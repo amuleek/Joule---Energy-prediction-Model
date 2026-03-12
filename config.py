@@ -77,9 +77,11 @@ ALERT_CONFIG = {
     'enable_price_alerts': os.getenv('ENABLE_PRICE_ALERTS', 'false').lower() == 'true'  # Disabled by default
 }
 
-# Prediction Email Schedule
+# Prediction Email Schedule (EST Timezone)
 PREDICTION_SCHEDULE = {
-    'morning_time': os.getenv('PREDICTION_MORNING_TIME', '08:00'),  # 8:00 AM
-    'evening_time': os.getenv('PREDICTION_EVENING_TIME', '20:00'),  # 8:00 PM
-    'enabled': os.getenv('PREDICTION_SCHEDULE_ENABLED', 'true').lower() == 'true'
+    'times': os.getenv('PREDICTION_TIMES', '06:00,09:00,12:00,18:00').split(','),  # 6 AM, 9 AM, 12 PM, 6 PM EST
+    'timezone': os.getenv('PREDICTION_TIMEZONE', 'US/Eastern'),  # EST/EDT
+    'enabled': os.getenv('PREDICTION_SCHEDULE_ENABLED', 'true').lower() == 'true',
+    # Time horizons included in predictions
+    'time_horizons': ['daily', 'one_week', 'two_weeks', 'monthly']
 }

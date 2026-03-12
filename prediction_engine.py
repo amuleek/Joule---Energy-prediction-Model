@@ -190,7 +190,7 @@ class PredictionEngine:
                 arrow = '+' if tomorrow_dir == 'UP' else '-'
                 html += f"""
                         <tr>
-                            <td>Tomorrow</td>
+                            <td>Daily (Tomorrow)</td>
                             <td>${tomorrow_price:.4f}</td>
                             <td class="{dir_class}">{arrow}{abs(tomorrow_pct):.2f}%</td>
                             <td class="{dir_class}">{tomorrow_dir}</td>
@@ -213,6 +213,24 @@ class PredictionEngine:
                         </tr>
                 """
                 
+                # Two Weeks
+                biweekly = pred.get('biweekly', {})
+                if not biweekly:
+                    biweekly = pred.get('next_week', {})
+                biweekly_price = biweekly.get('price', 0)
+                biweekly_pct = biweekly.get('change_percent', 0)
+                biweekly_dir = biweekly.get('direction', 'UP')
+                dir_class = 'up' if biweekly_dir == 'UP' else 'down'
+                arrow = '+' if biweekly_dir == 'UP' else '-'
+                html += f"""
+                        <tr>
+                            <td>Two Weeks</td>
+                            <td>${biweekly_price:.4f}</td>
+                            <td class="{dir_class}">{arrow}{abs(biweekly_pct):.2f}%</td>
+                            <td class="{dir_class}">{biweekly_dir}</td>
+                        </tr>
+                """
+                
                 # One Month
                 monthly = pred.get('monthly', {})
                 if not monthly:
@@ -224,7 +242,7 @@ class PredictionEngine:
                 arrow = '+' if month_dir == 'UP' else '-'
                 html += f"""
                         <tr>
-                            <td>One Month</td>
+                            <td>Monthly</td>
                             <td>${month_price:.4f}</td>
                             <td class="{dir_class}">{arrow}{abs(month_pct):.2f}%</td>
                             <td class="{dir_class}">{month_dir}</td>

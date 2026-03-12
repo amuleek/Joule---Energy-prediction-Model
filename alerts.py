@@ -351,7 +351,7 @@ class EmailAlertSystem:
             if predictions:
                 html += "<h3>🤖 AI Price Predictions:</h3>"
                 html += "<table class='data-table'>"
-                html += "<tr><th>Product</th><th>Next Day</th><th>Next Week</th><th>Biweekly</th></tr>"
+                html += "<tr><th>Product</th><th>Daily</th><th>One Week</th><th>Two Weeks</th><th>Monthly</th></tr>"
                 
                 for product, pred in predictions.items():
                     if pred:
@@ -359,12 +359,18 @@ class EmailAlertSystem:
                         next_day = f"{pred['next_day']['direction']} {abs(pred['next_day']['change_percent']):.2f}%"
                         next_week = f"{pred['next_week']['direction']} {abs(pred['next_week']['change_percent']):.2f}%"
                         biweekly = f"{pred['biweekly']['direction']} {abs(pred['biweekly']['change_percent']):.2f}%"
+                        monthly = pred.get('monthly', {})
+                        if monthly:
+                            monthly_str = f"{monthly['direction']} {abs(monthly['change_percent']):.2f}%"
+                        else:
+                            monthly_str = "N/A"
                         
                         html += f"<tr>"
                         html += f"<td>{product_name}</td>"
                         html += f"<td>{next_day}</td>"
                         html += f"<td>{next_week}</td>"
                         html += f"<td>{biweekly}</td>"
+                        html += f"<td>{monthly_str}</td>"
                         html += f"</tr>"
                 
                 html += "</table>"

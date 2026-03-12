@@ -22,10 +22,10 @@
       "direction": "DOWN"
     },
     "confidence_range": {
-      "lower": 3.2299992679617784,
-      "upper": 3.230000762035634
+      "lower": 3.2299992707620806,
+      "upper": 3.230000764249279
     },
-    "timestamp": "2026-03-11T23:10:36.578539"
+    "timestamp": "2026-03-11T23:30:50.473836"
   },
   "ULSD_Diesel": {
     "current_price": NaN,
@@ -50,10 +50,10 @@
       "direction": "DOWN"
     },
     "confidence_range": {
-      "lower": 4.019999001607547,
-      "upper": 4.020000920091604
+      "lower": 4.019999043488925,
+      "upper": 4.0200009459241866
     },
-    "timestamp": "2026-03-11T23:10:36.578552"
+    "timestamp": "2026-03-11T23:30:50.473877"
   },
   "Crude_Oil": {
     "current_price": NaN,
@@ -78,9 +78,9 @@
       "direction": "DOWN"
     },
     "confidence_range": {
-      "lower": 97.49997508126633,
-      "upper": 97.50002223988533
+      "lower": 97.49997692264458,
+      "upper": 97.50002411700088
     },
-    "timestamp": "2026-03-11T23:10:36.578559"
+    "timestamp": "2026-03-11T23:30:50.473884"
   }
 }

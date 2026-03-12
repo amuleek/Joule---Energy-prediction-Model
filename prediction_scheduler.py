@@ -1,10 +1,12 @@
 """
 Prediction Email Scheduler
-Sends prediction emails automatically in the morning and evening
+Sends prediction emails automatically 5 times daily (EST timezone)
+Schedule: 6:00 AM, 9:00 AM, 12:00 PM, 6:00 PM EST
 """
 import schedule
 import time
 from datetime import datetime
+import pytz
 from prediction_engine import PredictionEngine
 
 class PredictionScheduler:
@@ -12,11 +14,13 @@ class PredictionScheduler:
     
     def __init__(self):
         self.engine = PredictionEngine()
+        self.est = pytz.timezone('US/Eastern')
     
     def run_and_send_predictions(self):
         """Run prediction pipeline and send emails"""
+        est_time = datetime.now(self.est)
         print("\n" + "=" * 70)
-        print(f"SCHEDULED PREDICTION RUN - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"SCHEDULED PREDICTION RUN - {est_time.strftime('%Y-%m-%d %H:%M:%S %Z')}")
         print("=" * 70)
         
         try:
@@ -33,40 +37,56 @@ class PredictionScheduler:
             import traceback
             traceback.print_exc()
     
-    def start_scheduler(self, morning_time="08:00", evening_time="20:00"):
+    def start_scheduler(self, times=None):
         """
-        Start the scheduler
+        Start the scheduler with 5 daily times (EST)
         Args:
-            morning_time: Time to send morning predictions (default 8:00 AM)
-            evening_time: Time to send evening predictions (default 8:00 PM)
+            times: List of times in HH:MM format (default: 6:00 AM, 9:00 AM, 12:00 PM, 6:00 PM EST)
         """
+        if times is None:
+            times = ["06:00", "09:00", "12:00", "18:00"]  # 6 AM, 9 AM, 12 PM, 6 PM EST
+        
         print("=" * 70)
-        print("PREDICTION EMAIL SCHEDULER")
+        print("PREDICTION EMAIL SCHEDULER (EST Timezone)")
         print("=" * 70)
-        print(f"Morning predictions: {morning_time}")
-        print(f"Evening predictions: {evening_time}")
+        print("Scheduled times (EST):")
+        for t in times:
+            hour = int(t.split(':')[0])
+            minute = t.split(':')[1]
+            period = "AM" if hour < 12 else "PM"
+            display_hour = hour if hour <= 12 else hour - 12
+            if display_hour == 0:
+                display_hour = 12
+            print(f"  - {display_hour}:{minute} {period} EST")
         print()
-        print("Scheduled tasks:")
-        print(f"  - Every day at {morning_time}: Generate and send predictions")
-        print(f"  - Every day at {evening_time}: Generate and send predictions")
+        print("Predictions include:")
+        print("  - Daily (Tomorrow)")
+        print("  - One Week")
+        print("  - Two Weeks")
+        print("  - Monthly")
         print()
         print("Press Ctrl+C to stop")
         print("=" * 70)
         print()
         
-        # Schedule morning predictions
-        schedule.every().day.at(morning_time).do(self.run_and_send_predictions)
-        
-        # Schedule evening predictions
-        schedule.every().day.at(evening_time).do(self.run_and_send_predictions)
+        # Schedule all times
+        for time_str in times:
+            schedule.every().day.at(time_str).do(self.run_and_send_predictions)
         
         # Run initial prediction (for testing)
         print("Running initial prediction (test)...")
         self.run_and_send_predictions()
         
         print("\nScheduler started. Waiting for scheduled times...")
-        print(f"Next morning run: {morning_time}")
-        print(f"Next evening run: {evening_time}")
+        print("Next scheduled runs:")
+        for t in times:
+            hour = int(t.split(':')[0])
+            minute = t.split(':')[1]
+            period = "AM" if hour < 12 else "PM"
+            display_hour = hour if hour <= 12 else hour - 12
+            if display_hour == 0:
+                display_hour = 12
+            print(f"  - {display_hour}:{minute} {period} EST")
         print()
         
         try:
@@ -79,9 +99,7 @@ class PredictionScheduler:
 if __name__ == "__main__":
     scheduler = PredictionScheduler()
     
-    # Default times: 8:00 AM and 8:00 PM
-    # You can customize these times
+    # Schedule: 6:00 AM, 9:00 AM, 12:00 PM, 6:00 PM EST (daily)
     scheduler.start_scheduler(
-        morning_time="08:00",  # 8:00 AM
-        evening_time="20:00"   # 8:00 PM
+        times=["06:00", "09:00", "12:00", "18:00"]
     )
