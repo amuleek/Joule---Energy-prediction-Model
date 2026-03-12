@@ -1,0 +1,86 @@
+{
+  "RBOB_Gasoline": {
+    "current_price": NaN,
+    "next_day": {
+      "price": 2.9400000099639167,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "next_week": {
+      "price": 3.0100000113079144,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "biweekly": {
+      "price": 3.0800000126519125,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "monthly": {
+      "price": 3.2300000155319086,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "confidence_range": {
+      "lower": 3.2299992679617784,
+      "upper": 3.230000762035634
+    },
+    "timestamp": "2026-03-11T23:10:36.578539"
+  },
+  "ULSD_Diesel": {
+    "current_price": NaN,
+    "next_day": {
+      "price": 3.7299999861696715,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "next_week": {
+      "price": 3.7999999864356693,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "biweekly": {
+      "price": 3.8699999867016666,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "monthly": {
+      "price": 4.01999998727166,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "confidence_range": {
+      "lower": 4.019999001607547,
+      "upper": 4.020000920091604
+    },
+    "timestamp": "2026-03-11T23:10:36.578552"
+  },
+  "Crude_Oil": {
+    "current_price": NaN,
+    "next_day": {
+      "price": 94.60000043670708,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "next_week": {
+      "price": 95.3000004317374,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "biweekly": {
+      "price": 96.00000042676771,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "monthly": {
+      "price": 97.50000041611838,
+      "change_percent": NaN,
+      "direction": "DOWN"
+    },
+    "confidence_range": {
+      "lower": 97.49997508126633,
+      "upper": 97.50002223988533
+    },
+    "timestamp": "2026-03-11T23:10:36.578559"
+  }
+}
