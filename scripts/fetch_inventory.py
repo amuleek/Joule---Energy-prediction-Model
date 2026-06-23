@@ -4,7 +4,6 @@ Fetches weekly inventory reports from EIA
 """
 import requests
 import pandas as pd
-from datetime import datetime
 import os
 import sys
 
@@ -13,54 +12,48 @@ from config import API_CONFIG, EIA_INVENTORY_SERIES
 
 EIA_API_KEY = API_CONFIG.get('eia_api_key', '')
 
+
+def _fetch_one_series(series_id: str):
+    url = "https://api.eia.gov/v2/petroleum/stoc/wstk/data/"
+    params = {
+        'api_key': EIA_API_KEY,
+        'frequency': 'weekly',
+        'data[0]': 'value',
+        'facets[series][]': series_id,
+        'sort[0][column]': 'period',
+        'sort[0][direction]': 'desc',
+        'length': 1,
+    }
+    r = requests.get(url, params=params, timeout=30)
+    r.raise_for_status()
+    data = r.json()
+    if 'response' in data and data['response'].get('data'):
+        item = data['response']['data'][0]
+        return item.get('period', ''), float(item.get('value', 0))
+    return None, None
+
+
 def fetch_inventory():
-    """Fetch inventory data from EIA"""
+    """Fetch weekly gasoline, distillate, and crude inventories from EIA."""
     print("Fetching inventory data...")
     
     inventory_data = []
     
     try:
-        # Get gasoline inventory
-        url = "https://api.eia.gov/v2/petroleum/stoc/wstk/data/"
-        params = {
-            'api_key': EIA_API_KEY,
-            'frequency': 'weekly',
-            'data[0]': 'value',
-            'facets[series][]': EIA_INVENTORY_SERIES['GASOLINE']['series_id'],
-            'sort[0][column]': 'period',
-            'sort[0][direction]': 'desc',
-            'length': 1
+        gas_date, gas_val = _fetch_one_series(EIA_INVENTORY_SERIES['GASOLINE']['series_id'])
+        die_date, die_val = _fetch_one_series(EIA_INVENTORY_SERIES['DIESEL']['series_id'])
+        cru_date, cru_val = _fetch_one_series(EIA_INVENTORY_SERIES['CRUDE']['series_id'])
+
+        # Align on latest common reporting week when dates differ (use max period string)
+        period = max(filter(None, [gas_date, die_date, cru_date]), default=gas_date or die_date or cru_date)
+        row = {
+            'date': period or '',
+            'gasoline_inventory': gas_val,
+            'diesel_inventory': die_val,
+            'crude_inventory': cru_val,
         }
-        r = requests.get(url, params=params, timeout=15)
-        r.raise_for_status()
-        data = r.json()
-        
-        if 'response' in data and 'data' in data['response']:
-            if data['response']['data']:
-                item = data['response']['data'][0]
-                inventory_data.append({
-                    'date': item.get('period', ''),
-                    'gasoline_inventory': float(item.get('value', 0)),
-                    'diesel_inventory': None  # Will fetch separately
-                })
-        
-        # Get diesel inventory
-        params['facets[series][]'] = EIA_INVENTORY_SERIES['DIESEL']['series_id']
-        r = requests.get(url, params=params, timeout=15)
-        r.raise_for_status()
-        data = r.json()
-        
-        if 'response' in data and 'data' in data['response']:
-            if data['response']['data']:
-                item = data['response']['data'][0]
-                if inventory_data:
-                    inventory_data[0]['diesel_inventory'] = float(item.get('value', 0))
-                else:
-                    inventory_data.append({
-                        'date': item.get('period', ''),
-                        'gasoline_inventory': None,
-                        'diesel_inventory': float(item.get('value', 0))
-                    })
+        if row['date']:
+            inventory_data.append(row)
         
     except Exception as e:
         print(f"Error fetching inventory: {str(e)}")
@@ -79,7 +72,7 @@ def fetch_inventory():
         return df
     else:
         print("No inventory data fetched")
-        return pd.DataFrame(columns=['date', 'gasoline_inventory', 'diesel_inventory'])
+        return pd.DataFrame(columns=['date', 'gasoline_inventory', 'diesel_inventory', 'crude_inventory'])
 
 if __name__ == "__main__":
     fetch_inventory()

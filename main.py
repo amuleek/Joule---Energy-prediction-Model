@@ -46,6 +46,7 @@ class EnergyAIAgent:
             all_data = self.collector.get_all_data()
             prices = all_data.get('prices', {})
             inventories = all_data.get('inventories', {})
+            retail_weekly = all_data.get('retail_pump_weekly')
             
             # Analyze prices
             print("🔍 Analyzing price changes...")
@@ -78,6 +79,17 @@ class EnergyAIAgent:
                     print(f"    Alert: {'YES' if change_metrics['is_significant'] else 'NO'}")
                 else:
                     print("    Status: First recording")
+
+            if retail_weekly:
+                rg = retail_weekly.get("regular_gasoline")
+                rd = retail_weekly.get("ulsd_diesel")
+                print("\n⛽ RETAIL PUMP (EIA weekly, NJ area / Central Atlantic PADD 1B):")
+                print(f"  Region: {retail_weekly.get('region_label', '')} ({retail_weekly.get('region_code', '')})")
+                print(f"  Survey week: {retail_weekly.get('period', '—')}")
+                if rg is not None:
+                    print(f"  Regular gasoline: ${rg:.3f}/gal")
+                if rd is not None:
+                    print(f"  ULSD diesel: ${rd:.3f}/gal")
             
             # Display inventory results
             if inventory_analyses:
@@ -111,6 +123,8 @@ class EnergyAIAgent:
             predictions = self.get_predictions()
             if predictions:
                 for product, pred in predictions.items():
+                    if str(product).startswith('_'):
+                        continue
                     if pred:
                         print(f"\n  {product.replace('_', ' ')}:")
                         print(f"    Current: ${pred['current_price']:.4f}")
@@ -154,8 +168,9 @@ class EnergyAIAgent:
         print(f"  - RBOB Gasoline (RB=F)")
         print(f"  - Ultra-Low Sulfur Diesel (HO=F)")
         print(f"\nData Sources:")
-        print(f"  - Prices: Alpha Vantage API")
+        print(f"  - Prices: Yahoo Finance / Alpha Vantage (see config)")
         print(f"  - Inventories: EIA API (if configured)")
+        print(f"  - Retail pump (NJ area): EIA weekly PADD 1B (override with EIA_RETAIL_DUOAREA)")
         print(f"\nCheck interval: Every {interval_minutes} minute(s)")
         print(f"Price change alerts: {'ENABLED' if ALERT_CONFIG.get('enable_price_alerts', False) else 'DISABLED'}")
         if ALERT_CONFIG.get('enable_price_alerts', False):

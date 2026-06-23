@@ -1,0 +1,66 @@
+{
+  "updated_at": "2026-06-23T19:39:14.767216",
+  "products": {
+    "RBOB_Gasoline": {
+      "day_1": {
+        "bias_pct": 1.059,
+        "mae_pct": 1.732,
+        "direction_hit_rate": 0.571,
+        "n_samples": 14
+      },
+      "day_4": {
+        "bias_pct": -1.405,
+        "mae_pct": 2.731,
+        "direction_hit_rate": 0.429,
+        "n_samples": 14
+      },
+      "day_7": {
+        "bias_pct": 0.162,
+        "mae_pct": 5.325,
+        "direction_hit_rate": 0.714,
+        "n_samples": 14
+      }
+    },
+    "ULSD_Diesel": {
+      "day_1": {
+        "bias_pct": -0.148,
+        "mae_pct": 2.696,
+        "direction_hit_rate": 0.429,
+        "n_samples": 14
+      },
+      "day_4": {
+        "bias_pct": 4.932,
+        "mae_pct": 5.508,
+        "direction_hit_rate": 0.357,
+        "n_samples": 14
+      },
+      "day_7": {
+        "bias_pct": 7.644,
+        "mae_pct": 7.644,
+        "direction_hit_rate": 0.429,
+        "n_samples": 14
+      }
+    },
+    "Crude_Oil": {
+      "day_1": {
+        "bias_pct": -0.508,
+        "mae_pct": 2.198,
+        "direction_hit_rate": 0.571,
+        "n_samples": 14
+      },
+      "day_4": {
+        "bias_pct": 4.136,
+        "mae_pct": 4.93,
+        "direction_hit_rate": 0.571,
+        "n_samples": 14
+      },
+      "day_7": {
+        "bias_pct": 9.161,
+        "mae_pct": 9.161,
+        "direction_hit_rate": 0.357,
+        "n_samples": 14
+      }
+    }
+  },
+  "note": "bias_pct = mean(pred-actual)/actual*100; subtracted from future % change"
+}

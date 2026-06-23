@@ -1,0 +1,149 @@
+{
+  "updated_at": "2026-06-23T19:39:14.444885",
+  "products": {
+    "RBOB_Gasoline": {
+      "error_correlation_rank": [
+        {
+          "variable": "layer_composite",
+          "score": 0.7048
+        },
+        {
+          "variable": "model_next_day_pct",
+          "score": 0.5332
+        },
+        {
+          "variable": "inventory_wow_pct",
+          "score": 0.4491
+        },
+        {
+          "variable": "gasoline_crack",
+          "score": 0.3986
+        },
+        {
+          "variable": "sentiment",
+          "score": 0.3509
+        },
+        {
+          "variable": "dxy_change_pct",
+          "score": 0.1857
+        },
+        {
+          "variable": "diesel_crack",
+          "score": 0.1697
+        },
+        {
+          "variable": "geo_risk_score",
+          "score": 0.0448
+        }
+      ]
+    },
+    "ULSD_Diesel": {
+      "error_correlation_rank": [
+        {
+          "variable": "diesel_crack",
+          "score": 0.7674
+        },
+        {
+          "variable": "gasoline_crack",
+          "score": 0.7382
+        },
+        {
+          "variable": "model_next_day_pct",
+          "score": 0.4517
+        },
+        {
+          "variable": "sentiment",
+          "score": 0.2342
+        },
+        {
+          "variable": "dxy_change_pct",
+          "score": 0.2188
+        },
+        {
+          "variable": "layer_composite",
+          "score": 0.213
+        },
+        {
+          "variable": "geo_risk_score",
+          "score": 0.1636
+        },
+        {
+          "variable": "inventory_wow_pct",
+          "score": 0.0456
+        }
+      ]
+    },
+    "Crude_Oil": {
+      "error_correlation_rank": [
+        {
+          "variable": "model_next_day_pct",
+          "score": 0.6953
+        },
+        {
+          "variable": "diesel_crack",
+          "score": 0.6744
+        },
+        {
+          "variable": "gasoline_crack",
+          "score": 0.622
+        },
+        {
+          "variable": "inventory_wow_pct",
+          "score": 0.3756
+        },
+        {
+          "variable": "dxy_change_pct",
+          "score": 0.2168
+        },
+        {
+          "variable": "geo_risk_score",
+          "score": 0.2159
+        },
+        {
+          "variable": "sentiment",
+          "score": 0.0964
+        },
+        {
+          "variable": "layer_composite",
+          "score": 0.0769
+        }
+      ]
+    }
+  },
+  "rbob_xgb": {
+    "rbob_crude_ratio": 0.1289,
+    "geo_risk_score": 0.0732,
+    "ULSD_lag1": 0.0599,
+    "crude_close": 0.0556,
+    "topic_geopolitical": 0.0545,
+    "rbob_close": 0.0446,
+    "macd_hist": 0.0394,
+    "calendar_spread_proxy": 0.0334,
+    "momentum_20d_pct": 0.033,
+    "momentum_5d_pct": 0.0327,
+    "price_vs_sma20_pct": 0.0308,
+    "topic_opec": 0.0307,
+    "Crude_lag7": 0.0304,
+    "Crude_lag1": 0.0269,
+    "sentiment": 0.0266,
+    "rbob_volume": 0.0264,
+    "RBOB_lag7": 0.0259,
+    "is_hurricane_season": 0.0258,
+    "rsi_14": 0.025,
+    "RBOB_lag1": 0.0242,
+    "ULSD": 0.0231,
+    "RBOB": 0.022,
+    "topic_shipping": 0.0216,
+    "topic_refinery": 0.0198,
+    "Crude": 0.0187,
+    "is_driving_season": 0.0186,
+    "crude_return_1d": 0.0181,
+    "topic_crude_markets": 0.0144,
+    "rbob_calendar_spread_5d": 0.0115,
+    "rbob_return_1d": 0.0027,
+    "topic_hurricane": 0.0018,
+    "retail_gasoline": 0.0,
+    "diesel_inventory": 0.0,
+    "gasoline_inventory": 0.0
+  }
+}

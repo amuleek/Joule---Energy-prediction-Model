@@ -242,6 +242,61 @@ class EnergyDataCollector:
             import traceback
             traceback.print_exc()
             return None
+
+    def get_eia_weekly_retail_pump_prices(self) -> Optional[Dict]:
+        """
+        Latest EIA weekly retail pump prices for a configured region (default PADD 1B, includes NJ).
+        Uses petroleum/pri/gnd — not futures; complements NYMEX RBOB/HO in reports.
+        """
+        if not self.eia_api_key:
+            return None
+        duo = API_CONFIG.get('eia_retail_duoarea', 'R1Y')
+        label = API_CONFIG.get('eia_retail_duoarea_label', duo)
+        url = "https://api.eia.gov/v2/petroleum/pri/gnd/data/"
+        products = {
+            "EPMR": "regular_gasoline",
+            "EPD2DXL0": "ulsd_diesel",
+        }
+        out: Dict = {
+            "region_code": duo,
+            "region_label": label,
+            "period": None,
+            "units": "$/gal",
+            "source": "EIA Weekly Retail (G&D)",
+        }
+        try:
+            for facet_product, key in products.items():
+                params = {
+                    "api_key": self.eia_api_key,
+                    "frequency": "weekly",
+                    "data[0]": "value",
+                    "facets[duoarea][]": duo,
+                    "facets[product][]": facet_product,
+                    "length": 1,
+                    "sort[0][column]": "period",
+                    "sort[0][direction]": "desc",
+                }
+                response = requests.get(url, params=params, timeout=15)
+                response.raise_for_status()
+                data = response.json()
+                rows = data.get("response", {}).get("data") or []
+                if not rows:
+                    continue
+                row = rows[0]
+                val = row.get("value")
+                if val is None or val == "":
+                    continue
+                out[key] = float(val)
+                p = row.get("period")
+                if p and (out["period"] is None or p > out["period"]):
+                    out["period"] = p
+            if out.get("regular_gasoline") is None and out.get("ulsd_diesel") is None:
+                return None
+            out["timestamp"] = datetime.now().isoformat()
+            return out
+        except Exception as e:
+            print(f"Error fetching EIA retail pump prices: {str(e)}")
+            return None
     
     def get_gasoline_inventory(self) -> Optional[Dict]:
         """Get Gasoline inventory data from EIA"""
@@ -257,6 +312,14 @@ class EnergyDataCollector:
         inventory_data = self.get_eia_inventory(series['series_id'], series['name'])
         if inventory_data:
             inventory_data['product_key'] = 'DIESEL_INVENTORY'
+        return inventory_data
+
+    def get_crude_inventory(self) -> Optional[Dict]:
+        """Get U.S. commercial crude oil stocks from EIA"""
+        series = EIA_INVENTORY_SERIES['CRUDE']
+        inventory_data = self.get_eia_inventory(series['series_id'], series['name'])
+        if inventory_data:
+            inventory_data['product_key'] = 'CRUDE_INVENTORY'
         return inventory_data
     
     def get_all_prices(self) -> Dict[str, Optional[Dict]]:
@@ -278,14 +341,16 @@ class EnergyDataCollector:
         """Get inventory data for all tracked products"""
         return {
             'GASOLINE_INVENTORY': self.get_gasoline_inventory(),
-            'DIESEL_INVENTORY': self.get_diesel_inventory()
+            'DIESEL_INVENTORY': self.get_diesel_inventory(),
+            'CRUDE_INVENTORY': self.get_crude_inventory(),
         }
     
     def get_all_data(self) -> Dict:
         """Get all price and inventory data"""
         return {
             'prices': self.get_all_prices(),
-            'inventories': self.get_all_inventories()
+            'inventories': self.get_all_inventories(),
+            'retail_pump_weekly': self.get_eia_weekly_retail_pump_prices(),
         }
 
 

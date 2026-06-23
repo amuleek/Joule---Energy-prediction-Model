@@ -7,25 +7,27 @@
 - **Password**: Configured (Gmail App Password)
 
 ### Recipients (Prediction & Alert Emails)
-1. **amuleeksidhu96@gmail.com** ✅
-2. **rangi93@yahoo.com** ✅ (NEW)
+1. **taransandhu@gillenergy.com**
+2. **bikramgill@gillenergy.com**
+3. **ravigill@gillenergy.com**
+4. **kashmirgill@gillenergy.com**
 
 ## What Gets Emailed
 
 ### 1. Price Change Alerts
 - Sent when prices increase/decrease by > 2%
 - Includes: Current price, change amount, market data
-- **Recipients**: Both emails
+- **Recipients**: All configured emails above
 
 ### 2. AI Predictions
 - Sent when predictions are generated
 - Includes: Tomorrow, One Week, One Month forecasts
-- **Recipients**: Both emails
+- **Recipients**: All configured emails above
 
 ### 3. Market Signals
 - Sent when price-inventory correlations detected
 - Includes: Strong demand/weak demand signals
-- **Recipients**: Both emails
+- **Recipients**: All configured emails above
 
 ## How to Test
 
@@ -48,21 +50,26 @@ When you run:
 
 ## Update Recipients
 
-To add/remove recipients, edit `config.py` line 13:
+To add/remove recipients, edit `config.py` or set environment variable:
 
-```python
-'recipient_emails': os.getenv('RECIPIENT_EMAILS', 'email1@gmail.com,email2@yahoo.com').split(',')
+```powershell
+$env:RECIPIENT_EMAILS="email1@gillenergy.com,email2@gillenergy.com"
 ```
 
-Or set environment variable:
-```powershell
-$env:RECIPIENT_EMAILS="email1@gmail.com,email2@yahoo.com,email3@outlook.com"
+Or in `.env`:
+
+```
+RECIPIENT_EMAILS=email1@gillenergy.com,email2@gillenergy.com
 ```
 
 ## Status
 
-✅ **Both emails configured and receiving:**
+Active recipients:
+- taransandhu@gillenergy.com
+- bikramgill@gillenergy.com
+- ravigill@gillenergy.com
+- kashmirgill@gillenergy.com
+
+Removed:
 - amuleeksidhu96@gmail.com
 - rangi93@yahoo.com
-
-✅ **Test email sent successfully!**

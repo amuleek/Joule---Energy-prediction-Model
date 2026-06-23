@@ -1,0 +1,1 @@
+"""Joule web dashboard."""

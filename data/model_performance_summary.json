@@ -1,0 +1,100 @@
+{
+  "updated_at": "2026-06-23T19:39:14.913550",
+  "products": {
+    "RBOB_Gasoline": {
+      "day_1": {
+        "mae": 0.077877,
+        "rmse": 0.105822,
+        "mae_pct": 2.441,
+        "direction_accuracy": 0.636,
+        "bias_pct": -0.344,
+        "n_samples": 22
+      },
+      "day_4": {
+        "mae": 0.14357,
+        "rmse": 0.196958,
+        "mae_pct": 4.771,
+        "direction_accuracy": 0.368,
+        "bias_pct": 1.524,
+        "n_samples": 19
+      },
+      "day_7": {
+        "mae": 0.201784,
+        "rmse": 0.256584,
+        "mae_pct": 6.704,
+        "direction_accuracy": 0.625,
+        "bias_pct": 2.186,
+        "n_samples": 16
+      }
+    },
+    "ULSD_Diesel": {
+      "day_1": {
+        "mae": 0.074609,
+        "rmse": 0.089658,
+        "mae_pct": 2.215,
+        "direction_accuracy": 0.5,
+        "bias_pct": 0.405,
+        "n_samples": 22
+      },
+      "day_4": {
+        "mae": 0.153813,
+        "rmse": 0.211701,
+        "mae_pct": 4.648,
+        "direction_accuracy": 0.526,
+        "bias_pct": 4.167,
+        "n_samples": 19
+      },
+      "day_7": {
+        "mae": 0.255497,
+        "rmse": 0.278394,
+        "mae_pct": 7.65,
+        "direction_accuracy": 0.438,
+        "bias_pct": 7.65,
+        "n_samples": 16
+      }
+    },
+    "Crude_Oil": {
+      "day_1": {
+        "mae": 1.786608,
+        "rmse": 2.174054,
+        "mae_pct": 2.076,
+        "direction_accuracy": 0.727,
+        "bias_pct": -0.486,
+        "n_samples": 22
+      },
+      "day_4": {
+        "mae": 4.672473,
+        "rmse": 5.990416,
+        "mae_pct": 5.56,
+        "direction_accuracy": 0.579,
+        "bias_pct": 4.937,
+        "n_samples": 19
+      },
+      "day_7": {
+        "mae": 7.311849,
+        "rmse": 8.041391,
+        "mae_pct": 8.946,
+        "direction_accuracy": 0.438,
+        "bias_pct": 8.946,
+        "n_samples": 16
+      }
+    }
+  },
+  "models": {
+    "VAR+XGB": {
+      "mae_pct": 5.207,
+      "direction_accuracy": 0.889,
+      "n_samples": 9
+    },
+    "VAR+XGB+CatBoost": {
+      "mae_pct": 3.694,
+      "direction_accuracy": 0.38,
+      "n_samples": 50
+    },
+    "Prophet+XGB+CatBoost": {
+      "mae_pct": 2.778,
+      "direction_accuracy": 0.889,
+      "n_samples": 9
+    }
+  }
+}

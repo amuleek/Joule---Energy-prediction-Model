@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joule — Energy Market Intelligence</title>
+  <link rel="icon" type="image/svg+xml" href="/static/img/joule.svg?v=5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/dashboard.css?v=5" />
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Joule logo -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <linearGradient id="joule-bg" x1="18" y1="12" x2="82" y2="88" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFAB40"/>
+        <stop offset="1" stop-color="#E65100"/>
+      </linearGradient>
+      <radialGradient id="joule-shine" cx="35%" cy="28%" r="50%">
+        <stop stop-color="white" stop-opacity="0.45"/>
+        <stop offset="1" stop-color="white" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="joule-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.22"/>
+      </filter>
+    </defs>
+    <symbol id="joule-mark" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="url(#joule-bg)" filter="url(#joule-shadow)"/>
+      <circle cx="50" cy="50" r="46" fill="url(#joule-shine)"/>
+      <text x="50" y="71" text-anchor="middle"
+        font-family="Nunito, 'Segoe UI', sans-serif" font-weight="800" font-size="50"
+        fill="#FFF8F0" letter-spacing="-1">J</text>
+      <g class="joule-face">
+        <g class="joule-eye">
+          <ellipse cx="40" cy="33" rx="5" ry="5.5" fill="#FFF8F0">
+            <animate attributeName="ry" values="5.5;5.5;0.4;5.5;5.5" keyTimes="0;0.4;0.43;0.46;1" dur="4.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <circle cx="41" cy="34" r="2.4" fill="#2D3436"/>
+          <circle cx="41.8" cy="32.8" r="0.85" fill="white"/>
+        </g>
+        <g class="joule-eye">
+          <ellipse cx="60" cy="33" rx="5" ry="5.5" fill="#FFF8F0">
+            <animate attributeName="ry" values="5.5;5.5;0.4;5.5;5.5" keyTimes="0;0.4;0.43;0.46;1" dur="4.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <circle cx="61" cy="34" r="2.4" fill="#2D3436"/>
+          <circle cx="61.8" cy="32.8" r="0.85" fill="white"/>
+        </g>
+        <path class="joule-smile" d="M 38 42 Q 50 49 62 42" stroke="#2D3436" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.75">
+          <animate attributeName="d"
+            values="M 38 42 Q 50 49 62 42;M 38 42 Q 50 50 62 42;M 38 42 Q 50 49 62 42"
+            dur="3s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-logo">
+        <svg class="joule-logo" viewBox="0 0 100 100" aria-label="Joule">
+          <use href="#joule-mark"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Joule</h1>
+        <div class="sub" id="spot-label">Loading…</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="status-pill"><span class="dot"></span> Live</div>
+      <span style="font-size:0.75rem;color:var(--text-muted)" id="generated-at">—</span>
+      <button id="refresh-btn" class="btn btn-ghost">↻ Refresh</button>
+      <button id="run-btn" class="btn btn-primary">▶ Run Joule</button>
+    </div>
+  </header>
+
+  <!-- News Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-label">
+      <svg class="ticker-logo" viewBox="0 0 100 100" aria-hidden="true"><use href="#joule-mark"/></svg>
+      News
+    </div>
+    <div class="ticker-track" id="ticker-track">
+      <span class="ticker-item">Joule is fetching headlines…</span>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <button class="nav-item active" data-section="section-overview">
+        <span class="nav-icon">📊</span> Overview
+      </button>
+      <button class="nav-item" data-section="section-forecasts">
+        <span class="nav-icon">🎯</span> Forecasts
+      </button>
+      <button class="nav-item" data-section="section-markets">
+        <span class="nav-icon">📈</span> Markets
+      </button>
+      <button class="nav-item" data-section="section-news">
+        <span class="nav-icon">📰</span> News
+      </button>
+      <button class="nav-item" data-section="section-analytics">
+        <span class="nav-icon">🔬</span> Analytics
+      </button>
+
+      <div class="sidebar-brand">
+        <svg class="sidebar-joule" viewBox="0 0 100 100" aria-label="Joule"><use href="#joule-mark"/></svg>
+        <div class="brand-bubble" id="joule-tip">
+          Joule online — tracking crude, RBOB & diesel across day 1, 4 & 7 horizons.
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div id="banner" class="banner">
+        <svg class="banner-logo" viewBox="0 0 100 100" aria-hidden="true"><use href="#joule-mark"/></svg>
+        <span id="banner-text">Joule is initializing…</span>
+      </div>
+
+      <!-- Overview -->
+      <section id="section-overview" class="section active">
+        <h2 class="section-title">Market Overview</h2>
+        <div class="kpi-strip" id="kpi-strip"></div>
+        <div class="product-grid" id="product-cards"></div>
+        <div class="chart-grid two-col">
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Settlement Price History (90 days)</h3></div>
+            <div id="price-chart" class="chart-container"></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">News Sentiment & Geo Risk</h3></div>
+            <div id="sentiment-chart" class="chart-container"></div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:1rem">
+          <div class="card-header"><h3 class="card-title">Market Fundamentals</h3></div>
+          <div class="fund-grid" id="fund-grid"></div>
+        </div>
+      </section>
+
+      <!-- Forecasts -->
+      <section id="section-forecasts" class="section">
+        <h2 class="section-title">Price Forecasts & Intelligence</h2>
+        <div class="chart-grid two-col">
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Multi-Horizon Forecast Paths</h3></div>
+            <div id="fan-chart" class="chart-container"></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Crack Spread Forecast</h3></div>
+            <div id="crack-chart" class="chart-container"></div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:1rem">
+          <div class="card-header">
+            <h3 class="card-title">Joule Intelligence</h3>
+            <svg class="card-logo" viewBox="0 0 100 100" aria-hidden="true"><use href="#joule-mark"/></svg>
+          </div>
+          <div id="intel-panel"></div>
+        </div>
+      </section>
+
+      <!-- Markets -->
+      <section id="section-markets" class="section">
+        <h2 class="section-title">Market Data</h2>
+        <div class="chart-grid two-col">
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">EIA Weekly Inventories</h3></div>
+            <div id="inventory-chart" class="chart-container"></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">US Dollar Index (DXY)</h3></div>
+            <div id="dxy-chart" class="chart-container"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- News -->
+      <section id="section-news" class="section">
+        <h2 class="section-title">Energy Market News</h2>
+        <div class="card">
+          <div class="news-feed" id="news-feed">
+            <div class="news-item">Joule is reading the headlines…</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics -->
+      <section id="section-analytics" class="section">
+        <h2 class="section-title">Forecast Accuracy</h2>
+        <div class="chart-grid">
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Day-1 Forecast vs Actual</h3></div>
+            <div id="accuracy-chart" class="chart-container"></div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:1rem">
+          <div class="card-header"><h3 class="card-title">Recent Forecast Scores</h3></div>
+          <div style="overflow-x:auto">
+            <table class="data-table" id="recent-table">
+              <thead>
+                <tr>
+                  <th>Target Date</th>
+                  <th>Product</th>
+                  <th>Horizon</th>
+                  <th>Predicted</th>
+                  <th>Actual</th>
+                  <th>Error</th>
+                  <th>Direction</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/js/dashboard.js?v=5"></script>
+</body>
+</html>

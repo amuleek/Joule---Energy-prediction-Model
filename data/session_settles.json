@@ -1,0 +1,58 @@
+{
+  "2026-06-22": {
+    "closes": {
+      "RBOB": 2.987,
+      "Crude": 74.82,
+      "ULSD": 3.0931
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBN26,CLN26,HON26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBN26",
+        "Crude": "CLN26",
+        "ULSD": "HON26"
+      },
+      "live_last": {
+        "RBOB": 3.007,
+        "Crude": 74.82,
+        "ULSD": 3.112
+      },
+      "label": "Barchart settle (2026-06-22)"
+    },
+    "saved_at": "2026-06-22T19:29:48"
+  },
+  "2026-06-23": {
+    "closes": {
+      "RBOB": 2.959,
+      "Crude": 73.21,
+      "ULSD": 3.1546
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBN26,CLQ26,HON26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBN26",
+        "Crude": "CLQ26",
+        "ULSD": "HON26"
+      },
+      "live_last": {
+        "RBOB": 2.9376,
+        "Crude": 72.88,
+        "ULSD": 3.1533
+      },
+      "label": "Barchart settle (2026-06-23)"
+    },
+    "saved_at": "2026-06-23T19:39:21"
+  }
+}

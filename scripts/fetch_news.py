@@ -28,7 +28,7 @@ def fetch_news_newsapi():
         from_date = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
         url = f"https://newsapi.org/v2/everything"
         params = {
-            'q': 'oil OR gasoline OR diesel OR OPEC OR crude OR energy',
+            'q': '(oil OR gasoline OR diesel OR OPEC OR crude OR refinery OR hurricane OR "Strait of Hormuz") AND (energy OR petroleum)',
             'from': from_date,
             'sortBy': 'publishedAt',
             'language': 'en',

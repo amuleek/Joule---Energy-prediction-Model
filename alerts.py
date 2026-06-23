@@ -354,6 +354,8 @@ class EmailAlertSystem:
                 html += "<tr><th>Product</th><th>Daily</th><th>One Week</th><th>Two Weeks</th><th>Monthly</th></tr>"
                 
                 for product, pred in predictions.items():
+                    if str(product).startswith('_'):
+                        continue
                     if pred:
                         product_name = product.replace('_', ' ')
                         next_day = f"{pred['next_day']['direction']} {abs(pred['next_day']['change_percent']):.2f}%"
