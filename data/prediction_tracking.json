@@ -1,0 +1,177 @@
+{
+  "updated_at": "2026-09-14T20:26:35.284014",
+  "accuracy_by_product": {
+    "RBOB_Gasoline": {
+      "label": "Gasoline (RBOB)",
+      "day1_direction_pct": 28.6,
+      "day1_mae_pct": 4.04,
+      "samples": 14
+    },
+    "ULSD_Diesel": {
+      "label": "Diesel (ULSD)",
+      "day1_direction_pct": 57.1,
+      "day1_mae_pct": 2.79,
+      "samples": 14
+    },
+    "Crude_Oil": {
+      "label": "WTI Crude",
+      "day1_direction_pct": 78.6,
+      "day1_mae_pct": 2.24,
+      "samples": 14
+    }
+  },
+  "latest_attributions": [
+    {
+      "date": "2026-09-10 \u2192 2026-09-14",
+      "product": "Gasoline (RBOB)",
+      "horizon": "day_4",
+      "ok": true,
+      "narrative": "Gasoline (RBOB) day_4: predicted DOWN ($3.1978), actual DOWN ($3.3628, -0.90%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+      "missed": []
+    },
+    {
+      "date": "2026-09-10 \u2192 2026-09-14",
+      "product": "Diesel (ULSD)",
+      "horizon": "day_4",
+      "ok": true,
+      "narrative": "Diesel (ULSD) day_4: predicted DOWN ($4.9255), actual DOWN ($4.9886, -1.36%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+      "missed": []
+    },
+    {
+      "date": "2026-09-10 \u2192 2026-09-14",
+      "product": "WTI Crude",
+      "horizon": "day_4",
+      "ok": false,
+      "narrative": "WTI Crude day_4: predicted UP ($104.3464), actual DOWN ($101.9100, -0.66%). Direction miss. Missed signals: US dollar index (DXY) (DXY +0.39% \u2014 headwind for oil)",
+      "missed": [
+        {
+          "factor": "dollar_macro",
+          "label": "US dollar index (DXY)",
+          "reason": "DXY +0.39% \u2014 headwind for oil"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11 \u2192 2026-09-14",
+      "product": "Gasoline (RBOB)",
+      "horizon": "day_1",
+      "ok": false,
+      "narrative": "Gasoline (RBOB) day_1: predicted DOWN ($3.2235), actual UP ($3.3628, +1.68%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09)",
+      "missed": [
+        {
+          "factor": "weather",
+          "label": "Gulf Coast weather (heat / storms)",
+          "reason": "High Gulf heat index ~35 \u2014 demand support"
+        },
+        {
+          "factor": "news_sentiment",
+          "label": "Aggregated news sentiment",
+          "reason": "News sentiment +0.09"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11 \u2192 2026-09-14",
+      "product": "Diesel (ULSD)",
+      "horizon": "day_1",
+      "ok": false,
+      "narrative": "Diesel (ULSD) day_1: predicted DOWN ($4.8505), actual UP ($4.9886, +0.59%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09); Refining crack spread (Wide diesel crack $110/bbl)",
+      "missed": [
+        {
+          "factor": "weather",
+          "label": "Gulf Coast weather (heat / storms)",
+          "reason": "High Gulf heat index ~35 \u2014 demand support"
+        },
+        {
+          "factor": "news_sentiment",
+          "label": "Aggregated news sentiment",
+          "reason": "News sentiment +0.09"
+        },
+        {
+          "factor": "crack_spread",
+          "label": "Refining crack spread",
+          "reason": "Wide diesel crack $110/bbl"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11 \u2192 2026-09-14",
+      "product": "WTI Crude",
+      "horizon": "day_1",
+      "ok": false,
+      "narrative": "WTI Crude day_1: predicted DOWN ($97.6033), actual UP ($101.9100, +1.86%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09)",
+      "missed": [
+        {
+          "factor": "weather",
+          "label": "Gulf Coast weather (heat / storms)",
+          "reason": "High Gulf heat index ~35 \u2014 demand support"
+        },
+        {
+          "factor": "news_sentiment",
+          "label": "Aggregated news sentiment",
+          "reason": "News sentiment +0.09"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13 \u2192 2026-09-14",
+      "product": "Gasoline (RBOB)",
+      "horizon": "day_1",
+      "ok": true,
+      "narrative": "Gasoline (RBOB) day_1: predicted UP ($3.3490), actual UP ($3.3628, +1.68%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+      "missed": []
+    },
+    {
+      "date": "2026-09-13 \u2192 2026-09-14",
+      "product": "Diesel (ULSD)",
+      "horizon": "day_1",
+      "ok": true,
+      "narrative": "Diesel (ULSD) day_1: predicted UP ($5.1174), actual UP ($4.9886, +0.59%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+      "missed": []
+    },
+    {
+      "date": "2026-09-13 \u2192 2026-09-14",
+      "product": "WTI Crude",
+      "horizon": "day_1",
+      "ok": true,
+      "narrative": "WTI Crude day_1: predicted UP ($102.7154), actual UP ($101.9100, +1.86%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+      "missed": []
+    }
+  ],
+  "top_missed_factors_day1": [
+    {
+      "factor": "weather",
+      "label": "Gulf Coast weather (heat / storms)",
+      "count": 3
+    },
+    {
+      "factor": "news_sentiment",
+      "label": "Aggregated news sentiment",
+      "count": 3
+    },
+    {
+      "factor": "crack_spread",
+      "label": "Refining crack spread",
+      "count": 2
+    },
+    {
+      "factor": "inventory",
+      "label": "EIA weekly inventory",
+      "count": 2
+    },
+    {
+      "factor": "tape_momentum",
+      "label": "Price momentum / tape",
+      "count": 1
+    },
+    {
+      "factor": "geopolitical",
+      "label": "Geopolitical / OPEC / shipping headlines",
+      "count": 1
+    }
+  ],
+  "learning_rules": {
+    "momentum_blend_cap": 0.2
+  },
+  "recent_divergence_misses": 0
+}

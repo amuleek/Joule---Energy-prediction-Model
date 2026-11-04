@@ -139,7 +139,9 @@ function renderProducts(data) {
       return `<div class="forecast-cell">
         <div class="fc-label">${h.label}</div>
         <div class="fc-price">$${h.price.toFixed(p.decimals)}</div>
-        <div class="fc-pct ${dirClass(h.direction)}">${fmtPct(h.change_pct)}</div>
+        ${h.range_80
+          ? `<div class="fc-pct flat" title="80% likely range">${h.range_80.low.toFixed(p.decimals)}–${h.range_80.high.toFixed(p.decimals)}</div>`
+          : `<div class="fc-pct ${dirClass(h.direction)}">${fmtPct(h.change_pct)}</div>`}
       </div>`;
     }).join("");
 

@@ -29,7 +29,7 @@ except ImportError:
 FAST_ENSEMBLE = os.getenv("FAST_ENSEMBLE", "true").lower() in ("1", "true", "yes")
 TECH_FEATURES = [
     "rsi_14", "macd_hist", "momentum_5d_pct", "momentum_20d_pct",
-    "price_vs_sma20_pct", "rbob_return_1d", "crude_return_1d", "rbob_volume",
+    "price_vs_sma20_pct", "rbob_return_1d", "ulsd_return_1d", "crude_return_1d", "rbob_volume",
     "rbob_calendar_spread_5d", "natgas_return_1d",
 ]
 
@@ -136,6 +136,16 @@ class FundamentalModel:
             drivers["inventory_wow"] = inv_signal
             score += inv_signal
 
+        surprises = (meta.get("catalyst_calendar") or {}).get("inventory_surprise") or {}
+        feat = ((meta.get("catalyst_calendar") or {}).get("product_features") or {}).get(product_key) or {}
+        z_row = surprises.get(inv_key) or {}
+        z = z_row.get("z_score") if isinstance(z_row, dict) else None
+        if feat.get("fresh_print") and z is not None and abs(float(z)) >= 0.50:
+            # Standardized surprise vs typical week (not street forecast)
+            z_signal = -float(z) * 0.22
+            drivers["inventory_surprise_z"] = z_signal
+            score += z_signal
+
         op = meta.get("operational") or {}
         util = op.get("refinery_utilization_pct")
         if util is not None:
@@ -163,8 +173,8 @@ class FundamentalModel:
 
         if "is_driving_season" in df.columns and product_key == "RBOB_Gasoline":
             if float(df["is_driving_season"].iloc[-1]) > 0:
-                drivers["driving_season"] = 0.3
-                score += 0.3
+                drivers["driving_season"] = 0.12
+                score += 0.12
 
         return float(np.clip(score, -3.0, 3.0)), drivers
 
@@ -183,14 +193,16 @@ class NewsModel:
             drivers["sentiment"] = sig
             score += sig
 
-        geo = meta.get("geo_risk_score") or meta.get("topic_snapshot", {}).get("geo_risk_score")
+        topics = meta.get("topic_snapshot") or {}
+        geo = meta.get("geo_risk_score") or topics.get("geo_risk_score")
         if geo is not None:
             g = float(geo)
-            sig = g * 2.0
+            sent_val = float(sent if sent is not None else topics.get("sentiment") or 0)
+            sign = 1.0 if sent_val >= 0 else -0.5
+            sig = g * 1.2 * sign
             drivers["geo_risk"] = sig
             score += sig
 
-        topics = meta.get("topic_snapshot") or {}
         for tk in ("topic_opec", "topic_geopolitical", "topic_refinery", "topic_hurricane"):
             v = topics.get(tk)
             if v is not None and float(v) > 0.1:
@@ -308,11 +320,12 @@ class EnsembleAgent:
             use_blend = blend
             if _sign(ens_ret) and _sign(base_ret) and _sign(ens_ret) != _sign(base_ret):
                 use_blend = 0.82
-            if product_key == "RBOB_Gasoline":
-                tech_ret = fc["components"]["technical"]["return_pct"]
-                fund_ret = fc["components"]["fundamental"]["return_pct"]
-                if tech_ret < -0.3 and (fund_ret > 0.3 or base_ret > 1.5):
-                    use_blend = max(use_blend, 0.78)
+            tech_ret = fc["components"]["technical"]["return_pct"]
+            fund_ret = fc["components"]["fundamental"]["return_pct"]
+            if tech_ret < -0.3 and (fund_ret > 0.3 or base_ret > 1.5):
+                use_blend = max(use_blend, 0.78)
+            if tech_ret > 0.3 and (fund_ret < -0.3 or base_ret < -1.5):
+                use_blend = max(use_blend, 0.78)
             blended = (1 - use_blend) * base_day1 + use_blend * ensemble_price
             block["day_1"] = blended
             block["next_day"] = blended

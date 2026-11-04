@@ -98,6 +98,21 @@ def assess_product_uncertainty(
     d1m = day1_meta.get(product_key) or {}
     base_ret = d1m.get("base_return_pct")
     ens_ret = d1m.get("ensemble_return_pct")
+
+    gap = d1m.get("gap_risk") or meta.get("gap_risk") or {}
+    if gap.get("active"):
+        score += 2
+        reasons_gap = ", ".join(gap.get("reasons") or []) or "weekend/news shock risk"
+        reasons.append(
+            f"Gap risk elevated ({reasons_gap}) — Monday opens can move far beyond day-1 caps"
+        )
+    overnight = d1m.get("overnight_gap") or {}
+    if overnight.get("gap_pct") is not None and abs(float(overnight["gap_pct"])) >= 2.0:
+        score += 1
+        reasons.append(
+            f"Overnight tape already {float(overnight['gap_pct']):+.1f}% vs settle — "
+            "session close may gap further"
+        )
     if base_ret is not None and ens_ret is not None:
         if _sign(float(base_ret)) and _sign(float(ens_ret)) and _sign(float(base_ret)) != _sign(float(ens_ret)):
             score += 1
@@ -118,6 +133,15 @@ def assess_product_uncertainty(
             score += 1
             word = "build" if float(wow) > 0 else "draw"
             reasons.append(f"Weekly stocks {word} ({float(wow):+.1f}% WoW) vs model direction")
+
+    cal = meta.get("catalyst_calendar") or meta.get("event_intel") or {}
+    nxt = cal.get("next_high_impact") or cal.get("next") or {}
+    hrs = nxt.get("hours_to")
+    if hrs is not None and float(hrs) <= 20 and int(nxt.get("importance") or 0) >= 7:
+        score += 2
+        reasons.append(
+            f"{nxt.get('report')} in {float(hrs):.0f}h — day-1 can gap beyond the model"
+        )
 
     if score >= 4:
         level = "HIGH"

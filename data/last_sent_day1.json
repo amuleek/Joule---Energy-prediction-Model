@@ -1,0 +1,20 @@
+{
+  "sent_at": "2026-09-14T20:29:28.301098",
+  "target_date": "2026-09-15",
+  "directions": {
+    "RBOB_Gasoline": "UP",
+    "ULSD_Diesel": "UP",
+    "Crude_Oil": "UP"
+  },
+  "prices": {
+    "RBOB_Gasoline": 3.339436753449385,
+    "ULSD_Diesel": 5.05210204065925,
+    "Crude_Oil": 103.56636130677396
+  },
+  "change_pct": {
+    "RBOB_Gasoline": 0.7553932370681017,
+    "ULSD_Diesel": 1.912372474113929,
+    "Crude_Oil": 2.2311206400936916
+  },
+  "correction": true
+}

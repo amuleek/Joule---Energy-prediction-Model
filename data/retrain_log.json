@@ -1,10 +1,10 @@
 [
   {
-    "ran_at": "2026-06-04T20:01:41.999713",
+    "ran_at": "2026-09-03T07:16:37.333038",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.25,
+      "holdout_mape_pct": 3.5,
       "reason": ""
     },
     "catboost": {
@@ -14,9 +14,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.743,
-          "predicted_price": 3.4392682151611287,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.502,
+          "predicted_price": 3.232883298268656,
+          "current_price": 3.3853,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -25,9 +25,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -4.035,
-          "predicted_price": 3.845336423626026,
-          "current_price": 4.007,
+          "predicted_return_pct": -10.442,
+          "predicted_price": 2.9292494917769445,
+          "current_price": 3.2708,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -38,9 +38,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.637,
-          "predicted_price": 3.7175371342017507,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.771,
+          "predicted_price": 4.1190790794276655,
+          "current_price": 4.2805,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -49,9 +49,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.477,
-          "predicted_price": 3.973823761471758,
-          "current_price": 3.916,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.200480433302034,
+          "current_price": 4.2677,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -62,9 +62,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.912,
-          "predicted_price": 95.76286071452084,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.384,
+          "predicted_price": 83.31865234522074,
+          "current_price": 83.64,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -73,9 +73,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.417,
-          "predicted_price": 105.04662395963275,
-          "current_price": 112.25,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 81.7037378483635,
+          "current_price": 85.01,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -84,11 +84,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-04T22:54:19.933533",
+    "ran_at": "2026-09-03T19:17:54.865770",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.25,
+      "holdout_mape_pct": 3.52,
       "reason": ""
     },
     "catboost": {
@@ -98,9 +98,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.743,
-          "predicted_price": 3.4392682151611287,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.822,
+          "predicted_price": 3.321610167727469,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -109,9 +109,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -4.035,
-          "predicted_price": 3.845336423626026,
-          "current_price": 4.007,
+          "predicted_return_pct": -10.515,
+          "predicted_price": 2.9108452104958125,
+          "current_price": 3.2529,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -122,9 +122,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.637,
-          "predicted_price": 3.7175371342017507,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.363,
+          "predicted_price": 4.210203076055602,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -133,9 +133,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.477,
-          "predicted_price": 3.973823761471758,
-          "current_price": 3.916,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.184996534001399,
+          "current_price": 4.2438,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -146,9 +146,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.912,
-          "predicted_price": 95.76286071452084,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.376,
+          "predicted_price": 83.08633956855002,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -157,9 +157,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.417,
-          "predicted_price": 105.04662395963275,
-          "current_price": 112.25,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 79.13352850252917,
+          "current_price": 82.36,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -168,11 +168,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-05T07:46:20.403735",
+    "ran_at": "2026-09-03T19:18:50.702554",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.25,
+      "holdout_mape_pct": 3.52,
       "reason": ""
     },
     "catboost": {
@@ -182,9 +182,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.743,
-          "predicted_price": 3.4392682151611287,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.822,
+          "predicted_price": 3.321610167727469,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -193,9 +193,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -4.035,
-          "predicted_price": 3.845336423626026,
-          "current_price": 4.007,
+          "predicted_return_pct": -10.515,
+          "predicted_price": 2.9108452104958125,
+          "current_price": 3.2529,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -206,9 +206,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.637,
-          "predicted_price": 3.7175371342017507,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.363,
+          "predicted_price": 4.210203076055602,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -217,9 +217,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.477,
-          "predicted_price": 3.973823761471758,
-          "current_price": 3.916,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.184996534001399,
+          "current_price": 4.2438,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -230,9 +230,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.912,
-          "predicted_price": 95.76286071452084,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.376,
+          "predicted_price": 83.08633956855002,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -241,9 +241,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.417,
-          "predicted_price": 105.04662395963275,
-          "current_price": 112.25,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 79.13352850252917,
+          "current_price": 82.36,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -252,11 +252,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-07T10:12:16.902819",
+    "ran_at": "2026-09-03T19:20:27.040393",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.46,
+      "holdout_mape_pct": 3.52,
       "reason": ""
     },
     "catboost": {
@@ -266,9 +266,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.982,
-          "predicted_price": 3.361681171592459,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.822,
+          "predicted_price": 3.321610167727469,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -277,9 +277,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.808,
-          "predicted_price": 3.8944981238652483,
-          "current_price": 4.007,
+          "predicted_return_pct": -10.515,
+          "predicted_price": 2.9108452104958125,
+          "current_price": 3.2529,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -290,9 +290,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.363,
+          "predicted_price": 4.210203076055602,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -301,9 +301,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.579,
-          "predicted_price": 4.016992298186926,
-          "current_price": 3.916,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.184996534001399,
+          "current_price": 4.2438,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -314,9 +314,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.376,
+          "predicted_price": 83.08633956855002,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -325,9 +325,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.884,
-          "predicted_price": 104.52294706626138,
-          "current_price": 112.25,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 79.13352850252917,
+          "current_price": 82.36,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -336,11 +336,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-07T17:30:28.938259",
+    "ran_at": "2026-09-03T20:19:20.269531",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.46,
+      "holdout_mape_pct": 3.52,
       "reason": ""
     },
     "catboost": {
@@ -350,9 +350,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.982,
-          "predicted_price": 3.361681171592459,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.822,
+          "predicted_price": 3.321610167727469,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -361,9 +361,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.808,
-          "predicted_price": 3.8944981238652483,
-          "current_price": 4.007,
+          "predicted_return_pct": -10.515,
+          "predicted_price": 2.9108452104958125,
+          "current_price": 3.2529,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -374,9 +374,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.363,
+          "predicted_price": 4.210203076055602,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -385,9 +385,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.579,
-          "predicted_price": 4.016992298186926,
-          "current_price": 3.916,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.184996534001399,
+          "current_price": 4.2438,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -398,9 +398,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.376,
+          "predicted_price": 83.08633956855002,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -409,9 +409,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.884,
-          "predicted_price": 104.52294706626138,
-          "current_price": 112.25,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 79.13352850252917,
+          "current_price": 82.36,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -420,11 +420,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-07T22:19:05.135854",
+    "ran_at": "2026-09-04T09:57:37.945856",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.46,
+      "holdout_mape_pct": 3.52,
       "reason": ""
     },
     "catboost": {
@@ -434,9 +434,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.982,
-          "predicted_price": 3.361681171592459,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.822,
+          "predicted_price": 3.321610167727469,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -445,9 +445,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.808,
-          "predicted_price": 3.8944981238652483,
-          "current_price": 4.007,
+          "predicted_return_pct": -10.515,
+          "predicted_price": 2.9108452104958125,
+          "current_price": 3.2529,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -458,9 +458,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.363,
+          "predicted_price": 4.210203076055602,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -469,9 +469,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.579,
-          "predicted_price": 4.016992298186926,
-          "current_price": 3.916,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.184996534001399,
+          "current_price": 4.2438,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -482,9 +482,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.376,
+          "predicted_price": 83.08633956855002,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -493,9 +493,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.884,
-          "predicted_price": 104.52294706626138,
-          "current_price": 112.25,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 79.13352850252917,
+          "current_price": 82.36,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -504,11 +504,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-08T08:29:35.131692",
+    "ran_at": "2026-09-04T09:58:04.320815",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.45,
+      "holdout_mape_pct": 3.52,
       "reason": ""
     },
     "catboost": {
@@ -518,9 +518,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.982,
-          "predicted_price": 3.361681171592459,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.822,
+          "predicted_price": 3.321610167727469,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -529,9 +529,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.808,
-          "predicted_price": 3.8944981238652483,
-          "current_price": 4.007,
+          "predicted_return_pct": -10.515,
+          "predicted_price": 2.9108452104958125,
+          "current_price": 3.2529,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -542,9 +542,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.363,
+          "predicted_price": 4.210203076055602,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -553,9 +553,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.579,
-          "predicted_price": 4.016992298186926,
-          "current_price": 3.916,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.184996534001399,
+          "current_price": 4.2438,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -566,9 +566,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.376,
+          "predicted_price": 83.08633956855002,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -577,9 +577,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.884,
-          "predicted_price": 104.52294706626138,
-          "current_price": 112.25,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 79.13352850252917,
+          "current_price": 82.36,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -588,11 +588,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-08T18:22:25.062344",
+    "ran_at": "2026-09-04T09:59:26.752220",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.45,
+      "holdout_mape_pct": 3.52,
       "reason": ""
     },
     "catboost": {
@@ -602,9 +602,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.982,
-          "predicted_price": 3.361681171592459,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.822,
+          "predicted_price": 3.321610167727469,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -613,9 +613,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.808,
-          "predicted_price": 3.8944981238652483,
-          "current_price": 4.007,
+          "predicted_return_pct": -10.515,
+          "predicted_price": 2.9108452104958125,
+          "current_price": 3.2529,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -626,9 +626,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.363,
+          "predicted_price": 4.210203076055602,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -637,9 +637,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.579,
-          "predicted_price": 4.016992298186926,
-          "current_price": 3.916,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.184996534001399,
+          "current_price": 4.2438,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -650,9 +650,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.376,
+          "predicted_price": 83.08633956855002,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -661,9 +661,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.884,
-          "predicted_price": 104.52294706626138,
-          "current_price": 112.25,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 79.13352850252917,
+          "current_price": 82.36,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -672,11 +672,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-08T19:04:46.762505",
+    "ran_at": "2026-09-04T18:16:12.885970",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.94,
+      "holdout_mape_pct": 3.52,
       "reason": ""
     },
     "catboost": {
@@ -686,9 +686,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.027,
-          "predicted_price": 3.290804126706166,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.822,
+          "predicted_price": 3.321610167727469,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -697,9 +697,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.036,
-          "predicted_price": 3.4637403899200563,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.515,
+          "predicted_price": 2.9108452104958125,
+          "current_price": 3.2529,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -710,9 +710,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.363,
+          "predicted_price": 4.210203076055602,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -721,9 +721,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 6.332,
-          "predicted_price": 3.927903829316786,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.184996534001399,
+          "current_price": 4.2438,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -734,9 +734,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.376,
+          "predicted_price": 83.08633956855002,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -745,9 +745,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.537,
-          "predicted_price": 91.2478848345995,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 79.13352850252917,
+          "current_price": 82.36,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -756,11 +756,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-08T19:13:47.588627",
+    "ran_at": "2026-09-04T18:17:51.241285",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.94,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -770,9 +770,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.027,
-          "predicted_price": 3.290804126706166,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -781,9 +781,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.036,
-          "predicted_price": 3.4637403899200563,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -794,9 +794,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -805,9 +805,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 6.332,
-          "predicted_price": 3.927903829316786,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -818,9 +818,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -829,9 +829,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.537,
-          "predicted_price": 91.2478848345995,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -840,11 +840,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-08T19:34:52.336094",
+    "ran_at": "2026-09-04T18:19:57.364434",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.94,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -854,9 +854,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.027,
-          "predicted_price": 3.290804126706166,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -865,9 +865,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.036,
-          "predicted_price": 3.4637403899200563,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -878,9 +878,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -889,9 +889,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 6.332,
-          "predicted_price": 3.927903829316786,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -902,9 +902,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -913,9 +913,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.537,
-          "predicted_price": 91.2478848345995,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -924,11 +924,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-08T19:34:52.408447",
+    "ran_at": "2026-09-06T23:47:40.454924",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.94,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -938,9 +938,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.027,
-          "predicted_price": 3.290804126706166,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -949,9 +949,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.036,
-          "predicted_price": 3.4637403899200563,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -962,9 +962,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -973,9 +973,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 6.332,
-          "predicted_price": 3.927903829316786,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -986,9 +986,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -997,9 +997,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.537,
-          "predicted_price": 91.2478848345995,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1008,11 +1008,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-09T08:11:17.471408",
+    "ran_at": "2026-09-06T23:48:18.286880",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.94,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -1022,9 +1022,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.027,
-          "predicted_price": 3.290804126706166,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1033,9 +1033,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.036,
-          "predicted_price": 3.4637403899200563,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1046,9 +1046,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1057,9 +1057,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 6.332,
-          "predicted_price": 3.927903829316786,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1070,9 +1070,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1081,9 +1081,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.537,
-          "predicted_price": 91.2478848345995,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1092,11 +1092,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-09T08:12:10.672360",
+    "ran_at": "2026-09-06T23:49:05.171201",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.94,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -1106,9 +1106,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.027,
-          "predicted_price": 3.290804126706166,
-          "current_price": 3.465,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1117,9 +1117,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -0.036,
-          "predicted_price": 3.4637403899200563,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1130,9 +1130,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.302,
-          "predicted_price": 3.682850005003786,
-          "current_price": 3.694,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1141,9 +1141,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 6.332,
-          "predicted_price": 3.927903829316786,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1154,9 +1154,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.416,
-          "predicted_price": 97.2242612972322,
-          "current_price": 97.63,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1165,9 +1165,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.537,
-          "predicted_price": 91.2478848345995,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1176,11 +1176,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-09T18:29:49.118421",
+    "ran_at": "2026-09-06T23:49:36.890275",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.72,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -1190,9 +1190,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -9.863,
-          "predicted_price": 2.7883101713948366,
-          "current_price": 3.093400001525879,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1201,9 +1201,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": 0.446,
-          "predicted_price": 3.4804667368731073,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1214,9 +1214,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.574,
-          "predicted_price": 3.7929863123023404,
-          "current_price": 3.814899921417236,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1225,9 +1225,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 6.332,
-          "predicted_price": 3.927903829316786,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1238,9 +1238,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.563,
-          "predicted_price": 94.41552537763995,
-          "current_price": 94.9499969482422,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1249,9 +1249,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -6.537,
-          "predicted_price": 91.2478848345995,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1260,11 +1260,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-10T18:49:32.643389",
+    "ran_at": "2026-09-06T23:49:40.409770",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.35,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -1274,9 +1274,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -7.328,
-          "predicted_price": 2.8156588175539325,
-          "current_price": 3.038300037384033,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1285,9 +1285,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.548,
-          "predicted_price": 3.376715804211154,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1298,9 +1298,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.005,
-          "predicted_price": 3.6735995052746206,
-          "current_price": 3.673799991607666,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1309,9 +1309,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.195,
-          "predicted_price": 3.812006667536962,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1322,9 +1322,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.193,
-          "predicted_price": 91.92975101865626,
-          "current_price": 93.04000091552734,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1333,9 +1333,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.175,
-          "predicted_price": 93.55396293845092,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1344,11 +1344,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-10T23:03:15.825208",
+    "ran_at": "2026-09-06T23:50:09.967176",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.35,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -1358,9 +1358,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -7.328,
-          "predicted_price": 2.8156588175539325,
-          "current_price": 3.038300037384033,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1369,9 +1369,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.548,
-          "predicted_price": 3.376715804211154,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1382,9 +1382,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.005,
-          "predicted_price": 3.6735995052746206,
-          "current_price": 3.673799991607666,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1393,9 +1393,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.195,
-          "predicted_price": 3.812006667536962,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1406,9 +1406,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.193,
-          "predicted_price": 91.92975101865626,
-          "current_price": 93.04000091552734,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1417,9 +1417,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.175,
-          "predicted_price": 93.55396293845092,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1428,11 +1428,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-11T08:07:00.508072",
+    "ran_at": "2026-09-07T18:37:13.895110",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.35,
+      "holdout_mape_pct": 3.32,
       "reason": ""
     },
     "catboost": {
@@ -1442,9 +1442,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -7.328,
-          "predicted_price": 2.8156588175539325,
-          "current_price": 3.038300037384033,
+          "predicted_return_pct": -4.222,
+          "predicted_price": 2.947087966616224,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1453,9 +1453,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -2.548,
-          "predicted_price": 3.376715804211154,
-          "current_price": 3.465,
+          "predicted_return_pct": -10.983,
+          "predicted_price": 2.955437438146559,
+          "current_price": 3.3201,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1466,9 +1466,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.005,
-          "predicted_price": 3.6735995052746206,
-          "current_price": 3.673799991607666,
+          "predicted_return_pct": -3.919,
+          "predicted_price": 4.23775279863656,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1477,9 +1477,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.195,
-          "predicted_price": 3.812006667536962,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.192901714241082,
+          "current_price": 4.26,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1490,9 +1490,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.193,
-          "predicted_price": 91.92975101865626,
-          "current_price": 93.04000091552734,
+          "predicted_return_pct": -0.654,
+          "predicted_price": 85.1989703444826,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1501,9 +1501,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.175,
-          "predicted_price": 93.55396293845092,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 79.03185934914634,
+          "current_price": 82.23,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1512,11 +1512,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-11T19:38:31.759765",
+    "ran_at": "2026-09-07T18:38:49.368891",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.76,
+      "holdout_mape_pct": 3.58,
       "reason": ""
     },
     "catboost": {
@@ -1526,9 +1526,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.096,
-          "predicted_price": 2.890671192480379,
-          "current_price": 3.0459001064300537,
+          "predicted_return_pct": -4.272,
+          "predicted_price": 3.023762205819948,
+          "current_price": 3.1587,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1537,9 +1537,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -3.285,
-          "predicted_price": 3.3511801946253508,
-          "current_price": 3.465,
+          "predicted_return_pct": -6.3,
+          "predicted_price": 3.1720319030285413,
+          "current_price": 3.3853,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1550,9 +1550,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.47,
-          "predicted_price": 3.6042523657679597,
-          "current_price": 3.587399959564209,
+          "predicted_return_pct": -3.76,
+          "predicted_price": 4.544075958221924,
+          "current_price": 4.7216,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1561,9 +1561,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.195,
-          "predicted_price": 3.812006667536962,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.213078823429331,
+          "current_price": 4.2805,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1574,9 +1574,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.84,
-          "predicted_price": 89.77902293465465,
-          "current_price": 90.54000091552734,
+          "predicted_return_pct": -0.48,
+          "predicted_price": 90.41381393250522,
+          "current_price": 90.85,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1585,9 +1585,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.175,
-          "predicted_price": 93.55396293845092,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 80.3870207462313,
+          "current_price": 83.64,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1596,11 +1596,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-11T20:03:21.804826",
+    "ran_at": "2026-09-07T18:39:31.798180",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.76,
+      "holdout_mape_pct": 3.58,
       "reason": ""
     },
     "catboost": {
@@ -1610,9 +1610,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.096,
-          "predicted_price": 2.890671192480379,
-          "current_price": 3.0459001064300537,
+          "predicted_return_pct": -4.272,
+          "predicted_price": 3.023762205819948,
+          "current_price": 3.1587,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1621,9 +1621,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -3.285,
-          "predicted_price": 3.3511801946253508,
-          "current_price": 3.465,
+          "predicted_return_pct": -6.3,
+          "predicted_price": 3.1720319030285413,
+          "current_price": 3.3853,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1634,9 +1634,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.47,
-          "predicted_price": 3.6042523657679597,
-          "current_price": 3.587399959564209,
+          "predicted_return_pct": -3.76,
+          "predicted_price": 4.544075958221924,
+          "current_price": 4.7216,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1645,9 +1645,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.195,
-          "predicted_price": 3.812006667536962,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.213078823429331,
+          "current_price": 4.2805,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1658,9 +1658,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.84,
-          "predicted_price": 89.77902293465465,
-          "current_price": 90.54000091552734,
+          "predicted_return_pct": -0.48,
+          "predicted_price": 90.41381393250522,
+          "current_price": 90.85,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1669,9 +1669,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.175,
-          "predicted_price": 93.55396293845092,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 80.3870207462313,
+          "current_price": 83.64,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1680,11 +1680,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-11T20:03:22.799222",
+    "ran_at": "2026-09-07T18:40:11.113348",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.76,
+      "holdout_mape_pct": 3.58,
       "reason": ""
     },
     "catboost": {
@@ -1694,9 +1694,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.096,
-          "predicted_price": 2.890671192480379,
-          "current_price": 3.0459001064300537,
+          "predicted_return_pct": -4.272,
+          "predicted_price": 3.023762205819948,
+          "current_price": 3.1587,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1705,9 +1705,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -3.285,
-          "predicted_price": 3.3511801946253508,
-          "current_price": 3.465,
+          "predicted_return_pct": -6.3,
+          "predicted_price": 3.1720319030285413,
+          "current_price": 3.3853,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1718,9 +1718,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.47,
-          "predicted_price": 3.6042523657679597,
-          "current_price": 3.587399959564209,
+          "predicted_return_pct": -3.76,
+          "predicted_price": 4.544075958221924,
+          "current_price": 4.7216,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1729,9 +1729,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.195,
-          "predicted_price": 3.812006667536962,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.213078823429331,
+          "current_price": 4.2805,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1742,9 +1742,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.84,
-          "predicted_price": 89.77902293465465,
-          "current_price": 90.54000091552734,
+          "predicted_return_pct": -0.48,
+          "predicted_price": 90.41381393250522,
+          "current_price": 90.85,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1753,9 +1753,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.175,
-          "predicted_price": 93.55396293845092,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 80.3870207462313,
+          "current_price": 83.64,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1764,11 +1764,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-12T07:27:36.130110",
+    "ran_at": "2026-09-07T18:47:39.439428",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.72,
+      "holdout_mape_pct": 3.59,
       "reason": ""
     },
     "catboost": {
@@ -1778,9 +1778,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.096,
-          "predicted_price": 2.890671192480379,
-          "current_price": 3.0459001064300537,
+          "predicted_return_pct": -4.272,
+          "predicted_price": 3.023762205819948,
+          "current_price": 3.1587,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1789,9 +1789,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -3.285,
-          "predicted_price": 3.3511801946253508,
-          "current_price": 3.465,
+          "predicted_return_pct": -6.3,
+          "predicted_price": 3.1720319030285413,
+          "current_price": 3.3853,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1802,9 +1802,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.47,
-          "predicted_price": 3.6042523657679597,
-          "current_price": 3.587399959564209,
+          "predicted_return_pct": -3.76,
+          "predicted_price": 4.544075958221924,
+          "current_price": 4.7216,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1813,9 +1813,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.195,
-          "predicted_price": 3.812006667536962,
-          "current_price": 3.694,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.213078823429331,
+          "current_price": 4.2805,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1826,9 +1826,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.84,
-          "predicted_price": 89.77902293465465,
-          "current_price": 90.54000091552734,
+          "predicted_return_pct": -0.48,
+          "predicted_price": 90.41381393250522,
+          "current_price": 90.85,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1837,9 +1837,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.175,
-          "predicted_price": 93.55396293845092,
-          "current_price": 97.63,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 80.3870207462313,
+          "current_price": 83.64,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1848,11 +1848,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-15T18:49:31.658044",
+    "ran_at": "2026-09-07T19:09:00.120664",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.84,
+      "holdout_mape_pct": 3.59,
       "reason": ""
     },
     "catboost": {
@@ -1862,9 +1862,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.943,
-          "predicted_price": 2.8881257524634725,
-          "current_price": 3.0706000328063965,
+          "predicted_return_pct": -4.272,
+          "predicted_price": 3.023762205819948,
+          "current_price": 3.1587,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1873,9 +1873,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.712,
-          "predicted_price": 2.7310858093042762,
-          "current_price": 3.093400001525879,
+          "predicted_return_pct": -6.3,
+          "predicted_price": 3.1720319030285413,
+          "current_price": 3.3853,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1886,9 +1886,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.149,
-          "predicted_price": 3.605251787785114,
-          "current_price": 3.599900007247925,
+          "predicted_return_pct": -3.76,
+          "predicted_price": 4.544075958221924,
+          "current_price": 4.7216,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1897,9 +1897,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.125,
-          "predicted_price": 3.934101018179895,
-          "current_price": 3.814899921417236,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.213078823429331,
+          "current_price": 4.2805,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1910,9 +1910,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.0,
-          "predicted_price": 90.38722789132046,
-          "current_price": 91.3000030517578,
+          "predicted_return_pct": -0.48,
+          "predicted_price": 90.41381393250522,
+          "current_price": 90.85,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -1921,9 +1921,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -3.997,
-          "predicted_price": 91.15495598630054,
-          "current_price": 94.9499969482422,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 80.3870207462313,
+          "current_price": 83.64,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -1932,11 +1932,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-15T19:53:40.180324",
+    "ran_at": "2026-09-08T07:49:08.665153",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.84,
+      "holdout_mape_pct": 3.59,
       "reason": ""
     },
     "catboost": {
@@ -1946,9 +1946,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.943,
-          "predicted_price": 2.8881257524634725,
-          "current_price": 3.0706000328063965,
+          "predicted_return_pct": -4.272,
+          "predicted_price": 3.023762205819948,
+          "current_price": 3.1587,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -1957,9 +1957,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.712,
-          "predicted_price": 2.7310858093042762,
-          "current_price": 3.093400001525879,
+          "predicted_return_pct": -6.3,
+          "predicted_price": 3.1720319030285413,
+          "current_price": 3.3853,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -1970,9 +1970,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.149,
-          "predicted_price": 3.605251787785114,
-          "current_price": 3.599900007247925,
+          "predicted_return_pct": -3.76,
+          "predicted_price": 4.544075958221924,
+          "current_price": 4.7216,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -1981,9 +1981,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.125,
-          "predicted_price": 3.934101018179895,
-          "current_price": 3.814899921417236,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.213078823429331,
+          "current_price": 4.2805,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -1994,9 +1994,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.0,
-          "predicted_price": 90.38722789132046,
-          "current_price": 91.3000030517578,
+          "predicted_return_pct": -0.48,
+          "predicted_price": 90.41381393250522,
+          "current_price": 90.85,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2005,9 +2005,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -3.997,
-          "predicted_price": 91.15495598630054,
-          "current_price": 94.9499969482422,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 80.3870207462313,
+          "current_price": 83.64,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2016,11 +2016,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-16T08:19:13.733335",
+    "ran_at": "2026-09-08T07:49:29.082022",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.86,
+      "holdout_mape_pct": 3.59,
       "reason": ""
     },
     "catboost": {
@@ -2030,9 +2030,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.943,
-          "predicted_price": 2.8881257524634725,
-          "current_price": 3.0706000328063965,
+          "predicted_return_pct": -4.272,
+          "predicted_price": 3.023762205819948,
+          "current_price": 3.1587,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2041,9 +2041,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.712,
-          "predicted_price": 2.7310858093042762,
-          "current_price": 3.093400001525879,
+          "predicted_return_pct": -6.3,
+          "predicted_price": 3.1720319030285413,
+          "current_price": 3.3853,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2054,9 +2054,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.149,
-          "predicted_price": 3.605251787785114,
-          "current_price": 3.599900007247925,
+          "predicted_return_pct": -3.76,
+          "predicted_price": 4.544075958221924,
+          "current_price": 4.7216,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2065,9 +2065,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.125,
-          "predicted_price": 3.934101018179895,
-          "current_price": 3.814899921417236,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.213078823429331,
+          "current_price": 4.2805,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2078,9 +2078,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.0,
-          "predicted_price": 90.38722789132046,
-          "current_price": 91.3000030517578,
+          "predicted_return_pct": -0.48,
+          "predicted_price": 90.41381393250522,
+          "current_price": 90.85,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2089,9 +2089,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -3.997,
-          "predicted_price": 91.15495598630054,
-          "current_price": 94.9499969482422,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 80.3870207462313,
+          "current_price": 83.64,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2100,11 +2100,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-16T19:01:39.732515",
+    "ran_at": "2026-09-08T17:50:21.810373",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.38,
+      "holdout_mape_pct": 3.37,
       "reason": ""
     },
     "catboost": {
@@ -2114,9 +2114,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -7.621,
-          "predicted_price": 2.7967733928081113,
-          "current_price": 3.0275,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2125,9 +2125,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -8.598,
-          "predicted_price": 2.7770601138603155,
-          "current_price": 3.038300037384033,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2138,9 +2138,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.464,
-          "predicted_price": 3.5076761773729475,
-          "current_price": 3.5598,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2149,9 +2149,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 3.289,
-          "predicted_price": 3.794616243266491,
-          "current_price": 3.673799991607666,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2162,9 +2162,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.284,
-          "predicted_price": 87.71883739433618,
-          "current_price": 88.86,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2173,9 +2173,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.5,
-          "predicted_price": 88.85320695973371,
-          "current_price": 93.04000091552734,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2184,11 +2184,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-17T22:09:42.450754",
+    "ran_at": "2026-09-08T17:50:37.105000",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.44,
+      "holdout_mape_pct": 3.37,
       "reason": ""
     },
     "catboost": {
@@ -2198,9 +2198,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.093,
-          "predicted_price": 2.764915332752693,
-          "current_price": 3.1098999977111816,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2209,9 +2209,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -5.93,
-          "predicted_price": 2.8652921336767245,
-          "current_price": 3.0459001064300537,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2222,9 +2222,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.015,
-          "predicted_price": 3.613133729914745,
-          "current_price": 3.612600088119507,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2233,9 +2233,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.069,
-          "predicted_price": 3.6616261798208187,
-          "current_price": 3.587399959564209,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2246,9 +2246,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.11,
-          "predicted_price": 89.03052502584474,
-          "current_price": 90.02999877929688,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2257,9 +2257,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.605,
-          "predicted_price": 86.37025889447364,
-          "current_price": 90.54000091552734,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2268,11 +2268,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-18T19:22:52.801326",
+    "ran_at": "2026-09-08T17:50:54.854114",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.19,
+      "holdout_mape_pct": 3.37,
       "reason": ""
     },
     "catboost": {
@@ -2282,9 +2282,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.312,
-          "predicted_price": 2.750556446326406,
-          "current_price": 3.1013998985290527,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2293,9 +2293,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -9.085,
-          "predicted_price": 2.79164658260343,
-          "current_price": 3.0706000328063965,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2306,9 +2306,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.565,
-          "predicted_price": 3.458113095174143,
-          "current_price": 3.513099908828736,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2317,9 +2317,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.567,
-          "predicted_price": 3.6923051763981474,
-          "current_price": 3.599900007247925,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2330,9 +2330,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.462,
-          "predicted_price": 86.42776888715012,
-          "current_price": 87.70999908447266,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2341,9 +2341,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.639,
-          "predicted_price": 87.06420063211354,
-          "current_price": 91.3000030517578,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2352,11 +2352,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-19T20:54:12.341469",
+    "ran_at": "2026-09-08T18:00:54.894269",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.61,
+      "holdout_mape_pct": 3.41,
       "reason": ""
     },
     "catboost": {
@@ -2366,9 +2366,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -9.177,
-          "predicted_price": 2.676730582146399,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2377,9 +2377,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -9.456,
-          "predicted_price": 2.741223060562144,
-          "current_price": 3.0275,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2390,9 +2390,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -2.005,
-          "predicted_price": 3.201009308560497,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2401,9 +2401,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.943,
-          "predicted_price": 3.490644818095854,
-          "current_price": 3.5598,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2414,9 +2414,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.545,
-          "predicted_price": 79.50268998639746,
-          "current_price": 80.75,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2425,9 +2425,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.668,
-          "predicted_price": 84.71228819088687,
-          "current_price": 88.86,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2436,11 +2436,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-20T10:17:07.577365",
+    "ran_at": "2026-09-08T18:05:38.224356",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.67,
+      "holdout_mape_pct": 3.41,
       "reason": ""
     },
     "catboost": {
@@ -2450,9 +2450,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.552,
-          "predicted_price": 2.60674473368359,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2461,9 +2461,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -9.456,
-          "predicted_price": 2.741223060562144,
-          "current_price": 3.0275,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2474,9 +2474,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.195,
-          "predicted_price": 3.2601443595444746,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2485,9 +2485,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.943,
-          "predicted_price": 3.490644818095854,
-          "current_price": 3.5598,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2498,9 +2498,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.17,
-          "predicted_price": 79.80538575032585,
-          "current_price": 80.75,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2509,9 +2509,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.668,
-          "predicted_price": 84.71228819088687,
-          "current_price": 88.86,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2520,11 +2520,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-20T18:46:22.663381",
+    "ran_at": "2026-09-08T18:08:08.661124",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.66,
+      "holdout_mape_pct": 3.41,
       "reason": ""
     },
     "catboost": {
@@ -2534,9 +2534,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.552,
-          "predicted_price": 2.60674473368359,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2545,9 +2545,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -9.456,
-          "predicted_price": 2.741223060562144,
-          "current_price": 3.0275,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2558,9 +2558,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.195,
-          "predicted_price": 3.2601443595444746,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2569,9 +2569,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.943,
-          "predicted_price": 3.490644818095854,
-          "current_price": 3.5598,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2582,9 +2582,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.17,
-          "predicted_price": 79.80538575032585,
-          "current_price": 80.75,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2593,9 +2593,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.668,
-          "predicted_price": 84.71228819088687,
-          "current_price": 88.86,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2604,11 +2604,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-21T16:12:36.399396",
+    "ran_at": "2026-09-09T07:29:42.398355",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.68,
+      "holdout_mape_pct": 3.41,
       "reason": ""
     },
     "catboost": {
@@ -2618,9 +2618,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.552,
-          "predicted_price": 2.60674473368359,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2629,9 +2629,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -9.456,
-          "predicted_price": 2.741223060562144,
-          "current_price": 3.0275,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2642,9 +2642,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.195,
-          "predicted_price": 3.2601443595444746,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2653,9 +2653,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.943,
-          "predicted_price": 3.490644818095854,
-          "current_price": 3.5598,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2666,9 +2666,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.17,
-          "predicted_price": 79.80538575032585,
-          "current_price": 80.75,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2677,9 +2677,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.668,
-          "predicted_price": 84.71228819088687,
-          "current_price": 88.86,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2688,11 +2688,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-21T20:12:20.937101",
+    "ran_at": "2026-09-09T07:30:39.297280",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.68,
+      "holdout_mape_pct": 3.4,
       "reason": ""
     },
     "catboost": {
@@ -2702,9 +2702,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.552,
-          "predicted_price": 2.60674473368359,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2713,9 +2713,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -9.456,
-          "predicted_price": 2.741223060562144,
-          "current_price": 3.0275,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2726,9 +2726,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -0.195,
-          "predicted_price": 3.2601443595444746,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2737,9 +2737,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.943,
-          "predicted_price": 3.490644818095854,
-          "current_price": 3.5598,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2750,9 +2750,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.17,
-          "predicted_price": 79.80538575032585,
-          "current_price": 80.75,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2761,9 +2761,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.668,
-          "predicted_price": 84.71228819088687,
-          "current_price": 88.86,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2772,11 +2772,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-22T08:06:44.002857",
+    "ran_at": "2026-09-09T12:34:52.764816",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.96,
+      "holdout_mape_pct": 3.4,
       "reason": ""
     },
     "catboost": {
@@ -2786,9 +2786,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -12.092,
-          "predicted_price": 2.532193427386333,
-          "current_price": 2.8805,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2797,9 +2797,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -13.387,
-          "predicted_price": 2.6935829545270544,
-          "current_price": 3.1098999977111816,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2810,9 +2810,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.329,
-          "predicted_price": 3.2440385427983096,
-          "current_price": 3.1702,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2821,9 +2821,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 2.567,
-          "predicted_price": 3.7053312533026186,
-          "current_price": 3.612600088119507,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2834,9 +2834,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.831,
-          "predicted_price": 74.65762437763982,
-          "current_price": 76.05,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2845,9 +2845,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.639,
-          "predicted_price": 85.85311735626199,
-          "current_price": 90.02999877929688,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2856,11 +2856,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-22T18:16:33.449517",
+    "ran_at": "2026-09-09T12:35:22.582369",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.72,
+      "holdout_mape_pct": 3.4,
       "reason": ""
     },
     "catboost": {
@@ -2870,9 +2870,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.755,
-          "predicted_price": 2.5675700659455742,
-          "current_price": 2.9096,
+          "predicted_return_pct": -3.725,
+          "predicted_price": 2.981739743369609,
+          "current_price": 3.0971,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2881,9 +2881,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -13.237,
-          "predicted_price": 2.690874681318613,
-          "current_price": 3.1013998985290527,
+          "predicted_return_pct": -3.113,
+          "predicted_price": 3.3812470168888247,
+          "current_price": 3.4899,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2894,9 +2894,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.693,
-          "predicted_price": 3.2486749109567996,
-          "current_price": 3.1946,
+          "predicted_return_pct": -4.02,
+          "predicted_price": 4.472482401998528,
+          "current_price": 4.6598,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2905,9 +2905,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.943,
-          "predicted_price": 3.44485195578573,
-          "current_price": 3.513099908828736,
+          "predicted_return_pct": -1.708,
+          "predicted_price": 4.282288031156726,
+          "current_price": 4.3567,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -2918,9 +2918,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.726,
-          "predicted_price": 76.2324556262656,
-          "current_price": 76.79,
+          "predicted_return_pct": -0.765,
+          "predicted_price": 90.00651836407731,
+          "current_price": 90.7,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -2929,9 +2929,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.942,
-          "predicted_price": 83.37565661139995,
-          "current_price": 87.70999908447266,
+          "predicted_return_pct": -4.149,
+          "predicted_price": 79.93945988771583,
+          "current_price": 83.4,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -2940,11 +2940,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-22T19:12:09.067160",
+    "ran_at": "2026-09-09T18:21:58.756766",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.71,
+      "holdout_mape_pct": 3.63,
       "reason": ""
     },
     "catboost": {
@@ -2954,9 +2954,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.755,
-          "predicted_price": 2.5675700659455742,
-          "current_price": 2.9096,
+          "predicted_return_pct": -2.865,
+          "predicted_price": 3.0536173962552695,
+          "current_price": 3.1437,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -2965,9 +2965,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -13.237,
-          "predicted_price": 2.690874681318613,
-          "current_price": 3.1013998985290527,
+          "predicted_return_pct": -4.992,
+          "predicted_price": 2.9233891703777144,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -2978,9 +2978,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.693,
-          "predicted_price": 3.2486749109567996,
-          "current_price": 3.1946,
+          "predicted_return_pct": -3.382,
+          "predicted_price": 4.435729800325143,
+          "current_price": 4.591,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -2989,9 +2989,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.943,
-          "predicted_price": 3.44485195578573,
-          "current_price": 3.513099908828736,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.349485299228655,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -3002,9 +3002,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.726,
-          "predicted_price": 76.2324556262656,
-          "current_price": 76.79,
+          "predicted_return_pct": -0.361,
+          "predicted_price": 91.27943396549347,
+          "current_price": 91.61,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -3013,9 +3013,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.942,
-          "predicted_price": 83.37565661139995,
-          "current_price": 87.70999908447266,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 82.40033273891333,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -3024,11 +3024,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-22T19:29:46.013885",
+    "ran_at": "2026-09-09T18:23:21.971711",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 3.71,
+      "holdout_mape_pct": 3.63,
       "reason": ""
     },
     "catboost": {
@@ -3038,9 +3038,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.755,
-          "predicted_price": 2.5675700659455742,
-          "current_price": 2.9096,
+          "predicted_return_pct": -2.865,
+          "predicted_price": 3.0536173962552695,
+          "current_price": 3.1437,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -3049,9 +3049,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -13.237,
-          "predicted_price": 2.690874681318613,
-          "current_price": 3.1013998985290527,
+          "predicted_return_pct": -4.992,
+          "predicted_price": 2.9233891703777144,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -3062,9 +3062,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.693,
-          "predicted_price": 3.2486749109567996,
-          "current_price": 3.1946,
+          "predicted_return_pct": -3.382,
+          "predicted_price": 4.435729800325143,
+          "current_price": 4.591,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -3073,9 +3073,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": -1.943,
-          "predicted_price": 3.44485195578573,
-          "current_price": 3.513099908828736,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.349485299228655,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -3086,9 +3086,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -0.726,
-          "predicted_price": 76.2324556262656,
-          "current_price": 76.79,
+          "predicted_return_pct": -0.361,
+          "predicted_price": 91.27943396549347,
+          "current_price": 91.61,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -3097,9 +3097,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.942,
-          "predicted_price": 83.37565661139995,
-          "current_price": 87.70999908447266,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 82.40033273891333,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -3108,11 +3108,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-23T18:18:10.194417",
+    "ran_at": "2026-09-09T18:54:31.026238",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.81,
+      "holdout_mape_pct": 3.49,
       "reason": ""
     },
     "catboost": {
@@ -3122,9 +3122,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.155,
-          "predicted_price": 2.5670881334611804,
-          "current_price": 2.889400005340576,
+          "predicted_return_pct": -2.811,
+          "predicted_price": 3.0467670896208756,
+          "current_price": 3.1349,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -3133,9 +3133,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -14.856,
-          "predicted_price": 2.509363027974239,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -4.992,
+          "predicted_price": 2.9233891703777144,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -3146,9 +3146,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.796,
-          "predicted_price": 3.128691303237751,
-          "current_price": 3.073499917984009,
+          "predicted_return_pct": -3.382,
+          "predicted_price": 4.4382418668642085,
+          "current_price": 4.5936,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -3157,9 +3157,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.13,
-          "predicted_price": 3.2707580803267224,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.349485299228655,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -3170,9 +3170,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.152,
-          "predicted_price": 74.39325547876017,
-          "current_price": 75.26000213623047,
+          "predicted_return_pct": -0.361,
+          "predicted_price": 90.97055257122096,
+          "current_price": 91.3,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -3181,9 +3181,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.861,
-          "predicted_price": 76.82499759994342,
-          "current_price": 80.75,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 82.40033273891333,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -3192,11 +3192,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-23T19:17:39.489816",
+    "ran_at": "2026-09-09T21:14:24.517150",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.81,
+      "holdout_mape_pct": 3.48,
       "reason": ""
     },
     "catboost": {
@@ -3206,9 +3206,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.155,
-          "predicted_price": 2.5670881334611804,
-          "current_price": 2.889400005340576,
+          "predicted_return_pct": -2.811,
+          "predicted_price": 3.0467670896208756,
+          "current_price": 3.1349,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -3217,9 +3217,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -14.856,
-          "predicted_price": 2.509363027974239,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -4.992,
+          "predicted_price": 2.9233891703777144,
+          "current_price": 3.077,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -3230,9 +3230,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.796,
-          "predicted_price": 3.128691303237751,
-          "current_price": 3.073499917984009,
+          "predicted_return_pct": -3.382,
+          "predicted_price": 4.4382418668642085,
+          "current_price": 4.5936,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -3241,9 +3241,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.13,
-          "predicted_price": 3.2707580803267224,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.349485299228655,
+          "current_price": 4.4106,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -3254,9 +3254,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.152,
-          "predicted_price": 74.39325547876017,
-          "current_price": 75.26000213623047,
+          "predicted_return_pct": -0.361,
+          "predicted_price": 90.97055257122096,
+          "current_price": 91.3,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -3265,9 +3265,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.861,
-          "predicted_price": 76.82499759994342,
-          "current_price": 80.75,
+          "predicted_return_pct": -3.918,
+          "predicted_price": 82.40033273891333,
+          "current_price": 85.76,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -3276,11 +3276,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-23T19:29:51.776444",
+    "ran_at": "2026-09-10T08:21:31.915680",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.82,
+      "holdout_mape_pct": 3.51,
       "reason": ""
     },
     "catboost": {
@@ -3290,9 +3290,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.155,
-          "predicted_price": 2.5670881334611804,
-          "current_price": 2.889400005340576,
+          "predicted_return_pct": -3.059,
+          "predicted_price": 3.1162718048213534,
+          "current_price": 3.2146,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -3301,9 +3301,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -14.856,
-          "predicted_price": 2.509363027974239,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -2.478,
+          "predicted_price": 3.0574211245861145,
+          "current_price": 3.1351,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -3314,9 +3314,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.796,
-          "predicted_price": 3.128691303237751,
-          "current_price": 3.073499917984009,
+          "predicted_return_pct": -3.771,
+          "predicted_price": 4.368985594303816,
+          "current_price": 4.5402,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -3325,9 +3325,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.13,
-          "predicted_price": 3.2707580803267224,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.603628917375543,
+          "current_price": 4.6773,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -3338,9 +3338,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.152,
-          "predicted_price": 74.39325547876017,
-          "current_price": 75.26000213623047,
+          "predicted_return_pct": -0.384,
+          "predicted_price": 91.12853080512666,
+          "current_price": 91.48,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -3349,9 +3349,9 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.861,
-          "predicted_price": 76.82499759994342,
-          "current_price": 80.75,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 86.71110726596112,
+          "current_price": 90.22,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }
@@ -3360,11 +3360,11 @@
     "reason": ""
   },
   {
-    "ran_at": "2026-06-23T19:39:15.702749",
+    "ran_at": "2026-09-10T18:05:04.129908",
     "triggered": true,
     "xgb_rbob": {
       "used": true,
-      "holdout_mape_pct": 2.82,
+      "holdout_mape_pct": 3.55,
       "reason": ""
     },
     "catboost": {
@@ -3374,9 +3374,9 @@
           "horizon": "day_4",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -11.155,
-          "predicted_price": 2.5670881334611804,
-          "current_price": 2.889400005340576,
+          "predicted_return_pct": -3.059,
+          "predicted_price": 3.1162718048213534,
+          "current_price": 3.2146,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
           "from_cache": true
         },
@@ -3385,9 +3385,9 @@
           "horizon": "day_7",
           "product": "RBOB_Gasoline",
           "reason": "",
-          "predicted_return_pct": -14.856,
-          "predicted_price": 2.509363027974239,
-          "current_price": 2.947200059890747,
+          "predicted_return_pct": -2.478,
+          "predicted_price": 3.0574211245861145,
+          "current_price": 3.1351,
           "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
           "from_cache": true
         }
@@ -3398,9 +3398,9 @@
           "horizon": "day_4",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 1.796,
-          "predicted_price": 3.128691303237751,
-          "current_price": 3.073499917984009,
+          "predicted_return_pct": -3.771,
+          "predicted_price": 4.368985594303816,
+          "current_price": 4.5402,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
           "from_cache": true
         },
@@ -3409,9 +3409,9 @@
           "horizon": "day_7",
           "product": "ULSD_Diesel",
           "reason": "",
-          "predicted_return_pct": 0.13,
-          "predicted_price": 3.2707580803267224,
-          "current_price": 3.2664999961853027,
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.603628917375543,
+          "current_price": 4.6773,
           "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
           "from_cache": true
         }
@@ -3422,9 +3422,9 @@
           "horizon": "day_4",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -1.152,
-          "predicted_price": 74.39325547876017,
-          "current_price": 75.26000213623047,
+          "predicted_return_pct": -0.384,
+          "predicted_price": 91.12853080512666,
+          "current_price": 91.48,
           "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
           "from_cache": true
         },
@@ -3433,9 +3433,765 @@
           "horizon": "day_7",
           "product": "Crude_Oil",
           "reason": "",
-          "predicted_return_pct": -4.861,
-          "predicted_price": 76.82499759994342,
-          "current_price": 80.75,
+          "predicted_return_pct": -3.889,
+          "predicted_price": 86.71110726596112,
+          "current_price": 90.22,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-10T22:50:54.281191",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.55,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -3.059,
+          "predicted_price": 3.1162718048213534,
+          "current_price": 3.2146,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -2.478,
+          "predicted_price": 3.0574211245861145,
+          "current_price": 3.1351,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -3.771,
+          "predicted_price": 4.368985594303816,
+          "current_price": 4.5402,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.603628917375543,
+          "current_price": 4.6773,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.384,
+          "predicted_price": 91.12853080512666,
+          "current_price": 91.48,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.889,
+          "predicted_price": 86.71110726596112,
+          "current_price": 90.22,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-11T07:48:59.030208",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.43,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -4.502,
+          "predicted_price": 3.0820924458193546,
+          "current_price": 3.2274,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -2.46,
+          "predicted_price": 3.0274335295034467,
+          "current_price": 3.1038,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -3.771,
+          "predicted_price": 4.497739894228457,
+          "current_price": 4.674,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.61732192174498,
+          "current_price": 4.6822,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.384,
+          "predicted_price": 92.28407404664335,
+          "current_price": 92.64,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.918,
+          "predicted_price": 87.44466280980063,
+          "current_price": 91.01,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-13T17:03:28.824813",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.43,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -4.502,
+          "predicted_price": 3.0820924458193546,
+          "current_price": 3.2274,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -2.46,
+          "predicted_price": 3.0274335295034467,
+          "current_price": 3.1038,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -3.771,
+          "predicted_price": 4.497739894228457,
+          "current_price": 4.674,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.386,
+          "predicted_price": 4.61732192174498,
+          "current_price": 4.6822,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.384,
+          "predicted_price": 92.28407404664335,
+          "current_price": 92.64,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.918,
+          "predicted_price": 87.44466280980063,
+          "current_price": 91.01,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-13T20:55:41.292996",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.39,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -4.222,
+          "predicted_price": 3.115178294253906,
+          "current_price": 3.2525,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -2.577,
+          "predicted_price": 3.0541110069566675,
+          "current_price": 3.1349,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -4.031,
+          "predicted_price": 4.383666879857994,
+          "current_price": 4.5678,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.207,
+          "predicted_price": 4.538145840153883,
+          "current_price": 4.5936,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.669,
+          "predicted_price": 92.40793172181142,
+          "current_price": 93.03,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.569,
+          "predicted_price": 88.04189587086323,
+          "current_price": 91.3,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-14T08:37:52.002240",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.18,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -5.688,
+          "predicted_price": 3.0279916293039264,
+          "current_price": 3.2106,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -3.283,
+          "predicted_price": 3.1090782892549598,
+          "current_price": 3.2146,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -3.98,
+          "predicted_price": 4.609940156242124,
+          "current_price": 4.801,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.468688348121446,
+          "current_price": 4.5402,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.669,
+          "predicted_price": 95.40773773922376,
+          "current_price": 96.05,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.889,
+          "predicted_price": 87.92210255697321,
+          "current_price": 91.48,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-14T18:12:11.047130",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.16,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -5.688,
+          "predicted_price": 3.0279916293039264,
+          "current_price": 3.2106,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -3.283,
+          "predicted_price": 3.1090782892549598,
+          "current_price": 3.2146,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -3.98,
+          "predicted_price": 4.609940156242124,
+          "current_price": 4.801,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.468688348121446,
+          "current_price": 4.5402,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.669,
+          "predicted_price": 95.40773773922376,
+          "current_price": 96.05,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.889,
+          "predicted_price": 87.92210255697321,
+          "current_price": 91.48,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-14T18:21:21.786002",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.16,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -5.688,
+          "predicted_price": 3.0279916293039264,
+          "current_price": 3.2106,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -3.283,
+          "predicted_price": 3.1090782892549598,
+          "current_price": 3.2146,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -3.98,
+          "predicted_price": 4.609940156242124,
+          "current_price": 4.801,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.468688348121446,
+          "current_price": 4.5402,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.669,
+          "predicted_price": 95.40773773922376,
+          "current_price": 96.05,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.889,
+          "predicted_price": 87.92210255697321,
+          "current_price": 91.48,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-14T20:05:05.075998",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.16,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -5.688,
+          "predicted_price": 3.0279916293039264,
+          "current_price": 3.2106,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -3.283,
+          "predicted_price": 3.1090782892549598,
+          "current_price": 3.2146,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -3.98,
+          "predicted_price": 4.609940156242124,
+          "current_price": 4.801,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.575,
+          "predicted_price": 4.468688348121446,
+          "current_price": 4.5402,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.669,
+          "predicted_price": 95.40773773922376,
+          "current_price": 96.05,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.889,
+          "predicted_price": 87.92210255697321,
+          "current_price": 91.48,
+          "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+          "from_cache": true
+        }
+      }
+    },
+    "reason": ""
+  },
+  {
+    "ran_at": "2026-09-14T20:26:35.373865",
+    "triggered": true,
+    "xgb_rbob": {
+      "used": true,
+      "holdout_mape_pct": 3.06,
+      "reason": ""
+    },
+    "catboost": {
+      "RBOB_Gasoline": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -4.222,
+          "predicted_price": 3.115178294253906,
+          "current_price": 3.2525,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "RBOB_Gasoline",
+          "reason": "",
+          "predicted_return_pct": -2.577,
+          "predicted_price": 3.0541110069566675,
+          "current_price": 3.1349,
+          "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "ULSD_Diesel": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -4.031,
+          "predicted_price": 4.383666879857994,
+          "current_price": 4.5678,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "ULSD_Diesel",
+          "reason": "",
+          "predicted_return_pct": -1.207,
+          "predicted_price": 4.538145840153883,
+          "current_price": 4.5936,
+          "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+          "from_cache": true
+        }
+      },
+      "Crude_Oil": {
+        "day_4": {
+          "used": true,
+          "horizon": "day_4",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -0.669,
+          "predicted_price": 92.40793172181142,
+          "current_price": 93.03,
+          "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+          "from_cache": true
+        },
+        "day_7": {
+          "used": true,
+          "horizon": "day_7",
+          "product": "Crude_Oil",
+          "reason": "",
+          "predicted_return_pct": -3.569,
+          "predicted_price": 88.04189587086323,
+          "current_price": 91.3,
           "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
           "from_cache": true
         }

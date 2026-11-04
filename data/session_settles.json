@@ -54,5 +54,3229 @@
       "label": "Barchart settle (2026-06-23)"
     },
     "saved_at": "2026-06-23T19:39:21"
+  },
+  "2026-06-24": {
+    "closes": {
+      "RBOB": 2.8682,
+      "Crude": 69.84,
+      "ULSD": 3.1762
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBN26,CLQ26,HON26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBN26",
+        "Crude": "CLQ26",
+        "ULSD": "HON26"
+      },
+      "live_last": {
+        "RBOB": 2.8682,
+        "Crude": 69.84,
+        "ULSD": 3.1762
+      },
+      "label": "Barchart settle (2026-06-24)"
+    },
+    "saved_at": "2026-06-24T18:36:06"
+  },
+  "2026-06-25": {
+    "closes": {
+      "RBOB": 3.0029,
+      "Crude": 71.92,
+      "ULSD": 3.2982
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBN26,CLQ26,HON26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBN26",
+        "Crude": "CLQ26",
+        "ULSD": "HON26"
+      },
+      "live_last": {
+        "RBOB": 3.0029,
+        "Crude": 71.44,
+        "ULSD": 3.2847
+      },
+      "label": "Barchart settle (2026-06-25)"
+    },
+    "saved_at": "2026-06-25T18:42:25"
+  },
+  "2026-06-26": {
+    "closes": {
+      "RBOB": 2.9571,
+      "Crude": 69.23,
+      "ULSD": 3.2082
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBN26,CLQ26,HON26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBN26",
+        "Crude": "CLQ26",
+        "ULSD": "HON26"
+      },
+      "live_last": {
+        "RBOB": 2.9571,
+        "Crude": 69.23,
+        "ULSD": 3.2082
+      },
+      "label": "Barchart settle (2026-06-26)"
+    },
+    "saved_at": "2026-06-26T19:20:30"
+  },
+  "2026-06-29": {
+    "closes": {
+      "RBOB": 3.0614,
+      "Crude": 70.39,
+      "ULSD": 3.3317
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBN26,CLQ26,HON26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBN26",
+        "Crude": "CLQ26",
+        "ULSD": "HON26"
+      },
+      "live_last": {
+        "RBOB": 3.0614,
+        "Crude": 70.39,
+        "ULSD": 3.3317
+      },
+      "label": "Barchart settle (2026-06-29)"
+    },
+    "saved_at": "2026-06-29T18:42:15"
+  },
+  "2026-06-30": {
+    "closes": {
+      "RBOB": 3.0144,
+      "Crude": 69.5,
+      "ULSD": 3.3168
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBN26,CLQ26,HON26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBN26",
+        "Crude": "CLQ26",
+        "ULSD": "HON26"
+      },
+      "live_last": {
+        "RBOB": 3.0144,
+        "Crude": 69.84,
+        "ULSD": 3.3168
+      },
+      "label": "Barchart settle (2026-06-30)"
+    },
+    "saved_at": "2026-06-30T22:35:08"
+  },
+  "2026-07-01": {
+    "closes": {
+      "RBOB": 2.9412,
+      "Crude": 68.07,
+      "ULSD": 3.2152
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 2.9412,
+        "Crude": 68.07,
+        "ULSD": 3.2152
+      },
+      "label": "Barchart settle (2026-07-01)"
+    },
+    "saved_at": "2026-07-01T18:18:38"
+  },
+  "2026-07-02": {
+    "closes": {
+      "RBOB": 2.9452,
+      "Crude": 68.58,
+      "ULSD": 3.2179
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 2.9173,
+        "Crude": 68.69,
+        "ULSD": 3.1822
+      },
+      "label": "Barchart settle (2026-07-02)"
+    },
+    "saved_at": "2026-07-02T17:46:24"
+  },
+  "2026-07-06": {
+    "closes": {
+      "RBOB": 3.0033,
+      "Crude": 68.55,
+      "ULSD": 3.2984
+    },
+    "meta": {
+      "source": "barchart",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.0117,
+        "Crude": 68.8,
+        "ULSD": 3.3063
+      },
+      "label": "Barchart settle (2026-07-06)"
+    },
+    "saved_at": "2026-07-06T21:06:06"
+  },
+  "2026-07-07": {
+    "closes": {
+      "RBOB": 2.9539,
+      "ULSD": 3.3049,
+      "Crude": 70.44
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.0084,
+        "Crude": 72.34,
+        "ULSD": 3.3793
+      },
+      "label": "NYMEX (2026-07-07) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.0084,
+          "Crude": 72.34,
+          "ULSD": 3.3793
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 2.9539,
+            "session_close": 3.0084,
+            "reason": "official_nymex_settle",
+            "picked": 2.9539,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 2.9953999519348145,
+            "yahoo_high": 3.022200107574463
+          },
+          "ULSD": {
+            "barchart_settle": 3.3017,
+            "session_close": 3.3793,
+            "reason": "official_nymex_settle",
+            "picked": 3.3017,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 3.369499921798706,
+            "yahoo_high": 3.3942999839782715
+          },
+          "Crude": {
+            "barchart_settle": 70.44,
+            "session_close": 72.34,
+            "reason": "official_nymex_settle",
+            "picked": 70.44,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 72.06999969482422,
+            "yahoo_high": 72.6500015258789
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-07T19:29:01"
+  },
+  "2026-07-08": {
+    "closes": {
+      "RBOB": 3.1034,
+      "ULSD": 3.6575,
+      "Crude": 73.52
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.1252,
+        "Crude": 74.52,
+        "ULSD": 3.7122
+      },
+      "label": "NYMEX (2026-07-08) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.1252,
+          "Crude": 74.52,
+          "ULSD": 3.7122
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.1034,
+            "session_close": 3.1252,
+            "reason": "official_nymex_settle",
+            "picked": 3.1034,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.1101999282836914,
+            "yahoo_high": 3.132499933242798
+          },
+          "ULSD": {
+            "barchart_settle": 3.6575,
+            "session_close": 3.7122,
+            "reason": "official_nymex_settle",
+            "picked": 3.6575,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 3.7051000595092773,
+            "yahoo_high": 3.72189998626709
+          },
+          "Crude": {
+            "barchart_settle": 73.52,
+            "session_close": 74.52,
+            "reason": "official_nymex_settle",
+            "picked": 73.52,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 74.44999694824219,
+            "yahoo_high": 75.12999725341797
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-08T18:41:20"
+  },
+  "2026-07-09": {
+    "closes": {
+      "RBOB": 3.0387,
+      "ULSD": 3.5716,
+      "Crude": 72.08
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.0387,
+        "Crude": 72.08,
+        "ULSD": 3.5716
+      },
+      "label": "NYMEX (2026-07-09) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.0202,
+          "Crude": 71.81,
+          "ULSD": 3.552
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.0387,
+            "session_close": 3.0387,
+            "reason": "official_nymex_settle",
+            "picked": 3.0387,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.01200008392334,
+            "yahoo_high": 3.1621999740600586
+          },
+          "ULSD": {
+            "barchart_settle": 3.5716,
+            "session_close": 3.5716,
+            "reason": "official_nymex_settle",
+            "picked": 3.5716,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 3.5350000858306885,
+            "yahoo_high": 3.736999988555908
+          },
+          "Crude": {
+            "barchart_settle": 72.08,
+            "session_close": 72.08,
+            "reason": "official_nymex_settle",
+            "picked": 72.08,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 71.41999816894531,
+            "yahoo_high": 75.12999725341797
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-09T18:06:56"
+  },
+  "2026-07-10": {
+    "closes": {
+      "RBOB": 2.9526,
+      "ULSD": 3.5317,
+      "Crude": 71.41
+    },
+    "meta": {
+      "source": "verified",
+      "method": "manual",
+      "label": "NYMEX (2026-07-10) \u2014 verified official settle",
+      "note": "Gill Energy verified Fri Jul 10 NYMEX settles"
+    },
+    "saved_at": "2026-07-12T11:14:21"
+  },
+  "2026-07-13": {
+    "closes": {
+      "RBOB": 3.1663,
+      "ULSD": 3.8236,
+      "Crude": 78.14
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.1663,
+        "Crude": 78.14,
+        "ULSD": 3.8236
+      },
+      "label": "NYMEX (2026-07-13) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.1598,
+          "Crude": 78.0,
+          "ULSD": 3.8318
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.1663,
+            "session_close": 3.1663,
+            "reason": "official_nymex_settle",
+            "picked": 3.1663,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.023200035095215,
+            "yahoo_high": 3.1775999069213867
+          },
+          "ULSD": {
+            "barchart_settle": 3.8236,
+            "session_close": 3.8236,
+            "reason": "official_nymex_settle",
+            "picked": 3.8236,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 3.612799882888794,
+            "yahoo_high": 3.8517000675201416
+          },
+          "Crude": {
+            "barchart_settle": 78.14,
+            "session_close": 78.14,
+            "reason": "official_nymex_settle",
+            "picked": 78.14,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 72.61000061035156,
+            "yahoo_high": 78.58000183105469
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-13T18:08:08"
+  },
+  "2026-07-14": {
+    "closes": {
+      "RBOB": 3.2267,
+      "ULSD": 4.01,
+      "Crude": 80.13
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.2267,
+        "Crude": 80.13,
+        "ULSD": 4.01
+      },
+      "label": "NYMEX (2026-07-14) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.2267,
+          "Crude": 80.1,
+          "ULSD": 4.01
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.2267,
+            "session_close": 3.2267,
+            "reason": "official_nymex_settle",
+            "picked": 3.2267,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.2267000675201416,
+            "yahoo_high": 3.229099988937378
+          },
+          "ULSD": {
+            "barchart_settle": 4.01,
+            "session_close": 4.01,
+            "reason": "official_nymex_settle",
+            "picked": 4.01,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 3.99399995803833,
+            "yahoo_high": 4.010000228881836
+          },
+          "Crude": {
+            "barchart_settle": 80.13,
+            "session_close": 80.13,
+            "reason": "official_nymex_settle",
+            "picked": 80.13,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 79.58999633789062,
+            "yahoo_high": 80.18000030517578
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-14T18:18:01"
+  },
+  "2026-07-15": {
+    "closes": {
+      "RBOB": 3.3085,
+      "ULSD": 3.9483,
+      "Crude": 79.6
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.3085,
+        "Crude": 80.42,
+        "ULSD": 3.9886
+      },
+      "label": "NYMEX (2026-07-15) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.3085,
+          "Crude": 80.42,
+          "ULSD": 3.9886
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.3085,
+            "session_close": 3.3085,
+            "reason": "official_nymex_settle",
+            "picked": 3.3085,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.298099994659424,
+            "yahoo_high": 3.308500051498413
+          },
+          "ULSD": {
+            "barchart_settle": 3.9483,
+            "session_close": 3.9886,
+            "reason": "official_nymex_settle",
+            "picked": 3.9483,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 3.9825000762939453,
+            "yahoo_high": 3.988600015640259
+          },
+          "Crude": {
+            "barchart_settle": 79.6,
+            "session_close": 80.42,
+            "reason": "official_nymex_settle",
+            "picked": 79.6,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 79.5999984741211,
+            "yahoo_high": 80.48999786376953
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-15T18:49:56"
+  },
+  "2026-07-16": {
+    "closes": {
+      "RBOB": 3.2847,
+      "ULSD": 4.086,
+      "Crude": 79.6
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.2847,
+        "Crude": 79.6,
+        "ULSD": 4.086
+      },
+      "label": "NYMEX (2026-07-16) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.3092,
+          "Crude": 79.58,
+          "ULSD": 4.086
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.2847,
+            "session_close": 3.2847,
+            "reason": "official_nymex_settle",
+            "picked": 3.2847,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.3092000484466553,
+            "yahoo_high": 3.3092000484466553
+          },
+          "ULSD": {
+            "barchart_settle": 4.086,
+            "session_close": 4.086,
+            "reason": "official_nymex_settle",
+            "picked": 4.086,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.083799839019775,
+            "yahoo_high": 4.087900161743164
+          },
+          "Crude": {
+            "barchart_settle": 79.6,
+            "session_close": 79.6,
+            "reason": "official_nymex_settle",
+            "picked": 79.6,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 79.45999908447266,
+            "yahoo_high": 79.5999984741211
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-16T18:10:27"
+  },
+  "2026-07-17": {
+    "closes": {
+      "RBOB": 3.3927,
+      "ULSD": 4.0646,
+      "Crude": 82.49
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.3927,
+        "Crude": 82.49,
+        "ULSD": 4.0646
+      },
+      "label": "NYMEX (2026-07-17) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.391,
+          "Crude": 82.47,
+          "ULSD": 4.078
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.3927,
+            "session_close": 3.3927,
+            "reason": "official_nymex_settle",
+            "picked": 3.3927,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.2678000926971436,
+            "yahoo_high": 3.435800075531006
+          },
+          "ULSD": {
+            "barchart_settle": 4.0646,
+            "session_close": 4.0646,
+            "reason": "official_nymex_settle",
+            "picked": 4.0646,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.024799823760986,
+            "yahoo_high": 4.1280999183654785
+          },
+          "Crude": {
+            "barchart_settle": 82.49,
+            "session_close": 82.49,
+            "reason": "official_nymex_settle",
+            "picked": 82.49,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 78.61000061035156,
+            "yahoo_high": 82.76000213623047
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-17T22:01:17"
+  },
+  "2026-07-20": {
+    "closes": {
+      "RBOB": 3.4049,
+      "ULSD": 4.119,
+      "Crude": 83.23
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.4049,
+        "Crude": 83.23,
+        "ULSD": 4.119
+      },
+      "label": "NYMEX (2026-07-20) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.4049,
+          "Crude": 82.96,
+          "ULSD": 4.1093
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.4049,
+            "session_close": 3.4049,
+            "reason": "official_nymex_settle",
+            "picked": 3.4049,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.4021999835968018,
+            "yahoo_high": 3.404900074005127
+          },
+          "ULSD": {
+            "barchart_settle": 4.119,
+            "session_close": 4.119,
+            "reason": "official_nymex_settle",
+            "picked": 4.119,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.0005998611450195,
+            "yahoo_high": 4.203000068664551
+          },
+          "Crude": {
+            "barchart_settle": 83.23,
+            "session_close": 83.23,
+            "reason": "official_nymex_settle",
+            "picked": 83.23,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 80.2699966430664,
+            "yahoo_high": 85.38999938964844
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-20T18:11:24"
+  },
+  "2026-07-21": {
+    "closes": {
+      "RBOB": 3.4059,
+      "ULSD": 4.1266,
+      "Crude": 84.91
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLQ26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLQ26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.4059,
+        "Crude": 84.91,
+        "ULSD": 4.1266
+      },
+      "label": "NYMEX (2026-07-21) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.407,
+          "Crude": 84.99,
+          "ULSD": 4.1436
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLQ26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.4059,
+            "session_close": 3.4059,
+            "reason": "official_nymex_settle",
+            "picked": 3.4059,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.359299898147583,
+            "yahoo_high": 3.427500009536743
+          },
+          "ULSD": {
+            "barchart_settle": 4.1266,
+            "session_close": 4.1266,
+            "reason": "official_nymex_settle",
+            "picked": 4.1266,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.066999912261963,
+            "yahoo_high": 4.157100200653076
+          },
+          "Crude": {
+            "barchart_settle": 84.91,
+            "session_close": 84.91,
+            "reason": "official_nymex_settle",
+            "picked": 84.91,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLQ26.NYM",
+            "yahoo_low": 82.25,
+            "yahoo_high": 85.80000305175781
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-21T18:06:40"
+  },
+  "2026-07-22": {
+    "closes": {
+      "RBOB": 3.4456,
+      "ULSD": 4.1667,
+      "Crude": 88.14
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLU26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLU26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.4456,
+        "Crude": 88.14,
+        "ULSD": 4.1667
+      },
+      "label": "NYMEX (2026-07-22) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.4456,
+          "Crude": 88.14,
+          "ULSD": 4.1667
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.4456,
+            "session_close": 3.4456,
+            "reason": "official_nymex_settle",
+            "picked": 3.4456,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.4245998859405518,
+            "yahoo_high": 3.4456000328063965
+          },
+          "ULSD": {
+            "barchart_settle": 4.1667,
+            "session_close": 4.1667,
+            "reason": "official_nymex_settle",
+            "picked": 4.1667,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.166600227355957,
+            "yahoo_high": 4.179999828338623
+          },
+          "Crude": {
+            "barchart_settle": 88.14,
+            "session_close": 88.14,
+            "reason": "official_nymex_settle",
+            "picked": 88.14,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 87.31999969482422,
+            "yahoo_high": 88.36000061035156
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-22T18:34:46"
+  },
+  "2026-07-23": {
+    "closes": {
+      "RBOB": 3.4964,
+      "ULSD": 4.3787,
+      "Crude": 92.47
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLU26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLU26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.4964,
+        "Crude": 92.47,
+        "ULSD": 4.3787
+      },
+      "label": "NYMEX (2026-07-23) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.493,
+          "Crude": 92.5,
+          "ULSD": 4.3787
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.4964,
+            "session_close": 3.4964,
+            "reason": "official_nymex_settle",
+            "picked": 3.4964,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.4245998859405518,
+            "yahoo_high": 3.5339999198913574
+          },
+          "ULSD": {
+            "barchart_settle": 4.3787,
+            "session_close": 4.3787,
+            "reason": "official_nymex_settle",
+            "picked": 4.3787,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.378699779510498,
+            "yahoo_high": 4.378699779510498
+          },
+          "Crude": {
+            "barchart_settle": 92.47,
+            "session_close": 92.47,
+            "reason": "official_nymex_settle",
+            "picked": 92.47,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 92.37000274658203,
+            "yahoo_high": 92.63999938964844
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-23T18:13:35"
+  },
+  "2026-07-24": {
+    "closes": {
+      "RBOB": 3.3959,
+      "ULSD": 4.1806,
+      "Crude": 89.31
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLU26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLU26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.2892,
+        "Crude": 83.32,
+        "ULSD": 4.1139
+      },
+      "label": "NYMEX (2026-07-24) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.3959,
+          "Crude": 89.31,
+          "ULSD": 4.1806
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.3959,
+            "session_close": 3.3959,
+            "reason": "official_nymex_settle",
+            "picked": 3.3959,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.3685998916625977,
+            "yahoo_high": 3.49399995803833
+          },
+          "ULSD": {
+            "barchart_settle": 4.1806,
+            "session_close": 4.1806,
+            "reason": "official_nymex_settle",
+            "picked": 4.1806,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.162300109863281,
+            "yahoo_high": 4.385000228881836
+          },
+          "Crude": {
+            "barchart_settle": 89.31,
+            "session_close": 89.31,
+            "reason": "official_nymex_settle",
+            "picked": 89.31,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 87.68000030517578,
+            "yahoo_high": 92.83000183105469
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-27T07:41:17"
+  },
+  "2026-07-27": {
+    "closes": {
+      "RBOB": 3.3273,
+      "ULSD": 4.1116,
+      "Crude": 82.61
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLU26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLU26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.3229,
+        "Crude": 81.95,
+        "ULSD": 4.1045
+      },
+      "label": "NYMEX (2026-07-27) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.3229,
+          "Crude": 81.95,
+          "ULSD": 4.1045
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.3273,
+            "session_close": 3.3229,
+            "reason": "official_nymex_settle",
+            "picked": 3.3273,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.307499885559082,
+            "yahoo_high": 3.324700117111206
+          },
+          "ULSD": {
+            "barchart_settle": 4.1116,
+            "session_close": 4.1045,
+            "reason": "official_nymex_settle",
+            "picked": 4.1116,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.099999904632568,
+            "yahoo_high": 4.123300075531006
+          },
+          "Crude": {
+            "barchart_settle": 82.61,
+            "session_close": 81.95,
+            "reason": "official_nymex_settle",
+            "picked": 82.61,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 81.56999969482422,
+            "yahoo_high": 82.11000061035156
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-27T18:59:33"
+  },
+  "2026-07-28": {
+    "closes": {
+      "RBOB": 3.3345,
+      "ULSD": 4.1509,
+      "Crude": 79.26
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLU26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLU26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.3345,
+        "Crude": 79.26,
+        "ULSD": 4.1509
+      },
+      "label": "NYMEX (2026-07-28) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.3266,
+          "Crude": 79.13,
+          "ULSD": 4.1535
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.3345,
+            "session_close": 3.3345,
+            "reason": "official_nymex_settle",
+            "picked": 3.3345,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.2939000129699707,
+            "yahoo_high": 3.3577001094818115
+          },
+          "ULSD": {
+            "barchart_settle": 4.1509,
+            "session_close": 4.1509,
+            "reason": "official_nymex_settle",
+            "picked": 4.1509,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.058000087738037,
+            "yahoo_high": 4.173399925231934
+          },
+          "Crude": {
+            "barchart_settle": 79.26,
+            "session_close": 79.26,
+            "reason": "official_nymex_settle",
+            "picked": 79.26,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 77.77999877929688,
+            "yahoo_high": 82.43000030517578
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-28T18:03:52"
+  },
+  "2026-07-29": {
+    "closes": {
+      "RBOB": 3.3978,
+      "ULSD": 4.3701,
+      "Crude": 84.32
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLU26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLU26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.3978,
+        "Crude": 84.32,
+        "ULSD": 4.3701
+      },
+      "label": "NYMEX (2026-07-29) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.3914,
+          "Crude": 84.35,
+          "ULSD": 4.3654
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.3978,
+            "session_close": 3.3978,
+            "reason": "official_nymex_settle",
+            "picked": 3.3978,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.3264000415802,
+            "yahoo_high": 3.405600070953369
+          },
+          "ULSD": {
+            "barchart_settle": 4.3701,
+            "session_close": 4.3701,
+            "reason": "official_nymex_settle",
+            "picked": 4.3701,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.148200035095215,
+            "yahoo_high": 4.389400005340576
+          },
+          "Crude": {
+            "barchart_settle": 84.32,
+            "session_close": 84.32,
+            "reason": "official_nymex_settle",
+            "picked": 84.32,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 84.30000305175781,
+            "yahoo_high": 84.69999694824219
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-29T18:11:29"
+  },
+  "2026-07-30": {
+    "closes": {
+      "RBOB": 3.2847,
+      "ULSD": 4.2104,
+      "Crude": 83.95
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBQ26,CLU26,HOQ26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBQ26",
+        "Crude": "CLU26",
+        "ULSD": "HOQ26"
+      },
+      "live_last": {
+        "RBOB": 3.2847,
+        "Crude": 83.95,
+        "ULSD": 4.2104
+      },
+      "label": "NYMEX (2026-07-30) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.2488,
+          "Crude": 83.95,
+          "ULSD": 4.2104
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBQ26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOQ26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.2847,
+            "session_close": 3.2488,
+            "reason": "official_nymex_settle",
+            "picked": 3.2847,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBQ26.NYM",
+            "yahoo_low": 3.242500066757202,
+            "yahoo_high": 3.388400077819824
+          },
+          "ULSD": {
+            "barchart_settle": 4.2104,
+            "session_close": 4.2104,
+            "reason": "official_nymex_settle",
+            "picked": 4.2104,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOQ26.NYM",
+            "yahoo_low": 4.210400104522705,
+            "yahoo_high": 4.210400104522705
+          },
+          "Crude": {
+            "barchart_settle": 83.95,
+            "session_close": 83.95,
+            "reason": "official_nymex_settle",
+            "picked": 83.95,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 83.87000274658203,
+            "yahoo_high": 84.0
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-07-30T18:14:21"
+  },
+  "2026-07-31": {
+    "closes": {
+      "RBOB": 3.1142,
+      "ULSD": 4.0955,
+      "Crude": 84.67
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 2.9975,
+        "Crude": 79.28,
+        "ULSD": 4.0017
+      },
+      "label": "NYMEX (2026-07-31) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.1142,
+          "Crude": 84.67,
+          "ULSD": 4.0955
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.1142,
+            "session_close": 3.1142,
+            "reason": "official_nymex_settle",
+            "picked": 3.1142,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.065000057220459,
+            "yahoo_high": 3.1735000610351562
+          },
+          "ULSD": {
+            "barchart_settle": 4.0955,
+            "session_close": 4.0955,
+            "reason": "official_nymex_settle",
+            "picked": 4.0955,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.056099891662598,
+            "yahoo_high": 4.229300022125244
+          },
+          "Crude": {
+            "barchart_settle": 84.67,
+            "session_close": 84.67,
+            "reason": "official_nymex_settle",
+            "picked": 84.67,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 81.05999755859375,
+            "yahoo_high": 86.87000274658203
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-03T08:07:53"
+  },
+  "2026-08-03": {
+    "closes": {
+      "RBOB": 2.9667,
+      "ULSD": 3.8772,
+      "Crude": 80.34
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 2.9667,
+        "Crude": 80.34,
+        "ULSD": 3.8772
+      },
+      "label": "NYMEX (2026-08-03) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 2.9589,
+          "Crude": 80.06,
+          "ULSD": 3.8584
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 2.9667,
+            "session_close": 2.9667,
+            "reason": "official_nymex_settle",
+            "picked": 2.9667,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 2.9565999507904053,
+            "yahoo_high": 3.051100015640259
+          },
+          "ULSD": {
+            "barchart_settle": 3.8772,
+            "session_close": 3.8772,
+            "reason": "official_nymex_settle",
+            "picked": 3.8772,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 3.8568999767303467,
+            "yahoo_high": 4.065800189971924
+          },
+          "Crude": {
+            "barchart_settle": 80.34,
+            "session_close": 80.34,
+            "reason": "official_nymex_settle",
+            "picked": 80.34,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 78.43000030517578,
+            "yahoo_high": 81.30000305175781
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-03T18:00:06"
+  },
+  "2026-08-04": {
+    "closes": {
+      "RBOB": 2.8522,
+      "ULSD": 3.7705,
+      "Crude": 75.77
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 2.8522,
+        "Crude": 75.77,
+        "ULSD": 3.7705
+      },
+      "label": "NYMEX (2026-08-04) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 2.8395,
+          "Crude": 75.14,
+          "ULSD": 3.7303
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 2.9667,
+          "ULSD": 3.8772,
+          "Crude": 80.34
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 2.8522,
+            "session_close": 2.8522,
+            "prior_settle": 2.9667,
+            "reason": "official_nymex_settle",
+            "picked": 2.8522,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 2.808000087738037,
+            "yahoo_high": 3.006700038909912
+          },
+          "ULSD": {
+            "barchart_settle": 3.7705,
+            "session_close": 3.7303,
+            "prior_settle": 3.8772,
+            "reason": "official_nymex_settle",
+            "picked": 3.7705,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 3.672499895095825,
+            "yahoo_high": 3.9226999282836914
+          },
+          "Crude": {
+            "barchart_settle": 75.77,
+            "session_close": 75.77,
+            "prior_settle": 80.34,
+            "reason": "official_nymex_settle",
+            "picked": 75.77,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 75.11000061035156,
+            "yahoo_high": 82.33000183105469
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-04T18:03:14"
+  },
+  "2026-08-05": {
+    "closes": {
+      "RBOB": 2.8388,
+      "ULSD": 3.7962,
+      "Crude": 75.22
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 2.8313,
+        "Crude": 75.04,
+        "ULSD": 3.7818
+      },
+      "label": "NYMEX (2026-08-05) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 2.8313,
+          "Crude": 75.04,
+          "ULSD": 3.7818
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 2.8522,
+          "ULSD": 3.7705,
+          "Crude": 75.77
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 2.8388,
+            "session_close": 2.8313,
+            "prior_settle": 2.8522,
+            "reason": "official_nymex_settle",
+            "picked": 2.8388,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 2.8201000690460205,
+            "yahoo_high": 2.8399999141693115
+          },
+          "ULSD": {
+            "barchart_settle": 3.7962,
+            "session_close": 3.7818,
+            "prior_settle": 3.7705,
+            "reason": "official_nymex_settle",
+            "picked": 3.7962,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 3.7720999717712402,
+            "yahoo_high": 3.7923998832702637
+          },
+          "Crude": {
+            "barchart_settle": 75.22,
+            "session_close": 75.04,
+            "prior_settle": 75.77,
+            "reason": "official_nymex_settle",
+            "picked": 75.22,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 74.88999938964844,
+            "yahoo_high": 75.2699966430664
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-05T19:00:31"
+  },
+  "2026-08-06": {
+    "closes": {
+      "RBOB": 2.9556,
+      "ULSD": 3.9332,
+      "Crude": 78.16
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 2.9556,
+        "Crude": 78.16,
+        "ULSD": 3.9332
+      },
+      "label": "NYMEX (2026-08-06) \u2014 RBOB close, ULSD close, Crude close (session close fallback where settle unavailable) [stale Barchart overridden]",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 2.9542,
+          "Crude": 78.23,
+          "ULSD": 3.9298
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 2.8388,
+          "ULSD": 3.7962,
+          "Crude": 75.22
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 2.8388,
+            "session_close": 2.9556,
+            "prior_settle": 2.8388,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 2.9556,
+            "method": "session_close",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 2.8085999488830566,
+            "yahoo_high": 2.9614999294281006
+          },
+          "ULSD": {
+            "barchart_settle": 3.7962,
+            "session_close": 3.9332,
+            "prior_settle": 3.7962,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 3.9332,
+            "method": "session_close",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 3.732599973678589,
+            "yahoo_high": 3.942199945449829
+          },
+          "Crude": {
+            "barchart_settle": 75.22,
+            "session_close": 78.16,
+            "prior_settle": 75.22,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 78.16,
+            "method": "session_close",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 74.56999969482422,
+            "yahoo_high": 78.51000213623047
+          }
+        },
+        "label_suffix": " (session close fallback where settle unavailable) [stale Barchart overridden]"
+      }
+    },
+    "saved_at": "2026-08-06T18:00:48"
+  },
+  "2026-08-07": {
+    "closes": {
+      "RBOB": 2.9853,
+      "ULSD": 3.9024,
+      "Crude": 77.08
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 2.9853,
+        "Crude": 78.18,
+        "ULSD": 3.9024
+      },
+      "label": "NYMEX (2026-08-07) \u2014 RBOB settle, ULSD settle, Crude close (session close fallback where settle unavailable) [stale Barchart overridden]",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 2.9647,
+          "Crude": 77.08,
+          "ULSD": 3.882
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 2.9556,
+          "ULSD": 3.9332,
+          "Crude": 78.16
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 2.9853,
+            "session_close": 2.9853,
+            "prior_settle": 2.9556,
+            "reason": "official_nymex_settle",
+            "picked": 2.9853,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 2.925100088119507,
+            "yahoo_high": 3.0111000537872314
+          },
+          "ULSD": {
+            "barchart_settle": 3.9024,
+            "session_close": 3.9024,
+            "prior_settle": 3.9332,
+            "reason": "official_nymex_settle",
+            "picked": 3.9024,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 3.840399980545044,
+            "yahoo_high": 3.953399896621704
+          },
+          "Crude": {
+            "barchart_settle": 78.18,
+            "session_close": 77.08,
+            "prior_settle": 78.16,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 77.08,
+            "method": "session_close",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 76.52999877929688,
+            "yahoo_high": 78.7699966430664
+          }
+        },
+        "label_suffix": " (session close fallback where settle unavailable) [stale Barchart overridden]"
+      }
+    },
+    "saved_at": "2026-08-07T18:23:04"
+  },
+  "2026-08-10": {
+    "closes": {
+      "RBOB": 3.1333,
+      "ULSD": 4.165,
+      "Crude": 82.13
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 3.1333,
+        "Crude": 82.13,
+        "ULSD": 4.165
+      },
+      "label": "NYMEX (2026-08-10) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.1333,
+          "Crude": 82.11,
+          "ULSD": 4.165
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 2.9853,
+          "ULSD": 3.9024,
+          "Crude": 77.08
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.1333,
+            "session_close": 3.1333,
+            "prior_settle": 2.9853,
+            "reason": "official_nymex_settle",
+            "picked": 3.1333,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.1287999153137207,
+            "yahoo_high": 3.142199993133545
+          },
+          "ULSD": {
+            "barchart_settle": 4.165,
+            "session_close": 4.165,
+            "prior_settle": 3.9024,
+            "reason": "official_nymex_settle",
+            "picked": 4.165,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.162399768829346,
+            "yahoo_high": 4.172100067138672
+          },
+          "Crude": {
+            "barchart_settle": 82.13,
+            "session_close": 82.13,
+            "prior_settle": 77.08,
+            "reason": "official_nymex_settle",
+            "picked": 82.13,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 82.05999755859375,
+            "yahoo_high": 82.3499984741211
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-10T18:32:10"
+  },
+  "2026-08-11": {
+    "closes": {
+      "RBOB": 3.1354,
+      "ULSD": 4.1898,
+      "Crude": 83.2
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 3.1366,
+        "Crude": 83.2,
+        "ULSD": 4.2525
+      },
+      "label": "NYMEX (2026-08-11) \u2014 RBOB settle, ULSD settle, Crude close (session close fallback where settle unavailable) [stale Barchart overridden]",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.149,
+          "Crude": 83.23,
+          "ULSD": 4.2752
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 3.1333,
+          "ULSD": 4.165,
+          "Crude": 82.13
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.1354,
+            "session_close": 3.1366,
+            "prior_settle": 3.1333,
+            "reason": "official_nymex_settle",
+            "picked": 3.1354,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.0929999351501465,
+            "yahoo_high": 3.186000108718872
+          },
+          "ULSD": {
+            "barchart_settle": 4.1898,
+            "session_close": 4.2525,
+            "prior_settle": 4.165,
+            "reason": "official_nymex_settle",
+            "picked": 4.1898,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.114299774169922,
+            "yahoo_high": 4.284599781036377
+          },
+          "Crude": {
+            "barchart_settle": 82.13,
+            "session_close": 83.2,
+            "prior_settle": 82.13,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 83.2,
+            "method": "session_close",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 81.2699966430664,
+            "yahoo_high": 84.61000061035156
+          }
+        },
+        "label_suffix": " (session close fallback where settle unavailable) [stale Barchart overridden]"
+      }
+    },
+    "saved_at": "2026-08-11T17:37:04"
+  },
+  "2026-08-12": {
+    "closes": {
+      "RBOB": 3.1537,
+      "ULSD": 4.304,
+      "Crude": 83.27
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 3.1537,
+        "Crude": 83.27,
+        "ULSD": 4.304
+      },
+      "label": "NYMEX (2026-08-12) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.1379,
+          "Crude": 82.58,
+          "ULSD": 4.285
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 3.1354,
+          "ULSD": 4.1898,
+          "Crude": 83.2
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.1537,
+            "session_close": 3.1537,
+            "prior_settle": 3.1354,
+            "reason": "official_nymex_settle",
+            "picked": 3.1537,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.0947000980377197,
+            "yahoo_high": 3.177799940109253
+          },
+          "ULSD": {
+            "barchart_settle": 4.304,
+            "session_close": 4.304,
+            "prior_settle": 4.1898,
+            "reason": "official_nymex_settle",
+            "picked": 4.304,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.212500095367432,
+            "yahoo_high": 4.323999881744385
+          },
+          "Crude": {
+            "barchart_settle": 83.27,
+            "session_close": 83.27,
+            "prior_settle": 83.2,
+            "reason": "official_nymex_settle",
+            "picked": 83.27,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 82.4000015258789,
+            "yahoo_high": 84.3499984741211
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-12T17:56:39"
+  },
+  "2026-08-13": {
+    "closes": {
+      "RBOB": 3.128,
+      "ULSD": 4.2506,
+      "Crude": 81.25
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 3.128,
+        "Crude": 81.25,
+        "ULSD": 4.2506
+      },
+      "label": "NYMEX (2026-08-13) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.1134,
+          "Crude": 81.21,
+          "ULSD": 4.2343
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 3.1537,
+          "ULSD": 4.304,
+          "Crude": 83.27
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.128,
+            "session_close": 3.128,
+            "prior_settle": 3.1537,
+            "reason": "official_nymex_settle",
+            "picked": 3.128,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.109499931335449,
+            "yahoo_high": 3.1695001125335693
+          },
+          "ULSD": {
+            "barchart_settle": 4.2506,
+            "session_close": 4.2506,
+            "prior_settle": 4.304,
+            "reason": "official_nymex_settle",
+            "picked": 4.2506,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.189700126647949,
+            "yahoo_high": 4.316500186920166
+          },
+          "Crude": {
+            "barchart_settle": 81.25,
+            "session_close": 81.25,
+            "prior_settle": 83.27,
+            "reason": "official_nymex_settle",
+            "picked": 81.25,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 80.08999633789062,
+            "yahoo_high": 83.30000305175781
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-13T17:55:37"
+  },
+  "2026-08-14": {
+    "closes": {
+      "RBOB": 3.1841,
+      "ULSD": 4.2829,
+      "Crude": 82.4
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 3.1839,
+        "Crude": 82.51,
+        "ULSD": 4.3141
+      },
+      "label": "NYMEX (2026-08-14) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.1841,
+          "Crude": 82.4,
+          "ULSD": 4.2829
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 3.128,
+          "ULSD": 4.2506,
+          "Crude": 81.25
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.1841,
+            "session_close": 3.1839,
+            "prior_settle": 3.128,
+            "reason": "official_nymex_settle",
+            "picked": 3.1841,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.090399980545044,
+            "yahoo_high": 3.187999963760376
+          },
+          "ULSD": {
+            "barchart_settle": 4.2829,
+            "session_close": 4.3141,
+            "prior_settle": 4.2506,
+            "reason": "official_nymex_settle",
+            "picked": 4.2829,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.176400184631348,
+            "yahoo_high": 4.292900085449219
+          },
+          "Crude": {
+            "barchart_settle": 82.4,
+            "session_close": 82.51,
+            "prior_settle": 81.25,
+            "reason": "official_nymex_settle",
+            "picked": 82.4,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 80.70999908447266,
+            "yahoo_high": 82.98999786376953
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-17T07:51:24"
+  },
+  "2026-08-17": {
+    "closes": {
+      "RBOB": 3.2721,
+      "ULSD": 4.4432,
+      "Crude": 84.92
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 3.2721,
+        "Crude": 84.92,
+        "ULSD": 4.4432
+      },
+      "label": "NYMEX (2026-08-17) \u2014 RBOB close, ULSD close, Crude close (session close fallback where settle unavailable) [stale Barchart overridden]",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.2737,
+          "Crude": 84.95,
+          "ULSD": 4.4415
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 3.1841,
+          "ULSD": 4.2829,
+          "Crude": 82.4
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.1841,
+            "session_close": 3.2721,
+            "prior_settle": 3.1841,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 3.2721,
+            "method": "session_close",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.154900074005127,
+            "yahoo_high": 3.2757999897003174
+          },
+          "ULSD": {
+            "barchart_settle": 4.2829,
+            "session_close": 4.4432,
+            "prior_settle": 4.2829,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 4.4432,
+            "method": "session_close",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.240200042724609,
+            "yahoo_high": 4.455599784851074
+          },
+          "Crude": {
+            "barchart_settle": 82.4,
+            "session_close": 84.92,
+            "prior_settle": 82.4,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 84.92,
+            "method": "session_close",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 81.5,
+            "yahoo_high": 85.04000091552734
+          }
+        },
+        "label_suffix": " (session close fallback where settle unavailable) [stale Barchart overridden]"
+      }
+    },
+    "saved_at": "2026-08-17T18:01:16"
+  },
+  "2026-08-18": {
+    "closes": {
+      "RBOB": 3.3017,
+      "ULSD": 4.4501,
+      "Crude": 84.94
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLU26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 3.3017,
+        "Crude": 84.94,
+        "ULSD": 4.4501
+      },
+      "label": "NYMEX (2026-08-18) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.3072,
+          "Crude": 85.27,
+          "ULSD": 4.491
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 3.2721,
+          "ULSD": 4.4432,
+          "Crude": 84.92
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.3017,
+            "session_close": 3.3017,
+            "prior_settle": 3.2721,
+            "reason": "official_nymex_settle",
+            "picked": 3.3017,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.263000011444092,
+            "yahoo_high": 3.327199935913086
+          },
+          "ULSD": {
+            "barchart_settle": 4.4501,
+            "session_close": 4.4501,
+            "prior_settle": 4.4432,
+            "reason": "official_nymex_settle",
+            "picked": 4.4501,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.395500183105469,
+            "yahoo_high": 4.492400169372559
+          },
+          "Crude": {
+            "barchart_settle": 84.94,
+            "session_close": 84.94,
+            "prior_settle": 84.92,
+            "reason": "official_nymex_settle",
+            "picked": 84.94,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 84.56999969482422,
+            "yahoo_high": 85.94000244140625
+          }
+        },
+        "label_suffix": ""
+      }
+    },
+    "saved_at": "2026-08-18T18:08:04"
+  },
+  "2026-08-19": {
+    "closes": {
+      "RBOB": 3.2551,
+      "ULSD": 4.4523,
+      "Crude": 85.83
+    },
+    "meta": {
+      "source": "verified",
+      "method": "manual",
+      "label": "NYMEX (2026-08-19) \u2014 verified official settle",
+      "note": "Gill Energy verified NYMEX official settle"
+    },
+    "saved_at": "2026-08-19T20:13:22"
+  },
+  "2026-08-20": {
+    "closes": {
+      "RBOB": 3.2629,
+      "ULSD": 4.4803,
+      "Crude": 87.83
+    },
+    "meta": {
+      "source": "yahoo_history_backfill",
+      "method": "stale_barchart_override",
+      "label": "NYMEX (2026-08-20) \u2014 front-month session close (stale Barchart overridden)",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLU26",
+        "ULSD": "HOU26"
+      },
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.2629,
+          "Crude": 87.83,
+          "ULSD": 4.4803
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLU26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 3.2551,
+          "ULSD": 4.4523,
+          "Crude": 85.83
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.2551,
+            "session_close": 3.2629,
+            "prior_settle": 3.2551,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 3.2629,
+            "method": "session_close",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.193700075149536,
+            "yahoo_high": 3.2874999046325684
+          },
+          "ULSD": {
+            "barchart_settle": 4.4523,
+            "session_close": 4.4803,
+            "prior_settle": 4.4523,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 4.4803,
+            "method": "session_close",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.410299777984619,
+            "yahoo_high": 4.509699821472168
+          },
+          "Crude": {
+            "barchart_settle": 85.83,
+            "session_close": 87.83,
+            "prior_settle": 85.83,
+            "reason": "stale_barchart_use_yahoo",
+            "picked": 87.83,
+            "method": "session_close",
+            "yahoo_ticker": "CLU26.NYM",
+            "yahoo_low": 85.5999984741211,
+            "yahoo_high": 89.0
+          }
+        },
+        "label_suffix": " (session close fallback where settle unavailable) [stale Barchart overridden]"
+      },
+      "trust_level": 2
+    },
+    "saved_at": "2026-08-21T08:33:34"
+  },
+  "2026-08-21": {
+    "closes": {
+      "RBOB": 3.3479,
+      "ULSD": 4.4948,
+      "Crude": 87.06
+    },
+    "meta": {
+      "source": "nymex_official",
+      "method": "overview_settle",
+      "RBOB_field": "overview",
+      "Crude_field": "overview",
+      "ULSD_field": "overview",
+      "symbols": "RBU26,CLV26,HOU26",
+      "nearby": "RB*1,CL*1,HO*1",
+      "resolved": {
+        "RBOB": "RBU26",
+        "Crude": "CLV26",
+        "ULSD": "HOU26"
+      },
+      "live_last": {
+        "RBOB": 3.2737,
+        "Crude": 84.95,
+        "ULSD": 4.3629
+      },
+      "label": "NYMEX (2026-08-21) \u2014 RBOB settle, ULSD settle, Crude settle",
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.3479,
+          "Crude": 87.06,
+          "ULSD": 4.4948
+        },
+        "yahoo_tickers": {
+          "RBOB": "RBU26.NYM",
+          "Crude": "CLV26.NYM",
+          "ULSD": "HOU26.NYM"
+        },
+        "prior_closes": {
+          "RBOB": 3.2629,
+          "ULSD": 4.4803,
+          "Crude": 87.83
+        },
+        "picks": {
+          "RBOB": {
+            "barchart_settle": 3.3479,
+            "session_close": 3.3479,
+            "prior_settle": 3.2629,
+            "reason": "official_nymex_settle",
+            "picked": 3.3479,
+            "method": "nymex_settle",
+            "yahoo_ticker": "RBU26.NYM",
+            "yahoo_low": 3.2497000694274902,
+            "yahoo_high": 3.3661999702453613
+          },
+          "ULSD": {
+            "barchart_settle": 4.4948,
+            "session_close": 4.4948,
+            "prior_settle": 4.4803,
+            "reason": "official_nymex_settle",
+            "picked": 4.4948,
+            "method": "nymex_settle",
+            "yahoo_ticker": "HOU26.NYM",
+            "yahoo_low": 4.4293999671936035,
+            "yahoo_high": 4.556300163269043
+          },
+          "Crude": {
+            "barchart_settle": 87.06,
+            "session_close": 87.06,
+            "prior_settle": 87.83,
+            "reason": "official_nymex_settle",
+            "picked": 87.06,
+            "method": "nymex_settle",
+            "yahoo_ticker": "CLV26.NYM",
+            "yahoo_low": 85.80000305175781,
+            "yahoo_high": 87.51000213623047
+          }
+        },
+        "label_suffix": ""
+      },
+      "trust_level": 2,
+      "validation_warnings": [
+        "RBOB_Gasoline: $3.3479 matches RB=F continuous ($3.3479) \u2014 use front-month RBQ26.NYM (~$3.01)"
+      ]
+    },
+    "saved_at": "2026-08-24T06:51:51"
+  },
+  "2026-08-24": {
+    "closes": {
+      "RBOB": 2.9688,
+      "ULSD": 4.1734
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-08-24) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBU26",
+        "ULSD": "HOU26"
+      },
+      "trust_level": 2,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 2.9688,
+          "ULSD": 4.1734
+        }
+      }
+    },
+    "saved_at": "2026-09-09T18:30:47"
+  },
+  "2026-08-25": {
+    "closes": {
+      "RBOB": 2.9297,
+      "ULSD": 4.1409
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-08-25) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBU26",
+        "ULSD": "HOU26"
+      },
+      "trust_level": 2,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 2.9297,
+          "ULSD": 4.1409
+        }
+      }
+    },
+    "saved_at": "2026-09-09T18:30:49"
+  },
+  "2026-08-26": {
+    "closes": {
+      "RBOB": 2.9606,
+      "ULSD": 4.1453
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-08-26) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBU26",
+        "ULSD": "HOU26"
+      },
+      "trust_level": 2,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 2.9606,
+          "ULSD": 4.1453
+        }
+      }
+    },
+    "saved_at": "2026-09-09T18:30:50"
+  },
+  "2026-08-27": {
+    "closes": {
+      "RBOB": 2.9904,
+      "ULSD": 4.1753
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-08-27) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26"
+      },
+      "trust_level": 2,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 2.9904,
+          "ULSD": 4.1753
+        }
+      }
+    },
+    "saved_at": "2026-09-13T20:54:50"
+  },
+  "2026-08-28": {
+    "closes": {
+      "RBOB": 3.0502,
+      "ULSD": 4.249
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-08-28) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.0502,
+          "ULSD": 4.249
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:25:46"
+  },
+  "2026-08-31": {
+    "closes": {
+      "RBOB": 3.077,
+      "ULSD": 4.4106
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-08-31) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.077,
+          "ULSD": 4.4106
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:25:47"
+  },
+  "2026-09-01": {
+    "closes": {
+      "RBOB": 3.1351,
+      "Crude": 90.22,
+      "ULSD": 4.6773
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-09-01) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "Crude": "CLV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "Crude": "CLV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.1351,
+          "ULSD": 4.6773,
+          "Crude": 90.22
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:28:47"
+  },
+  "2026-09-02": {
+    "closes": {
+      "RBOB": 3.1038,
+      "Crude": 91.01,
+      "ULSD": 4.6822
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-09-02) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "Crude": "CLV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "Crude": "CLV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.1038,
+          "ULSD": 4.6822,
+          "Crude": 91.01
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:28:47"
+  },
+  "2026-09-03": {
+    "closes": {
+      "RBOB": 3.1349,
+      "Crude": 91.3,
+      "ULSD": 4.5936
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-09-03) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "Crude": "CLV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "Crude": "CLV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.1349,
+          "ULSD": 4.5936,
+          "Crude": 91.3
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:28:48"
+  },
+  "2026-09-04": {
+    "closes": {
+      "RBOB": 3.2146,
+      "Crude": 91.48,
+      "ULSD": 4.5402
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-09-04) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "Crude": "CLV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "Crude": "CLV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.2146,
+          "ULSD": 4.5402,
+          "Crude": 91.48
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:28:48"
+  },
+  "2026-09-07": {
+    "closes": {
+      "RBOB": 3.2274,
+      "ULSD": 4.674,
+      "Crude": 92.64
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-09-07) \u2014 Oct RBV26/HOV26/CLV26 (corrected; not RB=F 3.0276)",
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "ULSD": "HOV26.NYM",
+        "Crude": "CLV26.NYM"
+      },
+      "trust_level": 2,
+      "reconcile": {
+        "validated": true,
+        "yahoo_closes": {
+          "RBOB": 3.2274,
+          "ULSD": 4.674,
+          "Crude": 92.64
+        },
+        "prior_closes": {
+          "RBOB": 3.2146,
+          "ULSD": 4.547,
+          "Crude": 91.22
+        }
+      }
+    },
+    "saved_at": "2026-09-07T19:01:53"
+  },
+  "2026-09-08": {
+    "closes": {
+      "RBOB": 3.2525,
+      "Crude": 93.03,
+      "ULSD": 4.5678
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-09-08) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "Crude": "CLV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "Crude": "CLV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.2525,
+          "ULSD": 4.5678,
+          "Crude": 93.03
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:28:49"
+  },
+  "2026-09-09": {
+    "closes": {
+      "RBOB": 3.2106,
+      "Crude": 96.05,
+      "ULSD": 4.801
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-09-09) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "Crude": "CLV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "Crude": "CLV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.2106,
+          "ULSD": 4.801,
+          "Crude": 96.05
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:28:50"
+  },
+  "2026-09-10": {
+    "closes": {
+      "RBOB": 3.3932,
+      "ULSD": 5.0575,
+      "Crude": 102.59
+    },
+    "meta": {
+      "source": "verified",
+      "method": "manual",
+      "label": "NYMEX (2026-09-10) \u2014 verified official settle",
+      "note": "Gill screen official settle 2026-09-10",
+      "trust_level": 3
+    },
+    "saved_at": "2026-09-10T22:55:02"
+  },
+  "2026-09-11": {
+    "closes": {
+      "RBOB": 3.3072,
+      "Crude": 100.05,
+      "ULSD": 4.9593
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-09-11) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "Crude": "CLV26.NYM",
+        "ULSD": "HOV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBV26.NYM",
+          "Crude": "CLV26.NYM",
+          "ULSD": "HOV26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.3072,
+          "ULSD": 4.9593,
+          "Crude": 100.05
+        }
+      }
+    },
+    "saved_at": "2026-09-14T20:28:50"
+  },
+  "2026-09-14": {
+    "closes": {
+      "RBOB": 3.3144,
+      "ULSD": 4.9573,
+      "Crude": 101.3061
+    },
+    "meta": {
+      "source": "yahoo_settle_vwap",
+      "label": "NYMEX (2026-09-14) \u2014 14:28\u201314:30 ET named-month VWAP",
+      "method": "globex_settle_window_vwap",
+      "yahoo_tickers": {
+        "RBOB": "RBV26.NYM",
+        "ULSD": "HOV26.NYM",
+        "Crude": "CLV26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBV26",
+        "ULSD": "HOV26",
+        "Crude": "CLV26"
+      },
+      "vwap_bars": {
+        "RBOB": 3,
+        "ULSD": 3,
+        "Crude": 3
+      },
+      "trust_level": 2
+    },
+    "saved_at": "2026-09-14T20:29:26"
   }
 }

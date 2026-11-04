@@ -1,44 +1,54 @@
 {
-  "generated_at": "2026-06-23T19:39:15.280716",
+  "generated_at": "2026-09-14T20:26:35.285248",
   "evaluations_count": 0,
   "evaluations": [],
-  "explanations": [],
+  "explanations": [
+    "Gasoline (RBOB) day_4: predicted DOWN ($3.1978), actual DOWN ($3.3628, -0.90%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+    "Diesel (ULSD) day_4: predicted DOWN ($4.9255), actual DOWN ($4.9886, -1.36%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+    "WTI Crude day_4: predicted UP ($104.3464), actual DOWN ($101.9100, -0.66%). Direction miss. Missed signals: US dollar index (DXY) (DXY +0.39% \u2014 headwind for oil)",
+    "Gasoline (RBOB) day_1: predicted DOWN ($3.2235), actual UP ($3.3628, +1.68%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09)",
+    "Diesel (ULSD) day_1: predicted DOWN ($4.8505), actual UP ($4.9886, +0.59%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09); Refining crack spread (Wide diesel crack $110/bbl)",
+    "WTI Crude day_1: predicted DOWN ($97.6033), actual UP ($101.9100, +1.86%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09)",
+    "Gasoline (RBOB) day_1: predicted UP ($3.3490), actual UP ($3.3628, +1.68%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+    "Diesel (ULSD) day_1: predicted UP ($5.1174), actual UP ($4.9886, +0.59%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+    "WTI Crude day_1: predicted UP ($102.7154), actual UP ($101.9100, +1.86%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil."
+  ],
   "feature_importance": {
-    "updated_at": "2026-06-23T19:39:14.444885",
+    "updated_at": "2026-09-14T20:26:18.772850",
     "products": {
       "RBOB_Gasoline": {
         "error_correlation_rank": [
           {
-            "variable": "layer_composite",
-            "score": 0.7048
+            "variable": "gasoline_crack",
+            "score": 0.6023
           },
           {
             "variable": "model_next_day_pct",
-            "score": 0.5332
+            "score": 0.2822
+          },
+          {
+            "variable": "layer_composite",
+            "score": 0.2478
           },
           {
             "variable": "inventory_wow_pct",
-            "score": 0.4491
-          },
-          {
-            "variable": "gasoline_crack",
-            "score": 0.3986
-          },
-          {
-            "variable": "sentiment",
-            "score": 0.3509
-          },
-          {
-            "variable": "dxy_change_pct",
-            "score": 0.1857
-          },
-          {
-            "variable": "diesel_crack",
-            "score": 0.1697
+            "score": 0.2243
           },
           {
             "variable": "geo_risk_score",
-            "score": 0.0448
+            "score": 0.2167
+          },
+          {
+            "variable": "dxy_change_pct",
+            "score": 0.2007
+          },
+          {
+            "variable": "sentiment",
+            "score": 0.1601
+          },
+          {
+            "variable": "diesel_crack",
+            "score": 0.0109
           }
         ]
       },
@@ -46,71 +56,71 @@
         "error_correlation_rank": [
           {
             "variable": "diesel_crack",
-            "score": 0.7674
-          },
-          {
-            "variable": "gasoline_crack",
-            "score": 0.7382
+            "score": 0.441
           },
           {
             "variable": "model_next_day_pct",
-            "score": 0.4517
-          },
-          {
-            "variable": "sentiment",
-            "score": 0.2342
+            "score": 0.3314
           },
           {
             "variable": "dxy_change_pct",
-            "score": 0.2188
-          },
-          {
-            "variable": "layer_composite",
-            "score": 0.213
+            "score": 0.2859
           },
           {
             "variable": "geo_risk_score",
-            "score": 0.1636
+            "score": 0.1222
+          },
+          {
+            "variable": "layer_composite",
+            "score": 0.1025
+          },
+          {
+            "variable": "gasoline_crack",
+            "score": 0.0712
+          },
+          {
+            "variable": "sentiment",
+            "score": 0.0669
           },
           {
             "variable": "inventory_wow_pct",
-            "score": 0.0456
+            "score": 0.0396
           }
         ]
       },
       "Crude_Oil": {
         "error_correlation_rank": [
           {
-            "variable": "model_next_day_pct",
-            "score": 0.6953
-          },
-          {
             "variable": "diesel_crack",
-            "score": 0.6744
-          },
-          {
-            "variable": "gasoline_crack",
-            "score": 0.622
+            "score": 0.3517
           },
           {
             "variable": "inventory_wow_pct",
-            "score": 0.3756
+            "score": 0.1498
           },
           {
             "variable": "dxy_change_pct",
-            "score": 0.2168
+            "score": 0.1247
           },
           {
             "variable": "geo_risk_score",
-            "score": 0.2159
+            "score": 0.0886
+          },
+          {
+            "variable": "model_next_day_pct",
+            "score": 0.0836
+          },
+          {
+            "variable": "gasoline_crack",
+            "score": 0.0731
           },
           {
             "variable": "sentiment",
-            "score": 0.0964
+            "score": 0.0543
           },
           {
             "variable": "layer_composite",
-            "score": 0.0769
+            "score": 0.0416
           }
         ]
       }
@@ -147,71 +157,71 @@
       "rbob_calendar_spread_5d": 0.0115,
       "rbob_return_1d": 0.0027,
       "topic_hurricane": 0.0018,
-      "retail_gasoline": 0.0,
+      "gasoline_inventory": 0.0,
       "diesel_inventory": 0.0,
-      "gasoline_inventory": 0.0
+      "retail_gasoline": 0.0
     }
   },
   "error_adjustments": {
-    "updated_at": "2026-06-23T19:39:14.767216",
+    "updated_at": "2026-09-14T20:26:18.862279",
     "products": {
       "RBOB_Gasoline": {
         "day_1": {
-          "bias_pct": 1.059,
-          "mae_pct": 1.732,
-          "direction_hit_rate": 0.571,
+          "bias_pct": 1.01,
+          "mae_pct": 4.044,
+          "direction_hit_rate": 0.286,
           "n_samples": 14
         },
         "day_4": {
-          "bias_pct": -1.405,
-          "mae_pct": 2.731,
-          "direction_hit_rate": 0.429,
+          "bias_pct": -2.985,
+          "mae_pct": 5.873,
+          "direction_hit_rate": 0.5,
           "n_samples": 14
         },
         "day_7": {
-          "bias_pct": 0.162,
-          "mae_pct": 5.325,
-          "direction_hit_rate": 0.714,
+          "bias_pct": 1.717,
+          "mae_pct": 6.664,
+          "direction_hit_rate": 0.429,
           "n_samples": 14
         }
       },
       "ULSD_Diesel": {
         "day_1": {
-          "bias_pct": -0.148,
-          "mae_pct": 2.696,
-          "direction_hit_rate": 0.429,
+          "bias_pct": 0.247,
+          "mae_pct": 2.793,
+          "direction_hit_rate": 0.571,
           "n_samples": 14
         },
         "day_4": {
-          "bias_pct": 4.932,
-          "mae_pct": 5.508,
+          "bias_pct": -7.713,
+          "mae_pct": 7.713,
           "direction_hit_rate": 0.357,
           "n_samples": 14
         },
         "day_7": {
-          "bias_pct": 7.644,
-          "mae_pct": 7.644,
-          "direction_hit_rate": 0.429,
+          "bias_pct": -5.95,
+          "mae_pct": 6.244,
+          "direction_hit_rate": 0.643,
           "n_samples": 14
         }
       },
       "Crude_Oil": {
         "day_1": {
-          "bias_pct": -0.508,
-          "mae_pct": 2.198,
-          "direction_hit_rate": 0.571,
+          "bias_pct": -1.032,
+          "mae_pct": 2.236,
+          "direction_hit_rate": 0.786,
           "n_samples": 14
         },
         "day_4": {
-          "bias_pct": 4.136,
-          "mae_pct": 4.93,
-          "direction_hit_rate": 0.571,
+          "bias_pct": -6.966,
+          "mae_pct": 7.307,
+          "direction_hit_rate": 0.286,
           "n_samples": 14
         },
         "day_7": {
-          "bias_pct": 9.161,
-          "mae_pct": 9.161,
-          "direction_hit_rate": 0.357,
+          "bias_pct": -6.229,
+          "mae_pct": 6.345,
+          "direction_hit_rate": 0.571,
           "n_samples": 14
         }
       }
@@ -219,84 +229,84 @@
     "note": "bias_pct = mean(pred-actual)/actual*100; subtracted from future % change"
   },
   "model_metrics": {
-    "updated_at": "2026-06-23T19:39:14.913550",
+    "updated_at": "2026-09-14T20:26:18.891773",
     "products": {
       "RBOB_Gasoline": {
         "day_1": {
-          "mae": 0.077877,
-          "rmse": 0.105822,
-          "mae_pct": 2.441,
-          "direction_accuracy": 0.636,
-          "bias_pct": -0.344,
-          "n_samples": 22
+          "mae": 0.127413,
+          "rmse": 0.184756,
+          "mae_pct": 4.043,
+          "direction_accuracy": 0.3,
+          "bias_pct": 2.068,
+          "n_samples": 30
         },
         "day_4": {
-          "mae": 0.14357,
-          "rmse": 0.196958,
-          "mae_pct": 4.771,
-          "direction_accuracy": 0.368,
-          "bias_pct": 1.524,
-          "n_samples": 19
+          "mae": 0.200744,
+          "rmse": 0.224674,
+          "mae_pct": 6.241,
+          "direction_accuracy": 0.367,
+          "bias_pct": -1.287,
+          "n_samples": 30
         },
         "day_7": {
-          "mae": 0.201784,
-          "rmse": 0.256584,
-          "mae_pct": 6.704,
-          "direction_accuracy": 0.625,
-          "bias_pct": 2.186,
-          "n_samples": 16
+          "mae": 0.272223,
+          "rmse": 0.293519,
+          "mae_pct": 8.454,
+          "direction_accuracy": 0.267,
+          "bias_pct": -2.11,
+          "n_samples": 30
         }
       },
       "ULSD_Diesel": {
         "day_1": {
-          "mae": 0.074609,
-          "rmse": 0.089658,
-          "mae_pct": 2.215,
+          "mae": 0.123705,
+          "rmse": 0.15738,
+          "mae_pct": 2.733,
           "direction_accuracy": 0.5,
-          "bias_pct": 0.405,
-          "n_samples": 22
+          "bias_pct": 1.286,
+          "n_samples": 30
         },
         "day_4": {
-          "mae": 0.153813,
-          "rmse": 0.211701,
-          "mae_pct": 4.648,
-          "direction_accuracy": 0.526,
-          "bias_pct": 4.167,
-          "n_samples": 19
+          "mae": 0.316917,
+          "rmse": 0.351045,
+          "mae_pct": 6.967,
+          "direction_accuracy": 0.267,
+          "bias_pct": -3.062,
+          "n_samples": 30
         },
         "day_7": {
-          "mae": 0.255497,
-          "rmse": 0.278394,
-          "mae_pct": 7.65,
-          "direction_accuracy": 0.438,
-          "bias_pct": 7.65,
-          "n_samples": 16
+          "mae": 0.328437,
+          "rmse": 0.41276,
+          "mae_pct": 7.169,
+          "direction_accuracy": 0.5,
+          "bias_pct": -4.179,
+          "n_samples": 30
         }
       },
       "Crude_Oil": {
         "day_1": {
-          "mae": 1.786608,
-          "rmse": 2.174054,
-          "mae_pct": 2.076,
-          "direction_accuracy": 0.727,
-          "bias_pct": -0.486,
-          "n_samples": 22
+          "mae": 1.917849,
+          "rmse": 2.420563,
+          "mae_pct": 2.144,
+          "direction_accuracy": 0.567,
+          "bias_pct": -0.124,
+          "n_samples": 30
         },
         "day_4": {
-          "mae": 4.672473,
-          "rmse": 5.990416,
-          "mae_pct": 5.56,
-          "direction_accuracy": 0.579,
-          "bias_pct": 4.937,
-          "n_samples": 19
+          "mae": 5.593428,
+          "rmse": 6.389977,
+          "mae_pct": 6.226,
+          "direction_accuracy": 0.4,
+          "bias_pct": -2.516,
+          "n_samples": 30
         },
         "day_7": {
-          "mae": 7.311849,
-          "rmse": 8.041391,
-          "mae_pct": 8.946,
-          "direction_accuracy": 0.438,
-          "bias_pct": 8.946,
-          "n_samples": 16
+          "mae": 6.614069,
+          "rmse": 7.973401,
+          "mae_pct": 7.335,
+          "direction_accuracy": 0.433,
+          "bias_pct": -5.35,
+          "n_samples": 30
         }
       }
     },
@@ -307,34 +317,228 @@
         "n_samples": 9
       },
       "VAR+XGB+CatBoost": {
-        "mae_pct": 3.694,
-        "direction_accuracy": 0.38,
+        "mae_pct": 7.864,
+        "direction_accuracy": 0.16,
         "n_samples": 50
       },
       "Prophet+XGB+CatBoost": {
         "mae_pct": 2.778,
         "direction_accuracy": 0.889,
         "n_samples": 9
+      },
+      "VAR+ML+CatBoost": {
+        "mae_pct": 6.692,
+        "direction_accuracy": 0.32,
+        "n_samples": 50
       }
     }
   },
   "ensemble_weights": {
     "RBOB_Gasoline": {
-      "technical": 0.0593,
-      "fundamental": 0.3048,
-      "news": 0.636
+      "technical": 0.1464,
+      "fundamental": 0.3856,
+      "news": 0.468
     },
     "ULSD_Diesel": {
-      "technical": 0.6802,
-      "fundamental": 0.1981,
-      "news": 0.1218
+      "technical": 0.2485,
+      "fundamental": 0.4596,
+      "news": 0.2919
     },
     "Crude_Oil": {
-      "technical": 0.769,
-      "fundamental": 0.0497,
-      "news": 0.1813
+      "technical": 0.3685,
+      "fundamental": 0.3863,
+      "news": 0.2452
     }
   },
+  "attribution": {
+    "updated_at": "2026-09-14T20:26:35.284014",
+    "accuracy_by_product": {
+      "RBOB_Gasoline": {
+        "label": "Gasoline (RBOB)",
+        "day1_direction_pct": 28.6,
+        "day1_mae_pct": 4.04,
+        "samples": 14
+      },
+      "ULSD_Diesel": {
+        "label": "Diesel (ULSD)",
+        "day1_direction_pct": 57.1,
+        "day1_mae_pct": 2.79,
+        "samples": 14
+      },
+      "Crude_Oil": {
+        "label": "WTI Crude",
+        "day1_direction_pct": 78.6,
+        "day1_mae_pct": 2.24,
+        "samples": 14
+      }
+    },
+    "latest_attributions": [
+      {
+        "date": "2026-09-10 \u2192 2026-09-14",
+        "product": "Gasoline (RBOB)",
+        "horizon": "day_4",
+        "ok": true,
+        "narrative": "Gasoline (RBOB) day_4: predicted DOWN ($3.1978), actual DOWN ($3.3628, -0.90%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+        "missed": []
+      },
+      {
+        "date": "2026-09-10 \u2192 2026-09-14",
+        "product": "Diesel (ULSD)",
+        "horizon": "day_4",
+        "ok": true,
+        "narrative": "Diesel (ULSD) day_4: predicted DOWN ($4.9255), actual DOWN ($4.9886, -1.36%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+        "missed": []
+      },
+      {
+        "date": "2026-09-10 \u2192 2026-09-14",
+        "product": "WTI Crude",
+        "horizon": "day_4",
+        "ok": false,
+        "narrative": "WTI Crude day_4: predicted UP ($104.3464), actual DOWN ($101.9100, -0.66%). Direction miss. Missed signals: US dollar index (DXY) (DXY +0.39% \u2014 headwind for oil)",
+        "missed": [
+          {
+            "factor": "dollar_macro",
+            "label": "US dollar index (DXY)",
+            "reason": "DXY +0.39% \u2014 headwind for oil"
+          }
+        ]
+      },
+      {
+        "date": "2026-09-11 \u2192 2026-09-14",
+        "product": "Gasoline (RBOB)",
+        "horizon": "day_1",
+        "ok": false,
+        "narrative": "Gasoline (RBOB) day_1: predicted DOWN ($3.2235), actual UP ($3.3628, +1.68%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09)",
+        "missed": [
+          {
+            "factor": "weather",
+            "label": "Gulf Coast weather (heat / storms)",
+            "reason": "High Gulf heat index ~35 \u2014 demand support"
+          },
+          {
+            "factor": "news_sentiment",
+            "label": "Aggregated news sentiment",
+            "reason": "News sentiment +0.09"
+          }
+        ]
+      },
+      {
+        "date": "2026-09-11 \u2192 2026-09-14",
+        "product": "Diesel (ULSD)",
+        "horizon": "day_1",
+        "ok": false,
+        "narrative": "Diesel (ULSD) day_1: predicted DOWN ($4.8505), actual UP ($4.9886, +0.59%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09); Refining crack spread (Wide diesel crack $110/bbl)",
+        "missed": [
+          {
+            "factor": "weather",
+            "label": "Gulf Coast weather (heat / storms)",
+            "reason": "High Gulf heat index ~35 \u2014 demand support"
+          },
+          {
+            "factor": "news_sentiment",
+            "label": "Aggregated news sentiment",
+            "reason": "News sentiment +0.09"
+          },
+          {
+            "factor": "crack_spread",
+            "label": "Refining crack spread",
+            "reason": "Wide diesel crack $110/bbl"
+          }
+        ]
+      },
+      {
+        "date": "2026-09-11 \u2192 2026-09-14",
+        "product": "WTI Crude",
+        "horizon": "day_1",
+        "ok": false,
+        "narrative": "WTI Crude day_1: predicted DOWN ($97.6033), actual UP ($101.9100, +1.86%). Direction miss. Missed signals: Gulf Coast weather (heat / storms) (High Gulf heat index ~35 \u2014 demand support); Aggregated news sentiment (News sentiment +0.09)",
+        "missed": [
+          {
+            "factor": "weather",
+            "label": "Gulf Coast weather (heat / storms)",
+            "reason": "High Gulf heat index ~35 \u2014 demand support"
+          },
+          {
+            "factor": "news_sentiment",
+            "label": "Aggregated news sentiment",
+            "reason": "News sentiment +0.09"
+          }
+        ]
+      },
+      {
+        "date": "2026-09-13 \u2192 2026-09-14",
+        "product": "Gasoline (RBOB)",
+        "horizon": "day_1",
+        "ok": true,
+        "narrative": "Gasoline (RBOB) day_1: predicted UP ($3.3490), actual UP ($3.3628, +1.68%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+        "missed": []
+      },
+      {
+        "date": "2026-09-13 \u2192 2026-09-14",
+        "product": "Diesel (ULSD)",
+        "horizon": "day_1",
+        "ok": true,
+        "narrative": "Diesel (ULSD) day_1: predicted UP ($5.1174), actual UP ($4.9886, +0.59%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+        "missed": []
+      },
+      {
+        "date": "2026-09-13 \u2192 2026-09-14",
+        "product": "WTI Crude",
+        "horizon": "day_1",
+        "ok": true,
+        "narrative": "WTI Crude day_1: predicted UP ($102.7154), actual UP ($101.9100, +1.86%). Direction correct. Dominant context: US dollar index (DXY) \u2014 DXY +0.39% \u2014 headwind for oil.",
+        "missed": []
+      }
+    ],
+    "top_missed_factors_day1": [
+      {
+        "factor": "weather",
+        "label": "Gulf Coast weather (heat / storms)",
+        "count": 3
+      },
+      {
+        "factor": "news_sentiment",
+        "label": "Aggregated news sentiment",
+        "count": 3
+      },
+      {
+        "factor": "crack_spread",
+        "label": "Refining crack spread",
+        "count": 2
+      },
+      {
+        "factor": "inventory",
+        "label": "EIA weekly inventory",
+        "count": 2
+      },
+      {
+        "factor": "tape_momentum",
+        "label": "Price momentum / tape",
+        "count": 1
+      },
+      {
+        "factor": "geopolitical",
+        "label": "Geopolitical / OPEC / shipping headlines",
+        "count": 1
+      }
+    ],
+    "learning_rules": {
+      "momentum_blend_cap": 0.2
+    },
+    "recent_divergence_misses": 0,
+    "regime_learning": {
+      "updated_at": "2026-09-14T20:26:35.269995",
+      "regimes": [
+        "product_lag_catchup",
+        "pre_eia_extended_rally",
+        "weekend_gap",
+        "clear_up",
+        "clear_down",
+        "crude_gas_divergence"
+      ]
+    }
+  },
+  "mistake_lessons": [],
   "direction_accuracy": null,
   "mean_abs_error_pct": null,
   "message": "No mature forecasts to evaluate yet (need archived predictions + elapsed horizons)."

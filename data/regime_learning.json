@@ -1,0 +1,198 @@
+{
+  "updated_at": "2026-09-14T20:26:35.269995",
+  "regimes": {
+    "product_lag_catchup": {
+      "RBOB_Gasoline": {
+        "n": 76,
+        "under_call_count": 44,
+        "over_call_count": 32,
+        "direction_miss_count": 26,
+        "mean_signed_miss_pp": -0.8366,
+        "magnitude_scale": 1.8,
+        "blend_boost": 0.18,
+        "fade_boost": 0.0
+      },
+      "ULSD_Diesel": {
+        "n": 70,
+        "under_call_count": 19,
+        "over_call_count": 51,
+        "direction_miss_count": 40,
+        "mean_signed_miss_pp": 1.9987,
+        "magnitude_scale": 1.7,
+        "blend_boost": 0.14,
+        "fade_boost": 0.0
+      },
+      "Crude_Oil": {
+        "n": 0,
+        "under_call_count": 0,
+        "over_call_count": 0,
+        "direction_miss_count": 0,
+        "mean_signed_miss_pp": 0.0,
+        "magnitude_scale": 1.0,
+        "blend_boost": 0.0,
+        "fade_boost": 0.0
+      }
+    },
+    "pre_eia_extended_rally": {
+      "RBOB_Gasoline": {
+        "n": 8,
+        "under_call_count": 0,
+        "over_call_count": 8,
+        "direction_miss_count": 8,
+        "mean_signed_miss_pp": 2.6353,
+        "magnitude_scale": 0.75,
+        "blend_boost": 0.0,
+        "fade_boost": 0.3
+      },
+      "ULSD_Diesel": {
+        "n": 24,
+        "under_call_count": 0,
+        "over_call_count": 24,
+        "direction_miss_count": 16,
+        "mean_signed_miss_pp": 4.4357,
+        "magnitude_scale": 0.75,
+        "blend_boost": 0.0,
+        "fade_boost": 0.3
+      },
+      "Crude_Oil": {
+        "n": 33,
+        "under_call_count": 25,
+        "over_call_count": 0,
+        "direction_miss_count": 0,
+        "mean_signed_miss_pp": -1.47,
+        "magnitude_scale": 1.0,
+        "blend_boost": 0.0,
+        "fade_boost": 0.0
+      }
+    },
+    "weekend_gap": {
+      "RBOB_Gasoline": {
+        "n": 269,
+        "under_call_count": 92,
+        "over_call_count": 171,
+        "direction_miss_count": 241,
+        "mean_signed_miss_pp": -0.7533,
+        "magnitude_scale": 1.85,
+        "blend_boost": 0.2,
+        "fade_boost": 0.0
+      },
+      "ULSD_Diesel": {
+        "n": 269,
+        "under_call_count": 113,
+        "over_call_count": 156,
+        "direction_miss_count": 86,
+        "mean_signed_miss_pp": 2.0588,
+        "magnitude_scale": 1.85,
+        "blend_boost": 0.2,
+        "fade_boost": 0.0
+      },
+      "Crude_Oil": {
+        "n": 269,
+        "under_call_count": 165,
+        "over_call_count": 77,
+        "direction_miss_count": 81,
+        "mean_signed_miss_pp": 0.6202,
+        "magnitude_scale": 1.85,
+        "blend_boost": 0.2,
+        "fade_boost": 0.0
+      }
+    },
+    "clear_up": {
+      "RBOB_Gasoline": {
+        "n": 254,
+        "under_call_count": 62,
+        "over_call_count": 186,
+        "direction_miss_count": 178,
+        "mean_signed_miss_pp": -0.4268,
+        "magnitude_scale": 1.22,
+        "blend_boost": 0.155,
+        "fade_boost": 0.0
+      },
+      "ULSD_Diesel": {
+        "n": 396,
+        "under_call_count": 120,
+        "over_call_count": 242,
+        "direction_miss_count": 145,
+        "mean_signed_miss_pp": 2.5055,
+        "magnitude_scale": 1.69,
+        "blend_boost": 0.13,
+        "fade_boost": 0.0
+      },
+      "Crude_Oil": {
+        "n": 357,
+        "under_call_count": 175,
+        "over_call_count": 147,
+        "direction_miss_count": 108,
+        "mean_signed_miss_pp": -0.1124,
+        "magnitude_scale": 1.8,
+        "blend_boost": 0.18,
+        "fade_boost": 0.0
+      }
+    },
+    "clear_down": {
+      "RBOB_Gasoline": {
+        "n": 223,
+        "under_call_count": 183,
+        "over_call_count": 40,
+        "direction_miss_count": 182,
+        "mean_signed_miss_pp": -1.6985,
+        "magnitude_scale": 1.6,
+        "blend_boost": 0.0,
+        "fade_boost": 0.0
+      },
+      "ULSD_Diesel": {
+        "n": 70,
+        "under_call_count": 42,
+        "over_call_count": 0,
+        "direction_miss_count": 42,
+        "mean_signed_miss_pp": -2.0011,
+        "magnitude_scale": 1.0,
+        "blend_boost": 0.0,
+        "fade_boost": 0.0
+      },
+      "Crude_Oil": {
+        "n": 76,
+        "under_call_count": 73,
+        "over_call_count": 0,
+        "direction_miss_count": 10,
+        "mean_signed_miss_pp": -2.2131,
+        "magnitude_scale": 1.0,
+        "blend_boost": 0.0,
+        "fade_boost": 0.0
+      }
+    },
+    "crude_gas_divergence": {
+      "RBOB_Gasoline": {
+        "n": 26,
+        "under_call_count": 52,
+        "over_call_count": 0,
+        "direction_miss_count": 19,
+        "mean_signed_miss_pp": -3.311,
+        "magnitude_scale": 1.65,
+        "blend_boost": 0.32,
+        "fade_boost": 0.22
+      },
+      "ULSD_Diesel": {
+        "n": 0,
+        "under_call_count": 0,
+        "over_call_count": 0,
+        "direction_miss_count": 0,
+        "mean_signed_miss_pp": 0.0,
+        "magnitude_scale": 1.0,
+        "blend_boost": 0.0,
+        "fade_boost": 0.0
+      },
+      "Crude_Oil": {
+        "n": 0,
+        "under_call_count": 0,
+        "over_call_count": 0,
+        "direction_miss_count": 0,
+        "mean_signed_miss_pp": 0.0,
+        "magnitude_scale": 1.0,
+        "blend_boost": 0.0,
+        "fade_boost": 0.0
+      }
+    }
+  },
+  "note": "magnitude_scale multiplies lag-catchup / clear-direction size; fade_boost strengthens pre-EIA caution; blend_boost raises overlay blend."
+}

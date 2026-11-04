@@ -4,16 +4,37 @@ Configuration file for Energy AI Agent
 import os
 from typing import Dict
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 # Email Configuration
+_raw_recipients = [
+    e.strip()
+    for e in os.getenv(
+        'RECIPIENT_EMAILS',
+        'taransandhu@gillenergy.com,bikramgill@gillenergy.com,ravigill@gillenergy.com,kashmirgill@gillenergy.com',
+    ).split(',')
+    if e.strip()
+]
+# Preserve order, drop duplicates (duplicate To: caused double inbox copies)
+_seen_recipients = set()
+_recipient_emails = []
+for _e in _raw_recipients:
+    _key = _e.lower()
+    if _key in _seen_recipients:
+        continue
+    _seen_recipients.add(_key)
+    _recipient_emails.append(_e)
+
 EMAIL_CONFIG = {
     'smtp_server': os.getenv('SMTP_SERVER', 'smtp.gmail.com'),
     'smtp_port': int(os.getenv('SMTP_PORT', '587')),
-    'sender_email': os.getenv('SENDER_EMAIL', ''),
-    'sender_password': os.getenv('SENDER_PASSWORD', ''),
-    'recipient_emails': os.getenv(
-        'RECIPIENT_EMAILS',
-        'taransandhu@gillenergy.com,bikramgill@gillenergy.com,ravigill@gillenergy.com,kashmirgill@gillenergy.com'
-    ).split(',')
+    'sender_email': os.getenv('SENDER_EMAIL', 'amuleeksidhu96@gmail.com'),
+    'sender_password': os.getenv('SENDER_PASSWORD', '').replace(' ', ''),
+    'recipient_emails': _recipient_emails,
 }
 
 # API Configuration
@@ -124,10 +145,11 @@ DEFAULT_ENSEMBLE_WEIGHTS = {
 }
 
 # Max absolute % move caps per product/horizon (applied after model output)
+# Day-1 raised so strong geo/tape sessions can print ~3–5% instead of always ~0.5%
 PRODUCT_HORIZON_CAPS = {
-    'RBOB_Gasoline': {'day_1': 0.025, 'day_4': 0.06, 'day_7': 0.08},
-    'ULSD_Diesel': {'day_1': 0.03, 'day_4': 0.07, 'day_7': 0.09},
-    'Crude_Oil': {'day_1': 0.035, 'day_4': 0.08, 'day_7': 0.10},
+    'RBOB_Gasoline': {'day_1': 0.045, 'day_4': 0.06, 'day_7': 0.08},
+    'ULSD_Diesel': {'day_1': 0.05, 'day_4': 0.07, 'day_7': 0.09},
+    'Crude_Oil': {'day_1': 0.055, 'day_4': 0.08, 'day_7': 0.10},
 }
 
 MODEL_WEIGHTS_PATH = os.getenv('MODEL_WEIGHTS_PATH', 'data/model_weights.json')
@@ -149,4 +171,45 @@ PREDICTION_SCHEDULE = {
     'enabled': os.getenv('PREDICTION_SCHEDULE_ENABLED', 'true').lower() == 'true',
     # Time horizons included in predictions
     'time_horizons': ['daily', 'one_week', 'two_weeks', 'monthly']
+}
+
+# Weekend day-1: wait for Asia/Globex tape before emailing Monday call
+WEEKEND_DAY1_CONFIG = {
+    'asia_ready_hour_et': int(os.getenv('ASIA_TAPE_READY_HOUR_ET', '20')),
+    'asia_ready_minute_et': int(os.getenv('ASIA_TAPE_READY_MINUTE_ET', '15')),
+    'defer_until_asia': os.getenv('DEFER_WEEKEND_DAY1_UNTIL_ASIA', 'true').lower() == 'true',
+    'tape_gap_ready_pct': float(os.getenv('ASIA_TAPE_GAP_READY_PCT', '1.0')),
+    # Skip repeat emails when day-1 call unchanged (direction + price move)
+    'dedupe_emails': os.getenv('DEDUPE_DAY1_EMAILS', 'true').lower() == 'true',
+    'dedupe_price_pct': float(os.getenv('DEDUPE_DAY1_PRICE_PCT', '0.20')),
+    # Block a second email within N minutes (scheduler + manual run overlap)
+    'email_cooldown_minutes': float(os.getenv('DAY1_EMAIL_COOLDOWN_MINUTES', '45')),
+}
+
+# Scheduler: run pipeline on startup without emailing (avoids duplicate on restart)
+SCHEDULER_CONFIG = {
+    'send_on_startup': os.getenv('SCHEDULER_SEND_ON_STARTUP', 'false').lower() == 'true',
+}
+
+# NYMEX contract month: auto-roll RBOB/ULSD to *2 in last days of month (Oct vs Sep)
+NYMEX_CONTRACT_CONFIG = {
+    'roll_days_before_month_end': int(os.getenv('NYMEX_ROLL_DAYS_BEFORE_MONTH_END', '5')),
+    'auto_roll_rbob': os.getenv('NYMEX_AUTO_ROLL_RBOB', 'true').lower() == 'true',
+    'auto_roll_ulsd': os.getenv('NYMEX_AUTO_ROLL_ULSD', 'true').lower() == 'true',
+    'auto_roll_crude': os.getenv('NYMEX_AUTO_ROLL_CRUDE', 'false').lower() == 'true',
+    'force_lead_month': os.getenv('NYMEX_FORCE_LEAD_MONTH', 'false').lower() == 'true',
+}
+
+# Intraday: correct morning day-1 when live tape gaps opposite (e.g. +2% vs DOWN call)
+INTRADAY_DAY1_CONFIG = {
+    'enabled': os.getenv('INTRADAY_CORRECTION_ENABLED', 'true').lower() == 'true',
+    'tape_flip_pct': float(os.getenv('INTRADAY_TAPE_FLIP_PCT', '2.0')),
+    'window_start_hour_et': int(os.getenv('INTRADAY_WINDOW_START_HOUR_ET', '8')),
+    'window_end_hour_et': int(os.getenv('INTRADAY_WINDOW_END_HOUR_ET', '14')),
+    'window_end_minute_et': int(os.getenv('INTRADAY_WINDOW_END_MINUTE_ET', '30')),
+    'check_times': [
+        t.strip()
+        for t in os.getenv('INTRADAY_CHECK_TIMES', '10:30,13:30').split(',')
+        if t.strip()
+    ],
 }

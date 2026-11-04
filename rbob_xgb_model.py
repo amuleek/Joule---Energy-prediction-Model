@@ -119,76 +119,17 @@ def _make_regressor():
 
 
 def train_predict_next_rbob(df: pd.DataFrame) -> Dict[str, Any]:
-    """
-    Train on all but last HOLDOUT_ROWS; predict next-day RBOB from the latest feature row.
-    Returns diagnostics + predicted price.
-    """
-    out: Dict[str, Any] = {
-        "used": False,
-        "model": "XGBoost" if XGB_AVAILABLE else "GradientBoosting",
-        "next_day_price": None,
-        "confidence_pct": None,
-        "holdout_mape_pct": None,
-        "feature_count": 0,
-        "reason": "",
-    }
-    if df is None or df.empty or "RBOB" not in df.columns:
-        out["reason"] = "no RBOB column"
-        return out
-
-    feature_cols = _select_features(df)
-    if len(feature_cols) < 5:
-        out["reason"] = f"too few features ({len(feature_cols)})"
-        return out
-
-    X, y, prices = _prepare_xy(df, feature_cols)
-    if len(X) < MIN_TRAIN_ROWS:
-        out["reason"] = f"need {MIN_TRAIN_ROWS}+ rows, have {len(X)}"
-        return out
-
-    n = len(X)
-    train_end = n - HOLDOUT_ROWS
-    X_train, y_train = X.iloc[:train_end], y.iloc[:train_end]
-    X_hold, y_hold = X.iloc[train_end:], y.iloc[train_end:]
-    p_hold = prices.iloc[train_end:]
-
-    model = _make_regressor()
+    """Walk-forward RBOB next-session model (predicts on the latest live row)."""
     try:
-        model.fit(X_train, y_train)
-    except Exception as e:
-        out["reason"] = f"fit failed: {e}"
+        from product_ml import train_predict_product
+        out = train_predict_product(df, "RBOB_Gasoline")
+        wf = out.get("walk_forward") or {}
+        if out.get("used") and wf.get("mae") is not None:
+            # Approximate MAPE on price from return MAE
+            out["holdout_mape_pct"] = round(float(wf["mae"]) * 100, 2)
         return out
-
-    if len(X_hold) > 5:
-        pred_ret = model.predict(X_hold)
-        pred_prices = p_hold.values * (1 + pred_ret)
-        mape = float(np.mean(np.abs((pred_prices - p_hold.values) / p_hold.values)) * 100)
-        out["holdout_mape_pct"] = round(mape, 2)
-        out["confidence_pct"] = int(max(40, min(88, 100 - mape * 2)))
-
-    last_X = X.iloc[[-1]]
-    pred_ret = float(model.predict(last_X)[0])
-    current = float(pd.to_numeric(df["RBOB"].iloc[-1], errors="coerce"))
-    pred_next = current * (1 + pred_ret)
-
-    out["used"] = True
-    out["next_day_price"] = pred_next
-    out["predicted_return_pct"] = round(pred_ret * 100, 3)
-    out["current_price"] = current
-    out["feature_count"] = len(feature_cols)
-    out["top_features"] = feature_cols[:12]
-    if hasattr(model, "feature_importances_"):
-        imp = model.feature_importances_
-        total = float(imp.sum()) or 1.0
-        ranked = sorted(
-            ((feature_cols[i], float(imp[i]) / total) for i in range(len(feature_cols))),
-            key=lambda x: x[1],
-            reverse=True,
-        )
-        out["feature_importance"] = {k: round(v, 4) for k, v in ranked[:15]}
-    if out["confidence_pct"] is None:
-        out["confidence_pct"] = 60
-    return out
+    except Exception as e:
+        return {"used": False, "reason": str(e), "model": "XGBoost"}
 
 
 def get_feature_importance_scores(df: Optional[pd.DataFrame] = None) -> Dict[str, float]:
@@ -198,28 +139,12 @@ def get_feature_importance_scores(df: Optional[pd.DataFrame] = None) -> Dict[str
         if not os.path.exists(path):
             return {}
         df = pd.read_csv(path)
-
-    feature_cols = _select_features(df)
-    if len(feature_cols) < 5:
-        return {}
-    X, y, _ = _prepare_xy(df, feature_cols)
-    if len(X) < MIN_TRAIN_ROWS:
-        return {}
-
-    model = _make_regressor()
     try:
-        model.fit(X, y)
+        from product_ml import train_predict_product
+        info = train_predict_product(df, "RBOB_Gasoline")
+        return info.get("feature_importance") or {}
     except Exception:
         return {}
-
-    if not hasattr(model, "feature_importances_"):
-        return {}
-    imp = model.feature_importances_
-    total = float(imp.sum()) or 1.0
-    scores = {
-        feature_cols[i]: round(float(imp[i]) / total, 4) for i in range(len(feature_cols))
-    }
-    return dict(sorted(scores.items(), key=lambda x: x[1], reverse=True))
 
 
 def blend_rbob_next_day(

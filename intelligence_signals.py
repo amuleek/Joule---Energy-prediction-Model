@@ -96,6 +96,7 @@ def weekly_inventory_snapshot(df: Optional[pd.DataFrame]) -> Dict[str, Any]:
         if prev is not None and prev and not pd.isna(prev):
             wow = ((float(last) - float(prev)) / float(prev)) * 100.0
             row["wow_change_pct"] = round(wow, 3)
+            row["wow_change_kbbl"] = round(float(last) - float(prev), 1)
             row["direction"] = "DOWN" if wow < 0 else "UP" if wow > 0 else "FLAT"
         return row
 
@@ -162,9 +163,9 @@ def directional_view_for_product(
         geo_risk = topic_snapshot.get("geo_risk_score")
     s_geo = _geo_signal_strength(geo_risk)
 
-    # Dampen bullish labels when recent tape momentum contradicts the model
+    # Dampen model when recent tape momentum contradicts the near-term call
     s_tech = 0.0
-    if feature_snap and product_key == "RBOB_Gasoline":
+    if feature_snap:
         tech = feature_snap.get("technical") or {}
         mom5 = tech.get("momentum_5d_pct")
         if mom5 is not None:
@@ -172,6 +173,10 @@ def directional_view_for_product(
             if float(mom5) < -1.0 and pred_day_pct > 0.5:
                 s_pred *= 0.45
             if float(mom5) < -1.5 and pred_day_pct > 0:
+                s_inv *= 0.6
+            if float(mom5) > 1.0 and pred_day_pct < -0.5:
+                s_pred *= 0.45
+            if float(mom5) > 1.5 and pred_day_pct < 0:
                 s_inv *= 0.6
 
     score = 0.32 * s_inv + 0.32 * s_pred + 0.12 * s_sent + 0.12 * s_geo + 0.12 * s_tech
@@ -653,6 +658,17 @@ def build_intelligence_layer(
         for key, days, _, label in PREDICTION_HORIZONS
     }
 
+    event_intel: Dict[str, Any] = {
+        "status": "multi_layer",
+        "note": "Layers: futures, inventory, cash basis, refinery/weather, geo news, macro, technical.",
+    }
+    try:
+        from economic_calendar import event_intel_block
+        cal_snap = (predictions_json.get("_meta") or {}).get("catalyst_calendar")
+        event_intel = event_intel_block(cal_snap if cal_snap else None)
+    except Exception:
+        pass
+
     return {
         "inventory_weekly": inv_snap,
         "directional_signals": directional,
@@ -673,10 +689,7 @@ def build_intelligence_layer(
             "macro": "WTI path + DXY proxy",
             "technical": "RSI, MACD, momentum on RBOB series",
         },
-        "event_intel": {
-            "status": "multi_layer",
-            "note": "Layers: futures, inventory, cash basis, refinery/weather, geo news, macro, technical.",
-        },
+        "event_intel": event_intel,
     }
 
 
@@ -701,6 +714,17 @@ def smart_alert_candidates(
                     "detail": dv.get("summary", ""),
                 }
             )
+
+    eia_next = (meta_intel.get("event_intel") or {}).get("next") or {}
+    if eia_next.get("event_id") in ("eia", "api") and eia_next.get("hours_to") is not None:
+        hrs = float(eia_next["hours_to"])
+        if 0 <= hrs <= 36:
+            alerts.append({
+                "product": "RBOB_Gasoline",
+                "severity": "highlight",
+                "title": f"{eia_next.get('report')} in {hrs:.0f}h",
+                "detail": f"{eia_next.get('date')} {eia_next.get('time_et')} ET — gasoline/distillate surprise vs typical week moves RBOB and ULSD.",
+            })
 
     d_inv = inv.get("distillate") or {}
     if d_inv.get("wow_change_pct") is not None and float(d_inv["wow_change_pct"]) < -1.0:

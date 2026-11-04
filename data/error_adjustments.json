@@ -1,63 +1,63 @@
 {
-  "updated_at": "2026-06-23T19:39:14.767216",
+  "updated_at": "2026-09-14T20:26:18.862279",
   "products": {
     "RBOB_Gasoline": {
       "day_1": {
-        "bias_pct": 1.059,
-        "mae_pct": 1.732,
-        "direction_hit_rate": 0.571,
+        "bias_pct": 1.01,
+        "mae_pct": 4.044,
+        "direction_hit_rate": 0.286,
         "n_samples": 14
       },
       "day_4": {
-        "bias_pct": -1.405,
-        "mae_pct": 2.731,
-        "direction_hit_rate": 0.429,
+        "bias_pct": -2.985,
+        "mae_pct": 5.873,
+        "direction_hit_rate": 0.5,
         "n_samples": 14
       },
       "day_7": {
-        "bias_pct": 0.162,
-        "mae_pct": 5.325,
-        "direction_hit_rate": 0.714,
+        "bias_pct": 1.717,
+        "mae_pct": 6.664,
+        "direction_hit_rate": 0.429,
         "n_samples": 14
       }
     },
     "ULSD_Diesel": {
       "day_1": {
-        "bias_pct": -0.148,
-        "mae_pct": 2.696,
-        "direction_hit_rate": 0.429,
+        "bias_pct": 0.247,
+        "mae_pct": 2.793,
+        "direction_hit_rate": 0.571,
         "n_samples": 14
       },
       "day_4": {
-        "bias_pct": 4.932,
-        "mae_pct": 5.508,
+        "bias_pct": -7.713,
+        "mae_pct": 7.713,
         "direction_hit_rate": 0.357,
         "n_samples": 14
       },
       "day_7": {
-        "bias_pct": 7.644,
-        "mae_pct": 7.644,
-        "direction_hit_rate": 0.429,
+        "bias_pct": -5.95,
+        "mae_pct": 6.244,
+        "direction_hit_rate": 0.643,
         "n_samples": 14
       }
     },
     "Crude_Oil": {
       "day_1": {
-        "bias_pct": -0.508,
-        "mae_pct": 2.198,
-        "direction_hit_rate": 0.571,
+        "bias_pct": -1.032,
+        "mae_pct": 2.236,
+        "direction_hit_rate": 0.786,
         "n_samples": 14
       },
       "day_4": {
-        "bias_pct": 4.136,
-        "mae_pct": 4.93,
-        "direction_hit_rate": 0.571,
+        "bias_pct": -6.966,
+        "mae_pct": 7.307,
+        "direction_hit_rate": 0.286,
         "n_samples": 14
       },
       "day_7": {
-        "bias_pct": 9.161,
-        "mae_pct": 9.161,
-        "direction_hit_rate": 0.357,
+        "bias_pct": -6.229,
+        "mae_pct": 6.345,
+        "direction_hit_rate": 0.571,
         "n_samples": 14
       }
     }

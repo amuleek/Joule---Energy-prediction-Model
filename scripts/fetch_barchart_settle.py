@@ -111,6 +111,22 @@ def _parse_current_symbol_body(body: str) -> Tuple[Optional[float], Optional[flo
     return _settlement_from_quote(last_val, chg), last_val, sym, "last_minus_change"
 
 
+def _scrape_settle_s_flag(html: str, contract: str) -> Optional[float]:
+    """Barchart marks official settlement with trailing 's' on lastPrice (e.g. 3.3049s)."""
+    for m in re.finditer(
+        rf'"symbol"\s*:\s*"{re.escape(contract)}"[^}}]{{0,400}}"lastPrice"\s*:\s*"([0-9.]+)s"',
+        html,
+        re.DOTALL,
+    ):
+        try:
+            val = float(m.group(1))
+            if val > 0:
+                return round(val, 4)
+        except ValueError:
+            continue
+    return None
+
+
 def _scrape_contract_overview(contract: str) -> Tuple[Optional[float], Optional[float], Optional[str]]:
     """Return (settlement, last_price, contract) from a contract overview page."""
     url = f"https://www.barchart.com/futures/quotes/{contract}/overview"
@@ -118,6 +134,18 @@ def _scrape_contract_overview(contract: str) -> Tuple[Optional[float], Optional[
         html = _SESSION.get(url, timeout=30).text
     except Exception:
         return None, None, contract
+
+    settle_s = _scrape_settle_s_flag(html, contract)
+    if settle_s and settle_s > 0:
+        last_m = re.search(
+            rf'"symbol"\s*:\s*"{re.escape(contract)}"[^}}]{{0,400}}"lastPrice"\s*:\s*"([^"]+)"',
+            html,
+            re.DOTALL,
+        )
+        last_val = None
+        if last_m:
+            last_val, _ = _parse_price_token(last_m.group(1))
+        return settle_s, last_val, contract
 
     block = _CURRENT_SYMBOL_BLOCK.search(html)
     if block:
@@ -141,7 +169,7 @@ def _scrape_contract_overview(contract: str) -> Tuple[Optional[float], Optional[
 
 
 def _resolve_nearby_contract(nearby: str) -> Optional[str]:
-    """Resolve RB*1 → RBN26 from Barchart nearby or overview pages."""
+    """Resolve RB*1 → RBV26 from Barchart nearby or calendar front-month fallback."""
     url = f"https://www.barchart.com/futures/quotes/{nearby}/futures-prices"
     try:
         html = _SESSION.get(url, timeout=30).text
@@ -164,17 +192,37 @@ def _resolve_nearby_contract(nearby: str) -> Optional[str]:
     except Exception:
         pass
 
+    # Calendar front/lead from contract_roll (2-digit year: RBV26) — never 1-digit RBV6
+    try:
+        from contract_roll import infer_resolved_contracts, get_nearby_map
+
+        inferred = infer_resolved_contracts()
+        nearby_map = get_nearby_map()
+        for col, nb in nearby_map.items():
+            if nb == nearby and inferred.get(col):
+                return str(inferred[col])
+        # Direct root map when called with RB*1 / HO*1 / CL*1
+        root = _CONTRACT_ROOT_FALLBACK.get(nearby)
+        col_for_root = {"RB": "RBOB", "HO": "ULSD", "CL": "Crude"}.get(root or "")
+        if col_for_root and inferred.get(col_for_root):
+            return str(inferred[col_for_root])
+    except Exception:
+        pass
+
     root = _CONTRACT_ROOT_FALLBACK.get(nearby)
     if not root:
         return None
     month_codes = "FGHJKMNQUVXZ"
     now = datetime.now()
-    # Try current + next two month codes on same year letter
-    year_code = str(now.year)[-1]
-    for offset in (0, 1, 2):
-        mi = (now.month - 1 + offset) % 12
-        y_off = (now.month - 1 + offset) // 12
-        code = f"{root}{month_codes[mi]}{int(year_code) + y_off}"
+    # RBOB/HO liquid front is typically calendar month + 1 (Sep → Oct V)
+    start_month = now.month + (1 if root in ("RB", "HO") else 1)
+    for offset in range(0, 4):
+        month = start_month + offset
+        year = now.year
+        while month > 12:
+            month -= 12
+            year += 1
+        code = f"{root}{month_codes[month - 1]}{str(year)[-2:]}"
         settle, _, sym = _scrape_contract_overview(code)
         if settle and settle > 0:
             return sym or code

@@ -1,0 +1,153 @@
+{
+  "updated_at": "2026-09-14T20:26:35.272061",
+  "products": {
+    "RBOB_Gasoline": {
+      "tape_momentum": {
+        "weight": 0.87,
+        "miss_count": 7,
+        "hit_count": 23
+      },
+      "inventory": {
+        "weight": 1.76,
+        "miss_count": 154,
+        "hit_count": 134
+      },
+      "geopolitical": {
+        "weight": 1.73,
+        "miss_count": 19,
+        "hit_count": 135
+      },
+      "weather": {
+        "weight": 1.97,
+        "miss_count": 155,
+        "hit_count": 155
+      },
+      "hurricane": {
+        "weight": 1.0,
+        "miss_count": 0,
+        "hit_count": 0
+      },
+      "dollar_macro": {
+        "weight": 1.97,
+        "miss_count": 165,
+        "hit_count": 60
+      },
+      "crack_spread": {
+        "weight": 1.97,
+        "miss_count": 38,
+        "hit_count": 126
+      },
+      "news_sentiment": {
+        "weight": 1.97,
+        "miss_count": 54,
+        "hit_count": 36
+      },
+      "model_overlay": {
+        "weight": 1.0,
+        "miss_count": 0,
+        "hit_count": 0
+      }
+    },
+    "ULSD_Diesel": {
+      "tape_momentum": {
+        "weight": 1.05,
+        "miss_count": 7,
+        "hit_count": 17
+      },
+      "inventory": {
+        "weight": 2.0,
+        "miss_count": 101,
+        "hit_count": 52
+      },
+      "geopolitical": {
+        "weight": 0.6,
+        "miss_count": 5,
+        "hit_count": 265
+      },
+      "weather": {
+        "weight": 0.8,
+        "miss_count": 57,
+        "hit_count": 288
+      },
+      "hurricane": {
+        "weight": 1.0,
+        "miss_count": 0,
+        "hit_count": 0
+      },
+      "dollar_macro": {
+        "weight": 0.6,
+        "miss_count": 93,
+        "hit_count": 116
+      },
+      "crack_spread": {
+        "weight": 1.05,
+        "miss_count": 65,
+        "hit_count": 322
+      },
+      "news_sentiment": {
+        "weight": 0.89,
+        "miss_count": 13,
+        "hit_count": 73
+      },
+      "model_overlay": {
+        "weight": 1.0,
+        "miss_count": 0,
+        "hit_count": 0
+      }
+    },
+    "Crude_Oil": {
+      "tape_momentum": {
+        "weight": 1.16,
+        "miss_count": 7,
+        "hit_count": 49
+      },
+      "inventory": {
+        "weight": 0.83,
+        "miss_count": 117,
+        "hit_count": 206
+      },
+      "geopolitical": {
+        "weight": 0.72,
+        "miss_count": 9,
+        "hit_count": 309
+      },
+      "weather": {
+        "weight": 0.8,
+        "miss_count": 52,
+        "hit_count": 325
+      },
+      "hurricane": {
+        "weight": 1.0,
+        "miss_count": 0,
+        "hit_count": 0
+      },
+      "dollar_macro": {
+        "weight": 1.34,
+        "miss_count": 111,
+        "hit_count": 223
+      },
+      "crack_spread": {
+        "weight": 1.0,
+        "miss_count": 0,
+        "hit_count": 0
+      },
+      "news_sentiment": {
+        "weight": 0.73,
+        "miss_count": 12,
+        "hit_count": 94
+      },
+      "model_overlay": {
+        "weight": 1.0,
+        "miss_count": 0,
+        "hit_count": 0
+      }
+    }
+  },
+  "global_rules": {
+    "momentum_blend_cap": 0.2
+  },
+  "recent_overlay_misses": 0,
+  "recent_momentum_misses": 1,
+  "recent_divergence_misses": 0,
+  "regime_learning_updated_at": "2026-09-14T20:26:35.269995"
+}

@@ -14,7 +14,7 @@ services:
       # Email configuration
       - SENDER_EMAIL=${SENDER_EMAIL}
       - SENDER_PASSWORD=${SENDER_PASSWORD}
-      - RECIPIENT_EMAILS=${RECIPIENT_EMAILS}
+      - RECIPIENT_EMAILS=${RECIPIENT_EMAILS:-taransandhu@gillenergy.com,bikramgill@gillenergy.com,ravigill@gillenergy.com,kashmirgill@gillenergy.com}
       # API keys
       - ALPHA_VANTAGE_API_KEY=${ALPHA_VANTAGE_API_KEY}
       - EIA_API_KEY=${EIA_API_KEY}

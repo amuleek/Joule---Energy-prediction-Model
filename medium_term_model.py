@@ -28,7 +28,9 @@ FUND_FEATURES = [
     "gasoline_inventory", "diesel_inventory", "crude_inventory",
     "refinery_utilization_pct", "crude_imports_kbpd", "crude_exports_kbpd",
     "sentiment", "geo_risk_score", "dxy_change_1d_pct",
-    "is_driving_season", "is_hurricane_season",
+    "is_driving_season", "is_hurricane_season", "is_winter_heating",
+    "doy_sin", "doy_cos", "hdd_proxy", "cdd_proxy",
+    "gas_inv_z", "dist_inv_z", "crude_inv_z", "util_chg",
     "temp_max_c", "precip_mm", "baltic_dry_proxy",
     "RBOB_lag7", "Crude_lag7", "momentum_20d_pct",
 ]

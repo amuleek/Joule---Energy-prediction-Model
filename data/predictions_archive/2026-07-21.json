@@ -1,0 +1,1328 @@
+{
+  "issued_date": "2026-07-21",
+  "issued_at": "2026-07-21T21:43:46.937549",
+  "predictions": {
+    "Crude_Oil": {
+      "current_price": 84.91,
+      "confidence_range": {
+        "lower": 86.72191388365455,
+        "upper": 95.85053639772345
+      },
+      "timestamp": "2026-07-21T21:43:46.773918",
+      "day_1": {
+        "price": 85.88453410930349,
+        "change_percent": 1.1477259560752455,
+        "direction": "UP",
+        "label": "Tomorrow (Day 1)",
+        "days_ahead": 1
+      },
+      "day_4": {
+        "price": 87.31405727344692,
+        "change_percent": 2.8313005222552396,
+        "direction": "UP",
+        "label": "Day 4",
+        "days_ahead": 4
+      },
+      "day_7": {
+        "price": 88.71694390177173,
+        "change_percent": 4.483504771842812,
+        "direction": "UP",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "next_day": {
+        "price": 85.88453410930349,
+        "change_percent": 1.1477259560752455,
+        "direction": "UP",
+        "label": "Tomorrow (Day 1)",
+        "days_ahead": 1
+      },
+      "next_week": {
+        "price": 87.31405727344692,
+        "change_percent": 2.8313005222552396,
+        "direction": "UP",
+        "label": "Day 4",
+        "days_ahead": 4
+      },
+      "biweekly": {
+        "price": 88.71694390177173,
+        "change_percent": 4.483504771842812,
+        "direction": "UP",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "monthly": {
+        "price": 88.71694390177173,
+        "change_percent": 4.483504771842812,
+        "direction": "UP",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "directional": {
+        "label": "BULLISH",
+        "emoji": "\ud83d\udcc8",
+        "confidence": 48,
+        "score": 0.208,
+        "summary": "Weekly crude inventories drew 0.41% (typically supportive). Model tomorrow: +1.15%; day 7 outlook: +4.48%. News sentiment: +0.14. Headlines: Geopolitical risk (59% of today's headlines); Shipping / logistics (29% of today's headlines).",
+        "drivers": {
+          "inventory_wow_pct": -0.411,
+          "model_next_day_pct": 1.1477,
+          "model_next_week_pct": 4.4835,
+          "sentiment": 0.1363285799168152,
+          "geo_risk_score": 0.0914
+        },
+        "scenario_rationale": {
+          "headline": "The current scenario for WTI crude is bullish: the combined read from weekly stocks (where available), the model outlook, and headlines leans toward firmer prices.",
+          "bullets": [
+            "EIA weekly crude inventories fell about 0.41% week-over-week. Draws often go with tighter supply if demand holds, which tends to support prices.",
+            "The day-7 forecast expects about +4.48% vs. today\u2014a central part of the directional score.",
+            "Tomorrow\u2019s modeled move is about +1.15% vs. current; day-7 path is about +4.48%.",
+            "US dollar index rose +0.20% \u2014 a firmer dollar often pressures crude and products.",
+            "Aggregated energy/news sentiment is positive (score +0.14). That nudges the view with a purely inventory-driven story."
+          ],
+          "closing": "Bottom line: for WTI crude, the story is constructive\u2014watch for a reversal if inventories surprise large to the upside or sentiment sours on macro/risk.",
+          "scenario": "BULLISH"
+        }
+      },
+      "trading_signal": {
+        "product_key": "Crude_Oil",
+        "display": "WTI crude",
+        "tomorrow_delta": 0.97,
+        "tomorrow_delta_fmt": "+0.97 $/bbl",
+        "tomorrow_change_pct": 1.15,
+        "direction": "UP",
+        "confidence_pct": 50,
+        "drivers": [
+          "Geopolitical risk",
+          "Shipping / logistics"
+        ],
+        "drivers_text": "Geopolitical risk, Shipping / logistics",
+        "headline": "Tomorrow WTI crude: +0.97 $/bbl",
+        "subhead": "Moderate uncertainty \u2014 treat tomorrow as tentative \u00b7 Confidence: 55%"
+      },
+      "forecast_uncertainty": {
+        "level": "MEDIUM",
+        "score": 3,
+        "headline": "Moderate uncertainty \u2014 treat tomorrow as tentative",
+        "reasons": [
+          "Gap risk elevated (elevated geo_risk (9%), geopolitical headlines (59%), shipping/logistics (29%)) \u2014 Monday opens can move far beyond day-1 caps",
+          "Weekly stocks draw (-0.4% WoW) vs model direction"
+        ],
+        "tomorrow_change_pct": 1.1477,
+        "confidence_pct": 55,
+        "geo_risk_score": null
+      },
+      "reasoning": "Low conviction \u2014 model +1.1% tomorrow. Gap risk elevated (elevated geo_risk (9%), geopolitical headlines (59%), shipping/logistics (29%)) \u2014 Monday opens can move far beyond day-1 caps."
+    },
+    "RBOB_Gasoline": {
+      "current_price": 3.4059,
+      "confidence_range": {
+        "lower": 3.257162069914861,
+        "upper": 3.600021235169057
+      },
+      "timestamp": "2026-07-21T21:43:46.773967",
+      "day_1": {
+        "price": 3.4583504736594533,
+        "change_percent": 1.5399886567266603,
+        "direction": "UP",
+        "label": "Tomorrow (Day 1)",
+        "days_ahead": 1
+      },
+      "day_4": {
+        "price": 3.447776609177731,
+        "change_percent": 1.2295313772492198,
+        "direction": "UP",
+        "label": "Day 4",
+        "days_ahead": 4
+      },
+      "day_7": {
+        "price": 3.2684522530006133,
+        "change_percent": -4.035577879543928,
+        "direction": "DOWN",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "next_day": {
+        "price": 3.4583504736594533,
+        "change_percent": 1.5399886567266603,
+        "direction": "UP",
+        "label": "Tomorrow (Day 1)",
+        "days_ahead": 1
+      },
+      "next_week": {
+        "price": 3.447776609177731,
+        "change_percent": 1.2295313772492198,
+        "direction": "UP",
+        "label": "Day 4",
+        "days_ahead": 4
+      },
+      "biweekly": {
+        "price": 3.2684522530006133,
+        "change_percent": -4.035577879543928,
+        "direction": "DOWN",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "monthly": {
+        "price": 3.2684522530006133,
+        "change_percent": -4.035577879543928,
+        "direction": "DOWN",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "directional": {
+        "label": "NEUTRAL",
+        "emoji": "\u2696\ufe0f",
+        "confidence": 48,
+        "score": 0.1298,
+        "summary": "Weekly gasoline inventories drew 0.72% (typically supportive). Model tomorrow: +1.54%; day 7 outlook: -4.04%. News sentiment: +0.14. Headlines: Geopolitical risk (59% of today's headlines); Shipping / logistics (29% of today's headlines).",
+        "drivers": {
+          "inventory_wow_pct": -0.723,
+          "model_next_day_pct": 1.54,
+          "model_next_week_pct": -4.0356,
+          "sentiment": 0.1363285799168152,
+          "geo_risk_score": 0.0914
+        },
+        "scenario_rationale": {
+          "headline": "The current scenario for RBOB / gasoline is neutral: inventory, model, and sentiment do not all point the same way\u2014treat moves as tentative.",
+          "bullets": [
+            "EIA weekly gasoline inventories fell about 0.72% week-over-week. Draws often go with tighter supply if demand holds, which tends to support prices.",
+            "The day-7 forecast expects about -4.04% vs. today\u2014a central part of the directional score.",
+            "Tomorrow\u2019s modeled move is about +1.54% vs. current; day-7 path is about -4.04%.",
+            "US dollar index rose +0.20% \u2014 a firmer dollar often pressures crude and products.",
+            "Aggregated energy/news sentiment is positive (score +0.14). That nudges the view against a purely inventory-driven story.",
+            "Refining margin proxy (gasoline crack \u2248 $58.1/bbl vs. WTI): stronger cracks can reward refiners and support product pricing when crude is not collapsing."
+          ],
+          "closing": "Bottom line: for RBOB / gasoline, treat direction as balanced until inventories or headlines give a cleaner one-sided signal.",
+          "scenario": "NEUTRAL"
+        }
+      },
+      "trading_signal": {
+        "product_key": "RBOB_Gasoline",
+        "display": "RBOB / gasoline",
+        "tomorrow_delta": 5.2,
+        "tomorrow_delta_fmt": "+5.2\u00a2",
+        "tomorrow_change_pct": 1.54,
+        "direction": "UP",
+        "confidence_pct": 50,
+        "drivers": [
+          "ML outlook tomorrow: -4.8\u00a2/gal",
+          "crude +1.1%",
+          "EIA gasoline draw 0.7% WoW",
+          "Geopolitical risk",
+          "Shipping / logistics"
+        ],
+        "drivers_text": "ML outlook tomorrow: -4.8\u00a2/gal, crude +1.1%, EIA gasoline draw 0.7% WoW, Geopolitical risk, Shipping / logistics",
+        "headline": "Tomorrow RBOB / gasoline: +5.2\u00a2",
+        "subhead": "Low conviction \u2014 tomorrow can differ sharply from the model \u00b7 Confidence: 50%",
+        "horizons": {
+          "day_1": {
+            "horizon": "Tomorrow (Day 1)",
+            "change_percent": 1.54,
+            "direction": "UP",
+            "move_cents": 5.2
+          },
+          "day_4": {
+            "horizon": "Day 4",
+            "change_percent": 1.23,
+            "direction": "UP",
+            "move_cents": 4.2
+          },
+          "day_7": {
+            "horizon": "Day 7",
+            "change_percent": -4.04,
+            "direction": "DOWN",
+            "move_cents": -13.7
+          },
+          "next_day": {
+            "horizon": "Tomorrow (Day 1)",
+            "change_percent": 1.54,
+            "direction": "UP",
+            "move_cents": 5.2
+          }
+        },
+        "buy_recommendation": {
+          "action": "MONITOR",
+          "label": "Monitor \u2014 mixed signals",
+          "rationale": "Confidence is only 50%; wait for inventory or a clearer model tilt."
+        }
+      },
+      "forecast_uncertainty": {
+        "level": "HIGH",
+        "score": 4,
+        "headline": "Low conviction \u2014 tomorrow can differ sharply from the model",
+        "reasons": [
+          "Mixed signals (confidence 50%) \u2014 inventory, model, and headlines don't align",
+          "Gap risk elevated (elevated geo_risk (9%), geopolitical headlines (59%), shipping/logistics (29%)) \u2014 Monday opens can move far beyond day-1 caps",
+          "Weekly stocks draw (-0.7% WoW) vs model direction"
+        ],
+        "tomorrow_change_pct": 1.54,
+        "confidence_pct": 50,
+        "geo_risk_score": null
+      },
+      "reasoning": "Low conviction \u2014 model +1.5% tomorrow. Mixed signals (confidence 50%) \u2014 inventory, model, and headlines don't align."
+    },
+    "ULSD_Diesel": {
+      "current_price": 4.1266,
+      "confidence_range": {
+        "lower": 3.7917861966564077,
+        "upper": 4.190921585778135
+      },
+      "timestamp": "2026-07-21T21:43:46.773982",
+      "day_1": {
+        "price": 4.18641971195756,
+        "change_percent": 1.4496125613716022,
+        "direction": "UP",
+        "label": "Tomorrow (Day 1)",
+        "days_ahead": 1
+      },
+      "day_4": {
+        "price": 4.1638842613033775,
+        "change_percent": 0.9035104275524086,
+        "direction": "UP",
+        "label": "Day 4",
+        "days_ahead": 4
+      },
+      "day_7": {
+        "price": 4.118339309560748,
+        "change_percent": -0.20018151599989056,
+        "direction": "DOWN",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "next_day": {
+        "price": 4.18641971195756,
+        "change_percent": 1.4496125613716022,
+        "direction": "UP",
+        "label": "Tomorrow (Day 1)",
+        "days_ahead": 1
+      },
+      "next_week": {
+        "price": 4.1638842613033775,
+        "change_percent": 0.9035104275524086,
+        "direction": "UP",
+        "label": "Day 4",
+        "days_ahead": 4
+      },
+      "biweekly": {
+        "price": 4.118339309560748,
+        "change_percent": -0.20018151599989056,
+        "direction": "DOWN",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "monthly": {
+        "price": 4.118339309560748,
+        "change_percent": -0.20018151599989056,
+        "direction": "DOWN",
+        "label": "Day 7",
+        "days_ahead": 7
+      },
+      "directional": {
+        "label": "BEARISH",
+        "emoji": "\ud83d\udcc9",
+        "confidence": 48,
+        "score": -0.2801,
+        "summary": "Weekly distillate inventories built 4.40% (typically a headwind). Model tomorrow: +1.45%; day 7 outlook: -0.20%. News sentiment: +0.14. Headlines: Geopolitical risk (59% of today's headlines); Shipping / logistics (29% of today's headlines).",
+        "drivers": {
+          "inventory_wow_pct": 4.397,
+          "model_next_day_pct": 1.4496,
+          "model_next_week_pct": -0.2002,
+          "sentiment": 0.1363285799168152,
+          "geo_risk_score": 0.0914
+        },
+        "scenario_rationale": {
+          "headline": "The current scenario for ULSD / diesel is bearish: inventories, the model path, and/or sentiment are leaning toward softer prices over the near term.",
+          "bullets": [
+            "EIA weekly distillate inventories rose about 4.40% week-over-week. Stock builds add cushion and can cap rallies unless demand accelerates.",
+            "The day-7 forecast expects about -0.20% vs. today\u2014a central part of the directional score.",
+            "Tomorrow\u2019s modeled move is about +1.45% vs. current; day-7 path is about -0.20%.",
+            "US dollar index rose +0.20% \u2014 a firmer dollar often pressures crude and products.",
+            "Aggregated energy/news sentiment is positive (score +0.14). That nudges the view against a purely inventory-driven story.",
+            "Refining margin proxy (diesel crack \u2248 $88.4/bbl vs. WTI): diesel cracks reflect distillate tightness and margin incentives for supply."
+          ],
+          "closing": "Bottom line: for ULSD / diesel, risks skew lower near term\u2014confirm with another week of data before treating it as a trend.",
+          "scenario": "BEARISH"
+        }
+      },
+      "trading_signal": {
+        "product_key": "ULSD_Diesel",
+        "display": "ULSD / diesel",
+        "tomorrow_delta": 6.0,
+        "tomorrow_delta_fmt": "+6.0\u00a2",
+        "tomorrow_change_pct": 1.45,
+        "direction": "UP",
+        "confidence_pct": 50,
+        "drivers": [
+          "crude +1.1%",
+          "EIA distillate build 4.4% WoW",
+          "Geopolitical risk",
+          "Shipping / logistics"
+        ],
+        "drivers_text": "crude +1.1%, EIA distillate build 4.4% WoW, Geopolitical risk, Shipping / logistics",
+        "headline": "Tomorrow ULSD / diesel: +6.0\u00a2",
+        "subhead": "Moderate uncertainty \u2014 treat tomorrow as tentative \u00b7 Confidence: 68%"
+      },
+      "forecast_uncertainty": {
+        "level": "MEDIUM",
+        "score": 2,
+        "headline": "Moderate uncertainty \u2014 treat tomorrow as tentative",
+        "reasons": [
+          "Gap risk elevated (elevated geo_risk (9%), geopolitical headlines (59%), shipping/logistics (29%)) \u2014 Monday opens can move far beyond day-1 caps"
+        ],
+        "tomorrow_change_pct": 1.4496,
+        "confidence_pct": 68,
+        "geo_risk_score": null
+      },
+      "reasoning": "Low conviction \u2014 model +1.4% tomorrow. Gap risk elevated (elevated geo_risk (9%), geopolitical headlines (59%), shipping/logistics (29%)) \u2014 Monday opens can move far beyond day-1 caps."
+    },
+    "_meta": {
+      "model": "VAR+XGB+CatBoost",
+      "model_stack": [
+        "VAR/Prophet",
+        "XGBoost",
+        "Ensemble",
+        "BiasCorrection"
+      ],
+      "weekend_gap": false,
+      "crack_spreads_current": {
+        "gasoline_crack_usd_per_bbl": 58.1378,
+        "diesel_crack_usd_per_bbl": 88.40719999999999,
+        "units": "Approx. product value 42 gal/bbl minus WTI; refinery margin proxy"
+      },
+      "crack_spreads_forecast_var": {
+        "day_1": {
+          "gasoline_crack_usd_per_bbl": 57.39005578088867,
+          "diesel_crack_usd_per_bbl": 86.08218834189131
+        },
+        "day_4": {
+          "gasoline_crack_usd_per_bbl": 54.97075889626558,
+          "diesel_crack_usd_per_bbl": 80.4358145565547
+        },
+        "day_7": {
+          "gasoline_crack_usd_per_bbl": 52.71462426607329,
+          "diesel_crack_usd_per_bbl": 76.3506382904364
+        }
+      },
+      "retail_pump_weekly": {
+        "region_code": "R1Y",
+        "region_label": "PADD 1B Central Atlantic (includes NJ)",
+        "period": "2026-07-20",
+        "units": "$/gal",
+        "source": "EIA Weekly Retail (G&D)",
+        "regular_gasoline": 4.098,
+        "ulsd_diesel": 5.37,
+        "timestamp": "2026-07-21T21:43:44.872916"
+      },
+      "operational": {
+        "refinery_utilization_pct": 96.2,
+        "crude_imports_kbpd": 6961.0,
+        "crude_exports_kbpd": 1968.0
+      },
+      "hurricane": {
+        "fetched_at": "2026-07-14T08:36:21.173161",
+        "active_storm_count": 0,
+        "gulf_threat_count": 0,
+        "storms": [],
+        "risk_score": 0.0
+      },
+      "freight": {
+        "baltic_dry_proxy": 12.619999885559082,
+        "freight_volume": 19997,
+        "freight_return_1d": 0.035274841671673
+      },
+      "xgb_rbob": {
+        "used": true,
+        "model": "XGBoost",
+        "next_day_price": 3.357557805087883,
+        "confidence_pct": 88,
+        "holdout_mape_pct": 1.42,
+        "feature_count": 38,
+        "reason": "",
+        "predicted_return_pct": -1.419,
+        "current_price": 3.4059,
+        "top_features": [
+          "RBOB",
+          "ULSD",
+          "Crude",
+          "crack_gasoline",
+          "crack_diesel",
+          "RBOB_lag1",
+          "RBOB_lag7",
+          "Crude_lag1",
+          "Crude_lag7",
+          "ULSD_lag1",
+          "crack_gasoline_lag1",
+          "sentiment"
+        ],
+        "feature_importance": {
+          "topic_opec": 0.09,
+          "rbob_close": 0.0692,
+          "rbob_calendar_spread_5d": 0.0617,
+          "crack_gasoline_lag1": 0.0581,
+          "ULSD_lag1": 0.0563,
+          "Crude_lag7": 0.0421,
+          "macd_hist": 0.0345,
+          "momentum_20d_pct": 0.0322,
+          "calendar_spread_proxy": 0.0306,
+          "is_hurricane_season": 0.0295,
+          "price_vs_sma20_pct": 0.0291,
+          "crack_gasoline": 0.0289,
+          "momentum_5d_pct": 0.0288,
+          "rbob_crude_ratio": 0.0278,
+          "ULSD": 0.0271
+        },
+        "blend_weights": {
+          "var": 0.2,
+          "xgb": 0.8
+        }
+      },
+      "catboost_medium_term": {
+        "products": {
+          "Crude_Oil": {
+            "day_4": {
+              "used": true,
+              "horizon": "day_4",
+              "product": "Crude_Oil",
+              "reason": "",
+              "predicted_return_pct": -0.416,
+              "predicted_price": 79.26852726385415,
+              "current_price": 79.6,
+              "model_path": "data/models\\catboost_Crude_Oil_day_4.cbm",
+              "from_cache": true
+            },
+            "day_7": {
+              "used": true,
+              "horizon": "day_7",
+              "product": "Crude_Oil",
+              "reason": "",
+              "predicted_return_pct": -4.558,
+              "predicted_price": 68.15481603750254,
+              "current_price": 71.41,
+              "model_path": "data/models\\catboost_Crude_Oil_day_7.cbm",
+              "from_cache": true
+            }
+          },
+          "RBOB_Gasoline": {
+            "day_4": {
+              "used": true,
+              "horizon": "day_4",
+              "product": "RBOB_Gasoline",
+              "reason": "",
+              "predicted_return_pct": -4.647,
+              "predicted_price": 3.154766140309017,
+              "current_price": 3.3085,
+              "model_path": "data/models\\catboost_RBOB_Gasoline_day_4.cbm",
+              "from_cache": true
+            },
+            "day_7": {
+              "used": true,
+              "horizon": "day_7",
+              "product": "RBOB_Gasoline",
+              "reason": "",
+              "predicted_return_pct": -13.339,
+              "predicted_price": 2.5587512563905874,
+              "current_price": 2.9526,
+              "model_path": "data/models\\catboost_RBOB_Gasoline_day_7.cbm",
+              "from_cache": true
+            }
+          },
+          "ULSD_Diesel": {
+            "day_4": {
+              "used": true,
+              "horizon": "day_4",
+              "product": "ULSD_Diesel",
+              "reason": "",
+              "predicted_return_pct": 0.934,
+              "predicted_price": 3.9851799235846617,
+              "current_price": 3.9483,
+              "model_path": "data/models\\catboost_ULSD_Diesel_day_4.cbm",
+              "from_cache": true
+            },
+            "day_7": {
+              "used": true,
+              "horizon": "day_7",
+              "product": "ULSD_Diesel",
+              "reason": "",
+              "predicted_return_pct": -2.244,
+              "predicted_price": 3.4524662604143304,
+              "current_price": 3.5317,
+              "model_path": "data/models\\catboost_ULSD_Diesel_day_7.cbm",
+              "from_cache": true
+            }
+          }
+        },
+        "model": "CatBoost"
+      },
+      "dollar_index": {
+        "as_of": "2026-07-21",
+        "close": 101.187,
+        "change_pct_1d": 0.195,
+        "source": "yahoo",
+        "ticker": "DX-Y.NYB"
+      },
+      "ensemble": {
+        "Crude_Oil": {
+          "horizon": "day_1",
+          "combined_return_pct": 0.8289,
+          "delta_price": 0.70378,
+          "delta_display": 0.7,
+          "delta_unit": "$/bbl",
+          "weights": {
+            "technical": 0.457,
+            "fundamental": 0.4979,
+            "news": 0.0451
+          },
+          "components": {
+            "technical": {
+              "return_pct": 1.2826,
+              "detail": {
+                "momentum": 1.282603509497453
+              }
+            },
+            "fundamental": {
+              "return_pct": 0.2857,
+              "detail": {
+                "inventory_wow": 0.061649999999999996,
+                "refinery_util": 0.22400000000000006
+              }
+            },
+            "news": {
+              "return_pct": 2.2279,
+              "detail": {
+                "sentiment": 0.2044928698752228,
+                "geo_risk": 0.10967999999999999,
+                "rag_headlines": 0.5,
+                "freight_proxy": 1.7637420835836501
+              }
+            }
+          }
+        },
+        "RBOB_Gasoline": {
+          "horizon": "day_1",
+          "combined_return_pct": 1.6742,
+          "delta_price": 0.057023,
+          "delta_display": 5.7,
+          "delta_unit": "cents/gal",
+          "weights": {
+            "technical": 0.37783778377837784,
+            "fundamental": 0.34413441344134416,
+            "news": 0.27802780278027805
+          },
+          "components": {
+            "technical": {
+              "return_pct": 1.4742,
+              "detail": {
+                "momentum": 1.4741789916126646
+              }
+            },
+            "fundamental": {
+              "return_pct": 1.4466,
+              "detail": {
+                "inventory_wow": 0.10844999999999999,
+                "refinery_util": 0.22400000000000006,
+                "gasoline_crack": 0.994134,
+                "driving_season": 0.12
+              }
+            },
+            "news": {
+              "return_pct": 2.2279,
+              "detail": {
+                "sentiment": 0.2044928698752228,
+                "geo_risk": 0.10967999999999999,
+                "rag_headlines": 0.5,
+                "freight_proxy": 1.7637420835836501
+              }
+            }
+          }
+        },
+        "ULSD_Diesel": {
+          "horizon": "day_1",
+          "combined_return_pct": 1.6793,
+          "delta_price": 0.069298,
+          "delta_display": 6.93,
+          "delta_unit": "cents/gal",
+          "weights": {
+            "technical": 0.2298,
+            "fundamental": 0.3222,
+            "news": 0.448
+          },
+          "components": {
+            "technical": {
+              "return_pct": 1.5277,
+              "detail": {
+                "momentum": 1.5277111941784383
+              }
+            },
+            "fundamental": {
+              "return_pct": 1.0246,
+              "detail": {
+                "inventory_wow": -0.65955,
+                "refinery_util": 0.22400000000000006,
+                "diesel_crack": 1.4601799999999998
+              }
+            },
+            "news": {
+              "return_pct": 2.2279,
+              "detail": {
+                "sentiment": 0.2044928698752228,
+                "geo_risk": 0.10967999999999999,
+                "rag_headlines": 0.5,
+                "freight_proxy": 1.7637420835836501
+              }
+            }
+          }
+        }
+      },
+      "day1_consensus": {
+        "Crude_Oil": {
+          "consensus_return_pct": 1.0359,
+          "base_return_pct": 1.2016,
+          "ensemble_return_pct": 0.8289,
+          "xgb_return_pct": null,
+          "weights": {
+            "ensemble": 0.65
+          },
+          "base_weight": 0.12,
+          "gap_risk": {
+            "score": 0.6,
+            "active": true,
+            "weekend_crossing": false,
+            "cap_mult": 1.85,
+            "reasons": [
+              "elevated geo_risk (9%)",
+              "geopolitical headlines (59%)",
+              "shipping/logistics (29%)"
+            ]
+          },
+          "cap_mult": 1.85,
+          "momentum_continuation": {
+            "mode": "continuation",
+            "prior_session_pct": 2.019,
+            "continuation_pct": 0.706,
+            "blend": 0.3,
+            "consensus_before": 0.8463,
+            "consensus_after": 0.8044
+          },
+          "signal_learning": {
+            "nudge_pct": 0.2316,
+            "consensus_before": 0.8044,
+            "consensus_after": 1.0359,
+            "drivers": [
+              "inventory draw -0.4% (+0.164%)",
+              "geo risk 0.09 (+0.022%)",
+              "DXY +0.20% (-0.035%)",
+              "sentiment +0.14 (+0.010%)",
+              "Gulf heat 38 (+0.071%)"
+            ]
+          }
+        },
+        "RBOB_Gasoline": {
+          "consensus_return_pct": 1.7308,
+          "base_return_pct": 1.1901,
+          "ensemble_return_pct": 1.6742,
+          "xgb_return_pct": -1.419,
+          "weights": {
+            "ensemble": 0.62,
+            "xgb": 0.3
+          },
+          "base_weight": 0.15,
+          "gap_risk": {
+            "score": 0.6,
+            "active": true,
+            "weekend_crossing": false,
+            "cap_mult": 1.85,
+            "reasons": [
+              "elevated geo_risk (9%)",
+              "geopolitical headlines (59%)",
+              "shipping/logistics (29%)"
+            ]
+          },
+          "cap_mult": 1.85,
+          "signal_learning": {
+            "nudge_pct": 0.1351,
+            "consensus_before": 1.5957,
+            "consensus_after": 1.7308,
+            "drivers": [
+              "inventory draw -0.7% (+0.118%)",
+              "geo risk 0.09 (+0.022%)",
+              "DXY +0.20% (-0.069%)",
+              "sentiment +0.14 (+0.011%)",
+              "Gulf heat 38 (+0.039%)",
+              "gas crack $58/bbl (+0.015%)"
+            ]
+          }
+        },
+        "ULSD_Diesel": {
+          "consensus_return_pct": 1.5312,
+          "base_return_pct": 1.3026,
+          "ensemble_return_pct": 1.6793,
+          "xgb_return_pct": null,
+          "weights": {
+            "ensemble": 0.65
+          },
+          "base_weight": 0.12,
+          "gap_risk": {
+            "score": 0.6,
+            "active": true,
+            "weekend_crossing": false,
+            "cap_mult": 1.85,
+            "reasons": [
+              "elevated geo_risk (9%)",
+              "geopolitical headlines (59%)",
+              "shipping/logistics (29%)"
+            ]
+          },
+          "cap_mult": 1.85,
+          "signal_learning": {
+            "nudge_pct": -0.0894,
+            "consensus_before": 1.6206,
+            "consensus_after": 1.5312,
+            "drivers": [
+              "inventory build 4.4% (-0.240%)",
+              "geo risk 0.09 (+0.032%)",
+              "DXY +0.20% (-0.070%)",
+              "sentiment +0.14 (+0.015%)",
+              "Gulf heat 38 (+0.063%)",
+              "diesel crack $88/bbl (+0.111%)"
+            ]
+          }
+        }
+      },
+      "spot_reference": {
+        "as_of_date": "2026-07-21",
+        "label": "NYMEX (2026-07-21) \u2014 RBOB settle, ULSD settle, Crude settle",
+        "source": "barchart_cache",
+        "session": "NYMEX afternoon settle",
+        "closes": {
+          "RBOB": 3.4059,
+          "ULSD": 4.1266,
+          "Crude": 84.91
+        },
+        "by_product": {
+          "RBOB_Gasoline": 3.4059,
+          "ULSD_Diesel": 4.1266,
+          "Crude_Oil": 84.91
+        }
+      },
+      "rag_context": {
+        "RBOB_Gasoline": [
+          {
+            "title": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia",
+            "snippet": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia. Saudi Arabia and the Houthis traded fire last week for the first time in years, threatening a 2022 truce that has held despite expiring.\nThe post Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia appeared first on",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.2636,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia",
+            "snippet": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia. Saudi Arabia and the Houthis traded fire last week for the first time in years, threatening a 2022 truce that has held despite expiring.\nThe post Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia appeared first on",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.2636,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Houthis Declare a Naval Blockade on Saudi Arabia",
+            "snippet": "Houthis Declare a Naval Blockade on Saudi Arabia. The move could increase pressure on already-strained global energy markets.",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.2392,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Houthis Declare a Naval Blockade on Saudi Arabia",
+            "snippet": "Houthis Declare a Naval Blockade on Saudi Arabia. The move could increase pressure on already-strained global energy markets.",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.2392,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Iran strikes Saudi Arabia again, sending oil prices surging and Bitcoin wobbling",
+            "snippet": "Iran strikes Saudi Arabia again, sending oil prices surging and Bitcoin wobbling. Iran strikes Saudi Arabia for the first time in months, sending oil prices surging 3-7% and pushing Bitcoin below $62K as crypto markets react to\nThe post Iran strikes Saudi Arabia again, sending oi",
+            "source": "news",
+            "published_at": "2026-07-18",
+            "score": 0.2136,
+            "tags": "geo:iran,geo:saudi"
+          }
+        ],
+        "ULSD_Diesel": [
+          {
+            "title": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia",
+            "snippet": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia. Saudi Arabia and the Houthis traded fire last week for the first time in years, threatening a 2022 truce that has held despite expiring.\nThe post Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia appeared first on",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.3317,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia",
+            "snippet": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia. Saudi Arabia and the Houthis traded fire last week for the first time in years, threatening a 2022 truce that has held despite expiring.\nThe post Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia appeared first on",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.3317,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Houthis Declare a Naval Blockade on Saudi Arabia",
+            "snippet": "Houthis Declare a Naval Blockade on Saudi Arabia. The move could increase pressure on already-strained global energy markets.",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.301,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Houthis Declare a Naval Blockade on Saudi Arabia",
+            "snippet": "Houthis Declare a Naval Blockade on Saudi Arabia. The move could increase pressure on already-strained global energy markets.",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.301,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Iran strikes Saudi Arabia again, sending oil prices surging and Bitcoin wobbling",
+            "snippet": "Iran strikes Saudi Arabia again, sending oil prices surging and Bitcoin wobbling. Iran strikes Saudi Arabia for the first time in months, sending oil prices surging 3-7% and pushing Bitcoin below $62K as crypto markets react to\nThe post Iran strikes Saudi Arabia again, sending oi",
+            "source": "news",
+            "published_at": "2026-07-18",
+            "score": 0.2832,
+            "tags": "geo:iran,geo:saudi"
+          }
+        ],
+        "Crude_Oil": [
+          {
+            "title": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia",
+            "snippet": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia. Saudi Arabia and the Houthis traded fire last week for the first time in years, threatening a 2022 truce that has held despite expiring.\nThe post Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia appeared first on",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.3218,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia",
+            "snippet": "Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia. Saudi Arabia and the Houthis traded fire last week for the first time in years, threatening a 2022 truce that has held despite expiring.\nThe post Yemen\u2019s Houthis declare maritime blockade of Saudi Arabia appeared first on",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.3218,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Houthis Declare a Naval Blockade on Saudi Arabia",
+            "snippet": "Houthis Declare a Naval Blockade on Saudi Arabia. The move could increase pressure on already-strained global energy markets.",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.2921,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Houthis Declare a Naval Blockade on Saudi Arabia",
+            "snippet": "Houthis Declare a Naval Blockade on Saudi Arabia. The move could increase pressure on already-strained global energy markets.",
+            "source": "news",
+            "published_at": "2026-07-20",
+            "score": 0.2921,
+            "tags": "geo:saudi"
+          },
+          {
+            "title": "Iran strikes Saudi Arabia again, sending oil prices surging and Bitcoin wobbling",
+            "snippet": "Iran strikes Saudi Arabia again, sending oil prices surging and Bitcoin wobbling. Iran strikes Saudi Arabia for the first time in months, sending oil prices surging 3-7% and pushing Bitcoin below $62K as crypto markets react to\nThe post Iran strikes Saudi Arabia again, sending oi",
+            "source": "news",
+            "published_at": "2026-07-18",
+            "score": 0.2786,
+            "tags": "geo:iran,geo:saudi"
+          }
+        ]
+      },
+      "forecast_horizons": [
+        {
+          "key": "day_1",
+          "days_ahead": 1,
+          "label": "Tomorrow (Day 1)"
+        },
+        {
+          "key": "day_4",
+          "days_ahead": 4,
+          "label": "Day 4"
+        },
+        {
+          "key": "day_7",
+          "days_ahead": 7,
+          "label": "Day 7"
+        }
+      ],
+      "inventory_weekly": {
+        "crude": {
+          "level_kbbl": 409665.0,
+          "units": "thousand barrels",
+          "wow_change_pct": -0.411,
+          "direction": "DOWN"
+        },
+        "gasoline": {
+          "level_kbbl": 210529.0,
+          "units": "thousand barrels",
+          "wow_change_pct": -0.723,
+          "direction": "DOWN"
+        },
+        "distillate": {
+          "level_kbbl": 108175.0,
+          "units": "thousand barrels",
+          "wow_change_pct": 4.397,
+          "direction": "UP"
+        },
+        "source": "EIA weekly (stocks)"
+      },
+      "directional_signals": {
+        "Crude_Oil": {
+          "label": "BULLISH",
+          "emoji": "\ud83d\udcc8",
+          "confidence": 48,
+          "score": 0.208,
+          "summary": "Weekly crude inventories drew 0.41% (typically supportive). Model tomorrow: +1.15%; day 7 outlook: +4.48%. News sentiment: +0.14. Headlines: Geopolitical risk (59% of today's headlines); Shipping / logistics (29% of today's headlines).",
+          "drivers": {
+            "inventory_wow_pct": -0.411,
+            "model_next_day_pct": 1.1477,
+            "model_next_week_pct": 4.4835,
+            "sentiment": 0.1363285799168152,
+            "geo_risk_score": 0.0914
+          },
+          "scenario_rationale": {
+            "headline": "The current scenario for WTI crude is bullish: the combined read from weekly stocks (where available), the model outlook, and headlines leans toward firmer prices.",
+            "bullets": [
+              "EIA weekly crude inventories fell about 0.41% week-over-week. Draws often go with tighter supply if demand holds, which tends to support prices.",
+              "The day-7 forecast expects about +4.48% vs. today\u2014a central part of the directional score.",
+              "Tomorrow\u2019s modeled move is about +1.15% vs. current; day-7 path is about +4.48%.",
+              "US dollar index rose +0.20% \u2014 a firmer dollar often pressures crude and products.",
+              "Aggregated energy/news sentiment is positive (score +0.14). That nudges the view with a purely inventory-driven story."
+            ],
+            "closing": "Bottom line: for WTI crude, the story is constructive\u2014watch for a reversal if inventories surprise large to the upside or sentiment sours on macro/risk.",
+            "scenario": "BULLISH"
+          }
+        },
+        "RBOB_Gasoline": {
+          "label": "NEUTRAL",
+          "emoji": "\u2696\ufe0f",
+          "confidence": 48,
+          "score": 0.1298,
+          "summary": "Weekly gasoline inventories drew 0.72% (typically supportive). Model tomorrow: +1.54%; day 7 outlook: -4.04%. News sentiment: +0.14. Headlines: Geopolitical risk (59% of today's headlines); Shipping / logistics (29% of today's headlines).",
+          "drivers": {
+            "inventory_wow_pct": -0.723,
+            "model_next_day_pct": 1.54,
+            "model_next_week_pct": -4.0356,
+            "sentiment": 0.1363285799168152,
+            "geo_risk_score": 0.0914
+          },
+          "scenario_rationale": {
+            "headline": "The current scenario for RBOB / gasoline is neutral: inventory, model, and sentiment do not all point the same way\u2014treat moves as tentative.",
+            "bullets": [
+              "EIA weekly gasoline inventories fell about 0.72% week-over-week. Draws often go with tighter supply if demand holds, which tends to support prices.",
+              "The day-7 forecast expects about -4.04% vs. today\u2014a central part of the directional score.",
+              "Tomorrow\u2019s modeled move is about +1.54% vs. current; day-7 path is about -4.04%.",
+              "US dollar index rose +0.20% \u2014 a firmer dollar often pressures crude and products.",
+              "Aggregated energy/news sentiment is positive (score +0.14). That nudges the view against a purely inventory-driven story.",
+              "Refining margin proxy (gasoline crack \u2248 $58.1/bbl vs. WTI): stronger cracks can reward refiners and support product pricing when crude is not collapsing."
+            ],
+            "closing": "Bottom line: for RBOB / gasoline, treat direction as balanced until inventories or headlines give a cleaner one-sided signal.",
+            "scenario": "NEUTRAL"
+          }
+        },
+        "ULSD_Diesel": {
+          "label": "BEARISH",
+          "emoji": "\ud83d\udcc9",
+          "confidence": 48,
+          "score": -0.2801,
+          "summary": "Weekly distillate inventories built 4.40% (typically a headwind). Model tomorrow: +1.45%; day 7 outlook: -0.20%. News sentiment: +0.14. Headlines: Geopolitical risk (59% of today's headlines); Shipping / logistics (29% of today's headlines).",
+          "drivers": {
+            "inventory_wow_pct": 4.397,
+            "model_next_day_pct": 1.4496,
+            "model_next_week_pct": -0.2002,
+            "sentiment": 0.1363285799168152,
+            "geo_risk_score": 0.0914
+          },
+          "scenario_rationale": {
+            "headline": "The current scenario for ULSD / diesel is bearish: inventories, the model path, and/or sentiment are leaning toward softer prices over the near term.",
+            "bullets": [
+              "EIA weekly distillate inventories rose about 4.40% week-over-week. Stock builds add cushion and can cap rallies unless demand accelerates.",
+              "The day-7 forecast expects about -0.20% vs. today\u2014a central part of the directional score.",
+              "Tomorrow\u2019s modeled move is about +1.45% vs. current; day-7 path is about -0.20%.",
+              "US dollar index rose +0.20% \u2014 a firmer dollar often pressures crude and products.",
+              "Aggregated energy/news sentiment is positive (score +0.14). That nudges the view against a purely inventory-driven story.",
+              "Refining margin proxy (diesel crack \u2248 $88.4/bbl vs. WTI): diesel cracks reflect distillate tightness and margin incentives for supply."
+            ],
+            "closing": "Bottom line: for ULSD / diesel, risks skew lower near term\u2014confirm with another week of data before treating it as a trend.",
+            "scenario": "BEARISH"
+          }
+        }
+      },
+      "trading_signals": {
+        "RBOB_Gasoline": {
+          "product_key": "RBOB_Gasoline",
+          "display": "RBOB / gasoline",
+          "tomorrow_delta": 5.2,
+          "tomorrow_delta_fmt": "+5.2\u00a2",
+          "tomorrow_change_pct": 1.54,
+          "direction": "UP",
+          "confidence_pct": 50,
+          "drivers": [
+            "ML outlook tomorrow: -4.8\u00a2/gal",
+            "crude +1.1%",
+            "EIA gasoline draw 0.7% WoW",
+            "Geopolitical risk",
+            "Shipping / logistics"
+          ],
+          "drivers_text": "ML outlook tomorrow: -4.8\u00a2/gal, crude +1.1%, EIA gasoline draw 0.7% WoW, Geopolitical risk, Shipping / logistics",
+          "headline": "Tomorrow RBOB / gasoline: +5.2\u00a2",
+          "subhead": "Low conviction \u2014 tomorrow can differ sharply from the model \u00b7 Confidence: 50%",
+          "horizons": {
+            "day_1": {
+              "horizon": "Tomorrow (Day 1)",
+              "change_percent": 1.54,
+              "direction": "UP",
+              "move_cents": 5.2
+            },
+            "day_4": {
+              "horizon": "Day 4",
+              "change_percent": 1.23,
+              "direction": "UP",
+              "move_cents": 4.2
+            },
+            "day_7": {
+              "horizon": "Day 7",
+              "change_percent": -4.04,
+              "direction": "DOWN",
+              "move_cents": -13.7
+            },
+            "next_day": {
+              "horizon": "Tomorrow (Day 1)",
+              "change_percent": 1.54,
+              "direction": "UP",
+              "move_cents": 5.2
+            }
+          },
+          "buy_recommendation": {
+            "action": "MONITOR",
+            "label": "Monitor \u2014 mixed signals",
+            "rationale": "Confidence is only 50%; wait for inventory or a clearer model tilt."
+          }
+        },
+        "ULSD_Diesel": {
+          "product_key": "ULSD_Diesel",
+          "display": "ULSD / diesel",
+          "tomorrow_delta": 6.0,
+          "tomorrow_delta_fmt": "+6.0\u00a2",
+          "tomorrow_change_pct": 1.45,
+          "direction": "UP",
+          "confidence_pct": 50,
+          "drivers": [
+            "crude +1.1%",
+            "EIA distillate build 4.4% WoW",
+            "Geopolitical risk",
+            "Shipping / logistics"
+          ],
+          "drivers_text": "crude +1.1%, EIA distillate build 4.4% WoW, Geopolitical risk, Shipping / logistics",
+          "headline": "Tomorrow ULSD / diesel: +6.0\u00a2",
+          "subhead": "Moderate uncertainty \u2014 treat tomorrow as tentative \u00b7 Confidence: 68%"
+        },
+        "Crude_Oil": {
+          "product_key": "Crude_Oil",
+          "display": "WTI crude",
+          "tomorrow_delta": 0.97,
+          "tomorrow_delta_fmt": "+0.97 $/bbl",
+          "tomorrow_change_pct": 1.15,
+          "direction": "UP",
+          "confidence_pct": 50,
+          "drivers": [
+            "Geopolitical risk",
+            "Shipping / logistics"
+          ],
+          "drivers_text": "Geopolitical risk, Shipping / logistics",
+          "headline": "Tomorrow WTI crude: +0.97 $/bbl",
+          "subhead": "Moderate uncertainty \u2014 treat tomorrow as tentative \u00b7 Confidence: 55%"
+        }
+      },
+      "geopolitical_topics": {
+        "buckets": {
+          "refinery": {
+            "label": "Refinery / outage",
+            "intensity": 0.118
+          },
+          "hurricane": {
+            "label": "Hurricane / storm",
+            "intensity": 0.0
+          },
+          "opec": {
+            "label": "OPEC / supply policy",
+            "intensity": 0.059
+          },
+          "geopolitical": {
+            "label": "Geopolitical risk",
+            "intensity": 0.588
+          },
+          "shipping": {
+            "label": "Shipping / logistics",
+            "intensity": 0.294
+          },
+          "crude_markets": {
+            "label": "Crude markets",
+            "intensity": 0.235
+          }
+        },
+        "sentiment": 0.1363285799168152,
+        "geo_risk_score": 0.0914,
+        "top_drivers": [
+          "Geopolitical risk (59% of today's headlines)",
+          "Shipping / logistics (29% of today's headlines)",
+          "Crude markets (24% of today's headlines)"
+        ],
+        "sentiment_engine": "textblob"
+      },
+      "market_features": {
+        "available": true,
+        "as_of": "2026-07-21 00:00:00",
+        "technical": {
+          "rsi_14": 69.855,
+          "macd_hist": 0.0525,
+          "momentum_5d_pct": 5.5537,
+          "momentum_20d_pct": 14.0241,
+          "price_vs_sma20_pct": 9.8837
+        },
+        "basis": {
+          "calendar_spread_proxy": 0.1792
+        },
+        "seasonality": {
+          "is_driving_season": true,
+          "is_hurricane_season": true,
+          "is_winter_blend": false
+        },
+        "macro": {
+          "dxy_change_pct": 0.195
+        }
+      },
+      "layer_scores": {
+        "futures": {
+          "label": "Futures / VAR-Prophet",
+          "score": 0.4063602415252696,
+          "detail": "Model 1d +1.54%, 1w +1.23%"
+        },
+        "inventory": {
+          "label": "EIA inventories",
+          "score": 0.241,
+          "detail": "Gasoline WoW -0.72%"
+        },
+        "cash_market": {
+          "label": "Cash / NY basis",
+          "score": 0.0,
+          "detail": "Cash hubs not in latest row"
+        },
+        "refinery_weather": {
+          "label": "Refinery / weather",
+          "score": 0.231,
+          "detail": "Hurricane season / outage headline weight"
+        },
+        "geopolitical": {
+          "label": "News / geopolitical",
+          "score": 0.023,
+          "detail": "Geo risk 0.09, sentiment +0.14"
+        },
+        "macro": {
+          "label": "Macro / crude linkage",
+          "score": -0.015,
+          "detail": "DXY +0.20%, WTI 1d +1.1%"
+        },
+        "technical": {
+          "label": "Technical (RSI/MACD/momentum)",
+          "score": 0.557,
+          "detail": "rsi_14=69.855, macd_hist=0.0525, momentum_5d_pct=5.5537"
+        },
+        "composite": {
+          "label": "All layers (weighted)",
+          "score": 0.206
+        }
+      },
+      "rbob_horizons": {
+        "day_1": {
+          "horizon": "Tomorrow (Day 1)",
+          "change_percent": 1.54,
+          "direction": "UP",
+          "move_cents": 5.2
+        },
+        "day_4": {
+          "horizon": "Day 4",
+          "change_percent": 1.23,
+          "direction": "UP",
+          "move_cents": 4.2
+        },
+        "day_7": {
+          "horizon": "Day 7",
+          "change_percent": -4.04,
+          "direction": "DOWN",
+          "move_cents": -13.7
+        },
+        "next_day": {
+          "horizon": "Tomorrow (Day 1)",
+          "change_percent": 1.54,
+          "direction": "UP",
+          "move_cents": 5.2
+        }
+      },
+      "buy_recommendation": {
+        "action": "MONITOR",
+        "label": "Monitor \u2014 mixed signals",
+        "rationale": "Confidence is only 50%; wait for inventory or a clearer model tilt."
+      },
+      "horizons": {
+        "day_1": {
+          "audience": "Tomorrow (Day 1)",
+          "note": "1 calendar days ahead",
+          "days_ahead": 1
+        },
+        "day_4": {
+          "audience": "Day 4",
+          "note": "4 calendar days ahead",
+          "days_ahead": 4
+        },
+        "day_7": {
+          "audience": "Day 7",
+          "note": "7 calendar days ahead",
+          "days_ahead": 7
+        }
+      },
+      "agent_layers": {
+        "futures": "VAR / Prophet on RBOB, crude, ULSD",
+        "inventory": "EIA weekly stocks",
+        "cash_market": "NY Harbor & Gulf spot basis vs RBOB proxy",
+        "refinery_weather": "News buckets + hurricane season flag",
+        "geopolitical": "Topic NLP + geo risk score",
+        "macro": "WTI path + DXY proxy",
+        "technical": "RSI, MACD, momentum on RBOB series"
+      },
+      "event_intel": {
+        "status": "multi_layer",
+        "note": "Layers: futures, inventory, cash basis, refinery/weather, geo news, macro, technical."
+      },
+      "smart_alerts": [],
+      "market_story": {
+        "paragraph_1": "Gasoline stocks moved -0.72% week-over-week. Distillate stocks moved +4.40% week-over-week. Crude stocks moved -0.41% week-over-week.",
+        "paragraph_2": "Forecasts use the **VAR+XGB+CatBoost** pipeline (prices + spreads where applicable). WTI crude: BULLISH RBOB / gasoline: NEUTRAL ULSD / diesel: BEARISH"
+      },
+      "forecast_uncertainty": {
+        "RBOB_Gasoline": {
+          "level": "HIGH",
+          "headline": "Low conviction \u2014 tomorrow can differ sharply from the model"
+        },
+        "ULSD_Diesel": {
+          "level": "MEDIUM",
+          "headline": "Moderate uncertainty \u2014 treat tomorrow as tentative"
+        },
+        "Crude_Oil": {
+          "level": "MEDIUM",
+          "headline": "Moderate uncertainty \u2014 treat tomorrow as tentative"
+        }
+      },
+      "reasoning": {
+        "RBOB_Gasoline": "Low conviction \u2014 model +1.5% tomorrow. Mixed signals (confidence 50%) \u2014 inventory, model, and headlines don't align.",
+        "ULSD_Diesel": "Low conviction \u2014 model +1.4% tomorrow. Gap risk elevated (elevated geo_risk (9%), geopolitical headlines (59%), shipping/logistics (29%)) \u2014 Monday opens can move far beyond day-1 caps.",
+        "Crude_Oil": "Low conviction \u2014 model +1.1% tomorrow. Gap risk elevated (elevated geo_risk (9%), geopolitical headlines (59%), shipping/logistics (29%)) \u2014 Monday opens can move far beyond day-1 caps."
+      }
+    }
+  }
+}
