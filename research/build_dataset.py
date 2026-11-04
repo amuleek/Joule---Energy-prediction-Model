@@ -29,6 +29,9 @@ import requests
 import yfinance as yf
 from dotenv import load_dotenv
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from curve import curve_features, fetch_curve, roll_adjusted_index  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent
 OUT_DIR = ROOT / "data"
 START = "2006-01-01"
@@ -117,9 +120,17 @@ def fetch_inventories(api_key: str) -> pd.DataFrame:
 
 
 # --------------------------------------------------------------------------- features
-def build_features(px: pd.DataFrame, inv: pd.DataFrame | None) -> pd.DataFrame:
+def build_features(px: pd.DataFrame, inv: pd.DataFrame | None,
+                   ret_idx: pd.DataFrame | None = None,
+                   curve_f: pd.DataFrame | None = None) -> pd.DataFrame:
+    """px: price levels (spreads, cracks). ret_idx: optional roll-adjusted indexes for
+    PRODUCTS, used for every return-based feature and for the targets."""
     f = pd.DataFrame(index=px.index)
-    logp = np.log(px)
+    rp = px.copy()
+    if ret_idx is not None:
+        for c in ret_idx.columns:
+            rp[c] = ret_idx[c]
+    logp = np.log(rp)
 
     for c in px.columns:
         r1 = logp[c].diff()
@@ -128,10 +139,10 @@ def build_features(px: pd.DataFrame, inv: pd.DataFrame | None) -> pd.DataFrame:
         f[f"{c}_r20"] = logp[c].diff(20)
         f[f"{c}_vol20"] = r1.rolling(20).std()
     for c in PRODUCTS:
-        f[f"{c}_z20"] = (px[c] - px[c].rolling(20).mean()) / px[c].rolling(20).std()
+        f[f"{c}_z20"] = (rp[c] - rp[c].rolling(20).mean()) / rp[c].rolling(20).std()
         f[f"{c}_r60"] = logp[c].diff(60)
-        f[f"{c}_range_pos60"] = (px[c] - px[c].rolling(60).min()) / (
-            px[c].rolling(60).max() - px[c].rolling(60).min())
+        f[f"{c}_range_pos60"] = (rp[c] - rp[c].rolling(60).min()) / (
+            rp[c].rolling(60).max() - rp[c].rolling(60).min())
 
     # Refining margins ($/bbl)
     crack_321 = (2 * px["rbob"] * 42 + px["ulsd"] * 42 - 3 * px["crude"]) / 3
@@ -165,6 +176,10 @@ def build_features(px: pd.DataFrame, inv: pd.DataFrame | None) -> pd.DataFrame:
         rel = inv["eia_release"].reindex(f.index).fillna(0.0)
         f["eia_release_day"] = rel.values
 
+    if curve_f is not None:
+        for c in curve_f.columns:
+            f[c] = curve_f[c].reindex(f.index).values
+
     # Targets
     for c in PRODUCTS:
         for h in HORIZONS:
@@ -193,13 +208,38 @@ def main() -> int:
     else:
         print("EIA_API_KEY not set; building price-only dataset")
 
-    ds = build_features(px, inv)
+    _write(build_features(px, inv), "dataset.csv")
+
+    if key:
+        print("Downloading EIA futures curve (contracts 1-4)...")
+        try:
+            curves = fetch_curve(key)
+        except Exception as e:
+            print(f"  curve fetch failed ({e}); skipping curve dataset")
+            return 0
+        end = min(c.index.max() for c in curves.values())
+        start = max(c.index.min() for c in curves.values())
+        print(f"  curve history {start.date()} -> {end.date()}")
+        cpx = px.loc[start:end].copy()
+        ret_idx = pd.DataFrame(index=cpx.index)
+        for prod in PRODUCTS:
+            cv = curves[prod].reindex(cpx.index).ffill()
+            cpx[prod] = cv["c1"]  # true front-month level
+            idx, rolls = roll_adjusted_index(cv.dropna(), prod)
+            ret_idx[prod] = idx.reindex(cpx.index).ffill()
+            print(f"  {prod}: {int(rolls.sum())} rolls detected")
+        cf = curve_features(curves, cpx.index)
+        _write(build_features(cpx, inv, ret_idx=ret_idx), "dataset_rolladj.csv")
+        _write(build_features(cpx, inv, ret_idx=ret_idx, curve_f=cf), "dataset_curve.csv")
+    return 0
+
+
+def _write(ds: pd.DataFrame, name: str) -> None:
     ds.index.name = "date"
-    out = OUT_DIR / "dataset.csv"
+    out = OUT_DIR / name
     ds.to_csv(out)
     feats = [c for c in ds.columns if not c.startswith(("y_", "price_"))]
     print(f"Wrote {out} - {len(ds)} rows, {len(feats)} features")
-    return 0
 
 
 if __name__ == "__main__":

@@ -25,6 +25,7 @@ Usage
 """
 from __future__ import annotations
 
+import argparse
 import sys
 import warnings
 from pathlib import Path
@@ -48,6 +49,7 @@ OUT = ROOT / "results"
 PRODUCTS = ("crude", "rbob", "ulsd")
 HORIZONS = (1, 4, 7)
 TEST_START = "2014-01-01"
+TEST_END = None
 RETRAIN_EVERY = 63  # ~quarterly
 MIN_TRAIN = 750
 
@@ -60,7 +62,7 @@ def make_models():
         models["lgbm"] = lambda: lgb.LGBMRegressor(
             n_estimators=300, learning_rate=0.02, num_leaves=15, min_child_samples=100,
             subsample=0.8, subsample_freq=1, colsample_bytree=0.7, reg_lambda=5.0,
-            verbose=-1, random_state=42,
+            verbose=-1, random_state=42, n_jobs=4,
         )
     return models
 
@@ -114,10 +116,26 @@ def score(df: pd.DataFrame, model: str) -> dict:
 
 
 def main() -> int:
-    if not DATA.exists():
+    global TEST_START
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data", default=str(DATA))
+    ap.add_argument("--start", default=TEST_START)
+    ap.add_argument("--end", default=None, help="last date used (inclusive)")
+    ap.add_argument("--tag", default="", help="suffix for output files")
+    args = ap.parse_args()
+    TEST_START = args.start
+    data = Path(args.data)
+    if not data.exists():
         print("Run research/build_dataset.py first")
         return 1
-    ds = pd.read_csv(DATA, index_col=0, parse_dates=True)
+    ds = pd.read_csv(data, index_col=0, parse_dates=True)
+    if args.end:
+        ds = ds.loc[:args.end]
+        # drop targets that would look past the end date
+        for h in HORIZONS:
+            for p in PRODUCTS:
+                ds.loc[ds.index[-h:], f"y_{p}_h{h}"] = np.nan
+    sfx = f"_{args.tag}" if args.tag else ""
     feats = [c for c in ds.columns if not c.startswith(("y_", "price_"))]
     X = ds[feats].replace([np.inf, -np.inf], np.nan)
     OUT.mkdir(exist_ok=True)
@@ -127,7 +145,7 @@ def main() -> int:
         for h in HORIZONS:
             y = ds[f"y_{prod}_h{h}"]
             df = walk_forward(X, y, h)
-            df.to_csv(OUT / f"oos_{prod}_h{h}.csv")
+            df.to_csv(OUT / f"oos{sfx}_{prod}_h{h}.csv")
             for m in [c for c in df.columns if c != "actual"]:
                 rows.append({"product": prod, "horizon": h, **score(df, m)})
             if "lgbm" in df:
@@ -137,13 +155,13 @@ def main() -> int:
             print(f"  done {prod} h={h} ({len(df)} OOS days)")
 
     summary = pd.DataFrame(rows)
-    summary.to_csv(OUT / "backtest_summary.csv", index=False)
+    summary.to_csv(OUT / f"backtest_summary{sfx}.csv", index=False)
     pd.set_option("display.width", 200)
-    print("\n=== Out-of-sample results, %s onward ===" % TEST_START)
+    print(f"\n=== Out-of-sample results from {TEST_START} [{data.name}] ===")
     print(summary.round(3).to_string(index=False))
     if yearly:
         yr = pd.concat(yearly, axis=1)
-        yr.to_csv(OUT / "lgbm_dir_acc_by_year.csv")
+        yr.to_csv(OUT / f"lgbm_dir_acc_by_year{sfx}.csv")
         print("\n=== LightGBM direction accuracy by year ===")
         print(yr.round(2).to_string())
     return 0

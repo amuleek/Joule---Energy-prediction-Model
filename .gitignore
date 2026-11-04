@@ -36,4 +36,4 @@ price_history.json
 
 # Research pipeline (rebuilt by research/build_dataset.py)
 research/data/
-research/results/oos_*.csv
+research/results/oos*.csv
