@@ -31,6 +31,7 @@ from dotenv import load_dotenv
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from curve import curve_features, fetch_curve, roll_adjusted_index  # noqa: E402
+from extra_data import cot_features, fetch_cot, fetch_ovx, ovx_features  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 OUT_DIR = ROOT / "data"
@@ -208,7 +209,20 @@ def main() -> int:
     else:
         print("EIA_API_KEY not set; building price-only dataset")
 
-    _write(build_features(px, inv), "dataset.csv")
+    base = build_features(px, inv)
+    _write(base, "dataset.csv")
+
+    # Base + OVX implied volatility + CFTC positioning
+    try:
+        print("Downloading OVX and CFTC Commitments of Traders...")
+        ovx = fetch_ovx()
+        cot = {p: fetch_cot(p) for p in PRODUCTS}
+        print(f"  OVX {len(ovx)} days; COT {', '.join(f'{p} {len(d)} wks' for p, d in cot.items())}")
+        plus = base.join(ovx_features(ovx, base.index, base["crude_r1"]))
+        plus = plus.join(cot_features(cot, base.index))
+        _write(plus, "dataset_plus.csv")
+    except Exception as e:
+        print(f"  OVX/COT fetch failed ({e}); skipping dataset_plus")
 
     if key:
         print("Downloading EIA futures curve (contracts 1-4)...")

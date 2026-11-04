@@ -47,15 +47,8 @@ def har_design(r1: pd.Series) -> pd.DataFrame:
     })
 
 
-def sigma_forecasts(r1: pd.Series, rh: pd.Series, h: int) -> pd.DataFrame:
-    """sigma of the next-h-day log return, using only data up to each date."""
-    out = pd.DataFrame(index=r1.index)
-    out["static"] = rh.shift(h).rolling(252, min_periods=120).std()
-
-    var = r1.pow(2).ewm(alpha=0.06, adjust=False).mean()
-    out["ewma"] = np.sqrt(var * h)
-
-    X = har_design(r1)
+def _fit_har(X: pd.DataFrame, r1: pd.Series, h: int) -> pd.Series:
+    """Walk-forward log-variance regression; returns expected mean daily variance."""
     fut_var = (r1 ** 2).rolling(h).mean().shift(-h)  # mean daily var over next h days
     y = np.log(fut_var + 1e-8)
     har = pd.Series(np.nan, index=r1.index)
@@ -73,8 +66,40 @@ def sigma_forecasts(r1: pd.Series, rh: pd.Series, h: int) -> pd.DataFrame:
         Xs = X.iloc[sl].to_numpy()
         # log-normal bias correction: E[var] = exp(mu + s^2/2)
         har.iloc[sl] = np.exp(np.column_stack([np.ones(len(Xs)), Xs]) @ beta + resid_var / 2)
-    out["har"] = np.sqrt(har * h)
+    return har
+
+
+def sigma_forecasts(r1: pd.Series, rh: pd.Series, h: int,
+                    implied_var: pd.Series | None = None) -> pd.DataFrame:
+    """sigma of the next-h-day log return, using only data up to each date.
+    implied_var: optional daily implied variance (from OVX) for this product."""
+    out = pd.DataFrame(index=r1.index)
+    out["static"] = rh.shift(h).rolling(252, min_periods=120).std()
+
+    var = r1.pow(2).ewm(alpha=0.06, adjust=False).mean()
+    out["ewma"] = np.sqrt(var * h)
+
+    X = har_design(r1)
+    out["har"] = np.sqrt(_fit_har(X, r1, h) * h)
+
+    if implied_var is not None:
+        iv = implied_var.reindex(r1.index)
+        out["ovx"] = np.sqrt(iv * h)
+        out["ewma_ovx"] = np.sqrt((var + iv) / 2 * h)
+        out["har_ovx"] = np.sqrt(_fit_har(X.assign(iv=np.log(iv + 1e-8)), r1, h) * h)
     return out
+
+
+def implied_daily_var(ds: pd.DataFrame, product: str) -> pd.Series | None:
+    """OVX is crude implied vol; scale to other products by their relative EWMA variance."""
+    if "ovx" not in ds.columns:
+        return None
+    crude_iv = (ds["ovx"] / 100) ** 2 / 252
+    if product == "crude":
+        return crude_iv
+    ew = {p: np.log(ds[f"price_{p}"]).diff().pow(2).ewm(alpha=0.02, adjust=False).mean()
+          for p in ("crude", product)}
+    return crude_iv * ew[product] / ew["crude"]
 
 
 def evaluate(ds: pd.DataFrame) -> pd.DataFrame:
@@ -85,7 +110,8 @@ def evaluate(ds: pd.DataFrame) -> pd.DataFrame:
         for h in HORIZONS:
             rh = ds[f"y_{p}_h{h}"]                 # future h-day log return (target)
             past_rh = np.log(price).diff(h)        # realized h-day returns (for static)
-            sig = sigma_forecasts(r1, past_rh, h)
+            sig = sigma_forecasts(r1, past_rh, h, implied_daily_var(ds, p))
+            sig = sig.loc[sig.dropna().index.min():] if sig.notna().all(axis=1).any() else sig
             for m in sig.columns:
                 z = rh / sig[m]
                 lo, hi = {}, {}
