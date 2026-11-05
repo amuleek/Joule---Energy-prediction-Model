@@ -16,16 +16,26 @@ import pandas as pd
 from forecast_horizons import PREDICTION_HORIZONS
 
 try:
-    from live_prices import _row_is_full_session
+    from live_prices import _now_et, _row_is_full_session, _session_closed_for_date, trading_session_offset
 except ImportError:
     def _row_is_full_session(row) -> bool:  # type: ignore[misc]
         return True
+
+    def trading_session_offset(anchor, sessions_ahead, history=None):  # type: ignore[misc]
+        return None
+
+    def _now_et():  # type: ignore[misc]
+        return datetime.now()
+
+    def _session_closed_for_date(session_date, now_et):  # type: ignore[misc]
+        return pd.Timestamp(session_date).date() < now_et.date()
 
 ARCHIVE_DIR = "data/predictions_archive"
 REPORT_PATH = "data/post_mortem_report.json"
 FEATURE_IMPORTANCE_PATH = "data/feature_importance.json"
 ERROR_ADJUSTMENTS_PATH = "data/error_adjustments.json"
 EVAL_LOG_PATH = "data/prediction_eval_log.csv"
+MISTAKE_LESSONS_PATH = "data/mistake_lessons.jsonl"
 PRICES_PATH = "data/prices.csv"
 FUTURES_PATH = "data/futures_ohlc.csv"
 
@@ -66,61 +76,89 @@ def archive_predictions(predictions_json: Dict[str, Any], issued_date: Optional[
 
 
 def _load_prices() -> pd.DataFrame:
-    """Prefer NYMEX futures closes; fall back to prices.csv."""
-    frames = []
-    if os.path.exists(FUTURES_PATH):
-        try:
-            fut = pd.read_csv(FUTURES_PATH)
-            fut["date"] = pd.to_datetime(fut["date"], errors="coerce")
-            fut = fut.dropna(subset=["date"]).sort_values("date")
-            if not fut.empty:
-                full = fut[fut.apply(_row_is_full_session, axis=1)]
-                if not full.empty:
-                    fut = full
-                sub = fut[["date"]].copy()
-                for fut_col, price_col in FUTURES_TO_PRICE_COL.items():
-                    if fut_col in fut.columns:
-                        sub[price_col] = pd.to_numeric(fut[fut_col], errors="coerce")
-                frames.append(sub.dropna(subset=list(FUTURES_TO_PRICE_COL.values()), how="all"))
-        except Exception:
-            pass
-    if os.path.exists(PRICES_PATH):
-        try:
-            spot = pd.read_csv(PRICES_PATH)
-            spot["date"] = pd.to_datetime(spot["date"], errors="coerce")
-            spot = spot.dropna(subset=["date"]).sort_values("date")
-            if not spot.empty:
-                frames.append(spot)
-        except Exception:
-            pass
-    if not frames:
-        return pd.DataFrame()
-    fut_df = frames[0]
-    if len(frames) > 1:
-        spot_df = frames[1]
-        spot_only = spot_df[~spot_df["date"].isin(fut_df["date"])]
-        combined = pd.concat([fut_df, spot_only], ignore_index=True)
-    else:
-        combined = fut_df
-    price_cols = [c for c in ("RBOB", "ULSD", "Crude") if c in combined.columns]
-    if not price_cols:
-        return pd.DataFrame()
-    return combined.sort_values("date")
+    """Trusted official settles only — never futures_ohlc intraday/continuous closes."""
+    try:
+        from live_prices import load_trusted_settle_history
+        official = load_trusted_settle_history(min_trust=2)
+        if not official.empty:
+            return official.sort_values("date")
+    except Exception:
+        pass
+    return pd.DataFrame()
+
+
+def _named_month_actual(col: str, target: pd.Timestamp) -> Optional[float]:
+    """Front-month Yahoo settle for eval — never continuous RB=F / HO=F."""
+    try:
+        from live_prices import _fetch_yahoo_session_bars
+        from contract_roll import infer_resolved_contracts
+
+        date_str = pd.Timestamp(target).strftime("%Y-%m-%d")
+        inferred = infer_resolved_contracts(pd.Timestamp(target).to_pydatetime())
+        closes, _, tickers = _fetch_yahoo_session_bars(date_str, resolved_contracts=inferred)
+        px = closes.get(col)
+        if not px or float(px) <= 0:
+            return None
+        ticker = (tickers or {}).get(col) or ""
+        expected = (inferred.get(col) or "").replace(".NYM", "")
+        got = str(ticker).replace(".NYM", "")
+        if expected and got and expected != got:
+            return None
+        if str(ticker).endswith("=F"):
+            return None
+        return float(px)
+    except Exception:
+        return None
 
 
 def _actual_near_date(
     prices: pd.DataFrame,
     col: str,
     target: pd.Timestamp,
-    max_gap_days: int = 2,
+    max_gap_days: int = 0,
 ) -> Optional[float]:
-    """Best available price near target (EIA series is not always daily)."""
+    """Settle on the target NYMEX session only. Reject continuous-contract prints."""
     if prices.empty or col not in prices.columns:
-        return None
+        named = _named_month_actual(col, target)
+        return named
     work = prices.dropna(subset=[col]).copy()
     if work.empty:
+        return _named_month_actual(col, target)
+    work["date"] = pd.to_datetime(work["date"], errors="coerce")
+    day = pd.Timestamp(target).normalize()
+    exact = work[work["date"].dt.normalize() == day]
+    cached = float(exact.iloc[-1][col]) if not exact.empty else None
+
+    named = _named_month_actual(col, target)
+    if named and named > 0:
+        # Prefer named front when cached looks like continuous / wrong month
+        if cached is None:
+            return named
+        if abs(cached - named) / named >= 0.008:
+            try:
+                from scripts.fetch_futures_ohlc import fetch_symbol_history
+                from config import FUTURES_SYMBOLS
+
+                prefix = {"RBOB": "rbob", "ULSD": "diesel", "Crude": "crude"}.get(col, "")
+                hist = fetch_symbol_history(FUTURES_SYMBOLS.get(prefix, ""), period="1mo")
+                if hist is not None and not hist.empty:
+                    d = hist[hist["date"].dt.date == day.date()]
+                    if not d.empty:
+                        cont = float(d.iloc[-1]["Close"])
+                        if cont > 0 and abs(cached - cont) / cont <= 0.015:
+                            return named
+            except Exception:
+                pass
+            # Large divergence from named front — trust named
+            if abs(cached - named) / named >= 0.02:
+                return named
+        return cached if cached else named
+
+    if cached is not None:
+        return cached
+    if max_gap_days <= 0:
         return None
-    deltas = (work["date"] - target).dt.days
+    deltas = (work["date"].dt.normalize() - day).dt.days
     mask = deltas.abs() <= max_gap_days
     close = work.loc[mask].copy()
     if close.empty:
@@ -130,10 +168,128 @@ def _actual_near_date(
     return float(row[col])
 
 
+def scrub_continuous_eval_actuals(lookback_days: int = 21) -> int:
+    """
+    Rewrite recent eval-log actuals that still equal Yahoo continuous RB=F / HO=F
+    while the named front (RBV26 etc.) differs — those fake dumps poison learning.
+    """
+    if not os.path.exists(EVAL_LOG_PATH):
+        return 0
+    df = pd.read_csv(EVAL_LOG_PATH)
+    if df.empty or "actual" not in df.columns:
+        return 0
+
+    cutoff = (datetime.now() - timedelta(days=lookback_days)).strftime("%Y-%m-%d")
+    named_cache: Dict[str, Dict[str, float]] = {}
+    cont_cache: Dict[str, Dict[str, float]] = {}
+    fixed = 0
+
+    def _named_for(date_str: str, col: str) -> Optional[float]:
+        if date_str not in named_cache:
+            named_cache[date_str] = {}
+            try:
+                from live_prices import _fetch_yahoo_session_bars
+                from contract_roll import infer_resolved_contracts
+
+                inferred = infer_resolved_contracts(pd.Timestamp(date_str).to_pydatetime())
+                closes, _, tickers = _fetch_yahoo_session_bars(
+                    date_str, resolved_contracts=inferred
+                )
+                for c in ("RBOB", "ULSD", "Crude"):
+                    px = closes.get(c)
+                    t = (tickers or {}).get(c) or ""
+                    exp = (inferred.get(c) or "").replace(".NYM", "")
+                    got = str(t).replace(".NYM", "")
+                    if px and float(px) > 0 and (not exp or exp == got) and not str(t).endswith("=F"):
+                        named_cache[date_str][c] = float(px)
+            except Exception:
+                pass
+        return named_cache.get(date_str, {}).get(col)
+
+    def _cont_for(date_str: str, col: str) -> Optional[float]:
+        if date_str not in cont_cache:
+            cont_cache[date_str] = {}
+            try:
+                from scripts.fetch_futures_ohlc import fetch_symbol_history
+                from config import FUTURES_SYMBOLS
+
+                day = pd.Timestamp(date_str).date()
+                for c, prefix in (("RBOB", "rbob"), ("ULSD", "diesel"), ("Crude", "crude")):
+                    hist = fetch_symbol_history(FUTURES_SYMBOLS.get(prefix, ""), period="1mo")
+                    if hist is None or hist.empty:
+                        continue
+                    d = hist[hist["date"].dt.date == day]
+                    if not d.empty:
+                        cont_cache[date_str][c] = float(d.iloc[-1]["Close"])
+            except Exception:
+                pass
+        return cont_cache.get(date_str, {}).get(col)
+
+    for i, row in df.iterrows():
+        product = str(row.get("product") or "")
+        col = PRODUCT_COLUMNS.get(product)
+        target = str(row.get("target_date") or "")[:10]
+        if not col or not target or target < cutoff:
+            continue
+        try:
+            named = _named_for(target, col)
+            if not named or named <= 0:
+                continue
+            actual = float(row["actual"])
+            if abs(actual - named) / named < 0.005:
+                continue
+            cont = _cont_for(target, col)
+            if cont and cont > 0 and abs(actual - cont) / cont <= 0.02:
+                pass
+            elif abs(actual - named) / named >= 0.02:
+                pass
+            else:
+                continue
+            pred = float(row.get("predicted") or 0)
+            spot = float(row.get("spot_at_issue") or 0)
+            err = pred - named
+            df.at[i, "actual"] = named
+            df.at[i, "error"] = err
+            df.at[i, "error_pct"] = round((err / named) * 100, 3)
+            df.at[i, "abs_error_pct"] = round(abs(err / named) * 100, 3)
+            act_dir = "UP" if spot and named > spot else "DOWN" if spot and named < spot else "FLAT"
+            df.at[i, "actual_direction"] = act_dir
+            pred_dir = str(row.get("predicted_direction") or "FLAT")
+            df.at[i, "direction_correct"] = pred_dir == act_dir or abs(err / named * 100) < 0.5
+            fixed += 1
+        except Exception:
+            continue
+    if fixed:
+        df.to_csv(EVAL_LOG_PATH, index=False)
+    return fixed
+
+
 def _load_eval_log() -> pd.DataFrame:
     if not os.path.exists(EVAL_LOG_PATH):
         return pd.DataFrame()
     return pd.read_csv(EVAL_LOG_PATH)
+
+
+def drop_premature_eval_rows() -> int:
+    """Remove 'actuals' written before that NYMEX session had settled."""
+    if not os.path.exists(EVAL_LOG_PATH):
+        return 0
+    df = pd.read_csv(EVAL_LOG_PATH)
+    if df.empty or "target_date" not in df.columns:
+        return 0
+    now_et = _now_et()
+    targets = pd.to_datetime(df["target_date"], errors="coerce")
+    keep = []
+    for td in targets:
+        if pd.isna(td):
+            keep.append(False)
+            continue
+        keep.append(bool(_session_closed_for_date(td.date(), now_et)))
+    keep_s = pd.Series(keep, index=df.index)
+    dropped = int((~keep_s).sum())
+    if dropped:
+        df.loc[keep_s].to_csv(EVAL_LOG_PATH, index=False)
+    return dropped
 
 
 def _eval_key(row: Dict[str, Any]) -> Tuple:
@@ -169,9 +325,14 @@ def bootstrap_archive_if_needed() -> None:
 def evaluate_mature_predictions(prices: Optional[pd.DataFrame] = None) -> List[Dict[str, Any]]:
     """Compare archived forecasts to realized prices when horizons have matured."""
     bootstrap_archive_if_needed()
+    n_scrub = scrub_continuous_eval_actuals()
+    if n_scrub:
+        print(f"  Scrubbed {n_scrub} eval actual(s) that matched continuous RB=F/HO=F")
     prices = prices if prices is not None else _load_prices()
     if prices.empty:
         return []
+
+    drop_premature_eval_rows()
 
     existing = _load_eval_log()
     seen = set()
@@ -196,8 +357,16 @@ def evaluate_mature_predictions(prices: Optional[pd.DataFrame] = None) -> List[D
             continue
 
         issued_date = pd.Timestamp(archive.get("issued_date", fname.replace(".json", "")))
-        preds = archive.get("predictions") or {}
-        meta = preds.get("_meta") or {}
+        # Prefer wrapped archive; tolerate flat dumps written by manual repairs
+        preds = archive.get("predictions")
+        if not isinstance(preds, dict) or not any(
+            k in preds for k in PRODUCT_COLUMNS
+        ):
+            if any(k in archive for k in PRODUCT_COLUMNS):
+                preds = {k: v for k, v in archive.items() if not str(k).startswith("issued")}
+            else:
+                preds = {}
+        meta = preds.get("_meta") or archive.get("_meta") or {}
         spot_ref = meta.get("spot_reference") or {}
         spot_by_product = spot_ref.get("by_product") or {}
 
@@ -213,8 +382,12 @@ def evaluate_mature_predictions(prices: Optional[pd.DataFrame] = None) -> List[D
                 if key in seen:
                     continue
 
-                target = issued_date + pd.Timedelta(days=days)
-                if target > today:
+                target = trading_session_offset(issued_date, days, prices)
+                if target is None:
+                    target = issued_date + pd.Timedelta(days=days)
+                if target.date() > today.date():
+                    continue
+                if not _session_closed_for_date(target.date(), _now_et()):
                     continue
 
                 hd = block.get(hkey)
@@ -227,6 +400,12 @@ def evaluate_mature_predictions(prices: Optional[pd.DataFrame] = None) -> List[D
                 actual = _actual_near_date(prices, col, target)
                 if actual is None or actual <= 0:
                     continue
+                try:
+                    from live_prices import _is_trusted_settle
+                    if not _is_trusted_settle(target.strftime("%Y-%m-%d"), min_trust=2):
+                        continue
+                except ImportError:
+                    pass
 
                 error = pred_price - actual
                 error_pct = (error / actual) * 100
@@ -276,17 +455,58 @@ def _drivers_at_issue(block: Dict[str, Any], meta: Dict[str, Any], product: str)
     dxy = meta.get("dollar_index") or {}
     crack = meta.get("crack_spreads_current") or {}
     layers = meta.get("layer_scores") or {}
+    hurricane = meta.get("hurricane") or {}
+    day1_meta = (meta.get("day1_consensus") or {}).get(product) or {}
+    mom = day1_meta.get("momentum_continuation") or {}
+    div_meta = day1_meta.get("crude_rally_gasoline_divergence") or {}
+
+    crude_1d_pct = None
+    product_1d_pct = None
+    try:
+        from live_prices import recent_session_return_pct
+
+        issued = str(meta.get("spot_reference", {}).get("as_of_date") or "")[:10]
+        if issued:
+            hist = None
+            try:
+                from live_prices import load_official_price_history
+                import pandas as pd
+
+                full = load_official_price_history()
+                if full is not None and not full.empty:
+                    hist = full[pd.to_datetime(full["date"]) <= pd.Timestamp(issued)].copy()
+            except Exception:
+                hist = None
+            crude_1d_pct = recent_session_return_pct("Crude_Oil", days=1, history=hist)
+            product_1d_pct = recent_session_return_pct(product, days=1, history=hist)
+    except Exception:
+        pass
+
+    cross_divergence_pp = None
+    if crude_1d_pct is not None and product_1d_pct is not None:
+        cross_divergence_pp = float(crude_1d_pct) - float(product_1d_pct)
+    elif div_meta.get("divergence_pp") is not None:
+        cross_divergence_pp = float(div_meta["divergence_pp"])
 
     return {
         "inventory_wow_pct": inv_row.get("wow_change_pct"),
         "sentiment": drivers.get("sentiment"),
         "geo_risk_score": drivers.get("geo_risk_score"),
-        "dxy_change_pct": dxy.get("change_pct_1d"),
+        "dxy_change_pct": dxy.get("change_pct_1d") or dxy.get("change_1d_pct"),
         "gasoline_crack": crack.get("gasoline_crack_usd_per_bbl"),
         "diesel_crack": crack.get("diesel_crack_usd_per_bbl"),
         "layer_composite": (layers.get("composite") or {}).get("score"),
         "model_next_day_pct": drivers.get("model_next_day_pct"),
         "model_next_week_pct": drivers.get("model_next_week_pct"),
+        "hurricane_risk_score": hurricane.get("risk_score"),
+        "momentum_overlay_mode": mom.get("mode"),
+        "crude_1d_pct": round(crude_1d_pct, 3) if crude_1d_pct is not None else None,
+        "product_1d_pct": round(product_1d_pct, 3) if product_1d_pct is not None else None,
+        "cross_divergence_pp": round(cross_divergence_pp, 3) if cross_divergence_pp is not None else None,
+        "divergence_overlay_applied": bool(div_meta),
+        "predicted_day1_pct": block.get("day_1", {}).get("change_percent")
+        if isinstance(block.get("day_1"), dict)
+        else block.get("day_1_change"),
     }
 
 
@@ -324,8 +544,30 @@ def _explain_row(row: Dict[str, Any]) -> str:
     if gc is not None and row["product"] == "RBOB_Gasoline":
         reasons.append(f"gasoline crack ~${float(gc):.0f}/bbl")
 
+    crude_1d = drivers.get("crude_1d_pct")
+    prod_1d = drivers.get("product_1d_pct")
+    div_pp = drivers.get("cross_divergence_pp")
+    divergence_setup = (
+        row["product"] == "RBOB_Gasoline"
+        and crude_1d is not None
+        and prod_1d is not None
+        and float(crude_1d) >= 1.0
+        and float(prod_1d) <= 0.35
+        and float(div_pp or (float(crude_1d) - float(prod_1d))) >= 1.0
+    )
+    if divergence_setup:
+        reasons.append(
+            f"crude bid +{float(crude_1d):.1f}% but gasoline only {float(prod_1d):+.1f}% "
+            f"(divergence {float(div_pp or (float(crude_1d) - float(prod_1d))):.1f}pp)"
+        )
+
     if not ok:
-        if err > 0:
+        if divergence_setup and row.get("predicted_direction") == "UP":
+            parts.append(
+                "Missed crack compression — crude rallied but gasoline lagged/sold off; "
+                "inventory/crack support was overweighted vs live product tape."
+            )
+        elif err > 0:
             parts.append("Model overshot — likely overweighted bullish drivers or underweighted supply builds / stronger dollar.")
         else:
             parts.append("Model undershot — likely missed supportive inventory draws, crude strength, or headline risk.")
@@ -335,6 +577,97 @@ def _explain_row(row: Dict[str, Any]) -> str:
     if reasons:
         parts.append("Key factors at issue: " + "; ".join(reasons) + ".")
     return " ".join(parts)
+
+
+def learn_from_prediction_mistakes(new_evals: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    After each scored session, record what we got wrong and what to adjust next time.
+    Appends to mistake_lessons.jsonl and returns lessons for the daily report.
+    """
+    if not new_evals:
+        return []
+
+    lessons: List[Dict[str, Any]] = []
+    by_target: Dict[str, List[Dict[str, Any]]] = {}
+    for row in new_evals:
+        if row.get("horizon") != "day_1":
+            continue
+        by_target.setdefault(str(row["target_date"]), []).append(row)
+
+    for target_date, rows in by_target.items():
+        crude_row = next((r for r in rows if r["product"] == "Crude_Oil"), None)
+        gas_row = next((r for r in rows if r["product"] == "RBOB_Gasoline"), None)
+        if not gas_row or gas_row.get("direction_correct"):
+            continue
+
+        drivers = gas_row.get("drivers_at_issue") or {}
+        if isinstance(drivers, str):
+            try:
+                drivers = json.loads(drivers)
+            except Exception:
+                drivers = {}
+
+        crude_1d = drivers.get("crude_1d_pct")
+        prod_1d = drivers.get("product_1d_pct")
+        div_pp = drivers.get("cross_divergence_pp")
+        crude_actual_up = crude_row and crude_row.get("actual_direction") == "UP"
+        gas_pred_up = gas_row.get("predicted_direction") == "UP"
+        gas_actual_down = gas_row.get("actual_direction") == "DOWN"
+
+        pattern = None
+        lesson_text = None
+        action = None
+
+        if (
+            gas_pred_up
+            and gas_actual_down
+            and crude_1d is not None
+            and prod_1d is not None
+            and float(crude_1d) >= 1.0
+            and float(prod_1d) <= 0.35
+        ):
+            pattern = "crude_up_gas_down"
+            gap = float(div_pp or (float(crude_1d) - float(prod_1d)))
+            lesson_text = (
+                f"Called RBOB UP but gasoline sold off while crude was bid "
+                f"(crude {float(crude_1d):+.1f}%, gas {float(prod_1d):+.1f}%, gap {gap:.1f}pp)."
+            )
+            action = "boost crude_gas_divergence overlay; reduce crude spillover into RBOB"
+        elif gas_pred_up and gas_actual_down and crude_actual_up:
+            pattern = "crude_up_gas_down_session"
+            lesson_text = (
+                "Session divergence: crude finished UP but RBOB finished DOWN — "
+                "products do not always follow crude on geo/distillate-led days."
+            )
+            action = "tag crude_gas_divergence regime; learn blend_boost from this miss"
+
+        if not pattern:
+            continue
+
+        entry = {
+            "logged_at": datetime.now().isoformat(),
+            "target_date": target_date,
+            "issued_date": gas_row.get("issued_date"),
+            "pattern": pattern,
+            "product": "RBOB_Gasoline",
+            "predicted_direction": gas_row.get("predicted_direction"),
+            "actual_direction": gas_row.get("actual_direction"),
+            "error_pct": gas_row.get("error_pct"),
+            "crude_1d_pct": crude_1d,
+            "product_1d_pct": prod_1d,
+            "cross_divergence_pp": div_pp,
+            "lesson": lesson_text,
+            "action": action,
+        }
+        lessons.append(entry)
+
+    if lessons:
+        os.makedirs(os.path.dirname(MISTAKE_LESSONS_PATH) or "data", exist_ok=True)
+        with open(MISTAKE_LESSONS_PATH, "a", encoding="utf-8") as f:
+            for entry in lessons:
+                f.write(json.dumps(entry, default=str) + "\n")
+
+    return lessons
 
 
 def _rank_variables(
@@ -485,10 +818,21 @@ def build_post_mortem_report(new_evals: List[Dict[str, Any]]) -> Dict[str, Any]:
     from model_weights import compute_model_metrics, update_weights_from_evaluations
 
     explanations = [_explain_row(r) for r in new_evals]
+    mistake_lessons = learn_from_prediction_mistakes(new_evals)
     importance = _rank_variables(new_evals)
     adjustments = compute_error_adjustments(new_evals)
     model_metrics = compute_model_metrics()
     updated_weights = update_weights_from_evaluations(new_evals)
+
+    attribution_summary = {}
+    try:
+        from prediction_attribution import run_daily_attribution
+        attribution_summary = run_daily_attribution(new_evals)
+        for att in attribution_summary.get("latest_attributions") or []:
+            if att.get("narrative") and att["narrative"] not in explanations:
+                explanations.append(att["narrative"])
+    except Exception as exc:
+        attribution_summary = {"error": str(exc)}
 
     summary = {
         "generated_at": datetime.now().isoformat(),
@@ -499,6 +843,8 @@ def build_post_mortem_report(new_evals: List[Dict[str, Any]]) -> Dict[str, Any]:
         "error_adjustments": adjustments,
         "model_metrics": model_metrics,
         "ensemble_weights": updated_weights,
+        "attribution": attribution_summary,
+        "mistake_lessons": mistake_lessons,
     }
 
     if new_evals:
@@ -559,12 +905,45 @@ def run_daily_post_mortem(verbose: bool = True) -> Dict[str, Any]:
         print("=" * 60)
         if not new_evals:
             print(report.get("message", "Nothing to evaluate."))
+            att = report.get("attribution") or {}
+            if att.get("latest_attributions"):
+                print(f"Attribution refreshed ({len(att.get('latest_attributions') or [])} recent forecasts)")
+                for item in (att.get("latest_attributions") or [])[-3:]:
+                    if item.get("narrative"):
+                        print(f"  - {item['narrative'][:140]}")
+            top_miss = att.get("top_missed_factors_day1") or []
+            if top_miss:
+                print("Top missed factors (day 1):", ", ".join(
+                    f"{m['label']} ({m['count']})" for m in top_miss[:4]
+                ))
+            acc = att.get("accuracy_by_product") or {}
+            if acc:
+                for pk, stats in acc.items():
+                    print(
+                        f"  Track {stats['label']}: day-1 direction {stats['day1_direction_pct']}% "
+                        f"(MAE {stats['day1_mae_pct']}%, n={stats['samples']})"
+                    )
         else:
             print(f"Evaluated {len(new_evals)} forecast(s)")
             print(f"Direction accuracy: {report.get('direction_accuracy', 0):.0%}")
             print(f"Mean abs error: {report.get('mean_abs_error_pct', 0):.2f}%")
-            for line in report.get("explanations", [])[:6]:
+            for line in report.get("explanations", [])[:8]:
                 print(f"  - {line}")
+            for lesson in (report.get("mistake_lessons") or [])[:3]:
+                print(f"  [learn] {lesson.get('lesson')} → {lesson.get('action')}")
+            att = report.get("attribution") or {}
+            top_miss = att.get("top_missed_factors_day1") or []
+            if top_miss:
+                print("Top missed factors (day 1):", ", ".join(
+                    f"{m['label']} ({m['count']})" for m in top_miss[:4]
+                ))
+            acc = att.get("accuracy_by_product") or {}
+            if acc:
+                for pk, stats in acc.items():
+                    print(
+                        f"  Track {stats['label']}: day-1 direction {stats['day1_direction_pct']}% "
+                        f"(MAE {stats['day1_mae_pct']}%, n={stats['samples']})"
+                    )
             top = (report.get("feature_importance") or {}).get("rbob_xgb") or {}
             if top:
                 items = list(top.items())[:5]
@@ -593,6 +972,9 @@ def apply_bias_to_predictions(results: Dict[str, Any]) -> Dict[str, Any]:
     if not products:
         return results
 
+    day1_bias_factor = float(os.getenv("DAY1_BIAS_FACTOR", "0.40"))
+    day1_retain_floor = float(os.getenv("DAY1_BIAS_RETAIN_FLOOR", "0.70"))
+
     for product, block in results.items():
         if product.startswith("_") or not isinstance(block, dict):
             continue
@@ -610,11 +992,28 @@ def apply_bias_to_predictions(results: Dict[str, Any]) -> Dict[str, Any]:
                 continue
             bias_pct = float(padj[hkey].get("bias_pct", 0))
             if hkey == "day_1":
-                bias_pct *= 0.25
-            adjusted = price * (1 - bias_pct / 100.0)
-            lo = current * (1 - max_frac)
-            hi = current * (1 + max_frac)
-            block[hkey] = max(lo, min(adjusted, hi))
+                raw_chg = (price - current) / current * 100.0
+                # Gap/shock days: barely shrink the signal
+                local_factor = day1_bias_factor
+                if float(block.get("_day1_cap_mult") or 1.0) >= 1.5:
+                    local_factor *= 0.45
+                bias_adj = bias_pct * local_factor
+                new_chg = raw_chg - bias_adj
+                if abs(raw_chg) >= 0.55 and raw_chg * bias_adj > 0:
+                    min_mag = abs(raw_chg) * day1_retain_floor
+                    if abs(new_chg) < min_mag:
+                        new_chg = min_mag * (1.0 if raw_chg > 0 else -1.0)
+                # Don't let historical bias flip day-1 direction on a clear signal
+                if abs(raw_chg) >= 0.25 and raw_chg * new_chg < 0:
+                    new_chg = abs(raw_chg) * day1_retain_floor * (1.0 if raw_chg > 0 else -1.0)
+                cap_pct = max_frac * 100.0 * float(block.get("_day1_cap_mult") or 1.0)
+                new_chg = max(-cap_pct, min(new_chg, cap_pct))
+                block[hkey] = current * (1.0 + new_chg / 100.0)
+            else:
+                adjusted = price * (1 - bias_pct / 100.0)
+                lo = current * (1 - max_frac)
+                hi = current * (1 + max_frac)
+                block[hkey] = max(lo, min(adjusted, hi))
             chg = ((block[hkey] - current) / current * 100) if current else 0
             block[f"{hkey}_change"] = float(chg)
             block[f"{hkey}_direction"] = "UP" if chg > 0 else "DOWN" if chg < 0 else "FLAT"

@@ -51,6 +51,9 @@ def load_predictions(path: str = "data/predictions.json") -> Dict[str, Any]:
                 "price": round(float(h.get("price") or 0), decimals),
                 "change_pct": round(float(h.get("change_percent") or 0), 2),
                 "direction": h.get("direction", "FLAT"),
+                "range_80": {
+                    k: round(float(v), decimals) for k, v in (h.get("range_80") or {}).items()
+                } or None,
             }
         unc = block.get("forecast_uncertainty") or {}
         directional = block.get("directional") or {}

@@ -13,12 +13,11 @@ for email in EMAIL_CONFIG['recipient_emails']:
     print(f"  - {email.strip()}")
 print()
 
-# Generate fresh predictions and send
+# Generate fresh predictions and send once (generate_predictions already emails)
 engine = PredictionEngine()
-predictions = engine.generate_predictions()
+predictions = engine.run_full_pipeline()
 
 if predictions:
-    engine.send_prediction_email(predictions)
     print()
     print("=" * 70)
     print("Test email sent successfully!")

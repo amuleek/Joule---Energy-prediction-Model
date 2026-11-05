@@ -1,39 +1,39 @@
 {
-  "updated_at": "2026-06-23T19:39:14.444885",
+  "updated_at": "2026-09-14T20:26:18.772850",
   "products": {
     "RBOB_Gasoline": {
       "error_correlation_rank": [
         {
-          "variable": "layer_composite",
-          "score": 0.7048
+          "variable": "gasoline_crack",
+          "score": 0.6023
         },
         {
           "variable": "model_next_day_pct",
-          "score": 0.5332
+          "score": 0.2822
+        },
+        {
+          "variable": "layer_composite",
+          "score": 0.2478
         },
         {
           "variable": "inventory_wow_pct",
-          "score": 0.4491
-        },
-        {
-          "variable": "gasoline_crack",
-          "score": 0.3986
-        },
-        {
-          "variable": "sentiment",
-          "score": 0.3509
-        },
-        {
-          "variable": "dxy_change_pct",
-          "score": 0.1857
-        },
-        {
-          "variable": "diesel_crack",
-          "score": 0.1697
+          "score": 0.2243
         },
         {
           "variable": "geo_risk_score",
-          "score": 0.0448
+          "score": 0.2167
+        },
+        {
+          "variable": "dxy_change_pct",
+          "score": 0.2007
+        },
+        {
+          "variable": "sentiment",
+          "score": 0.1601
+        },
+        {
+          "variable": "diesel_crack",
+          "score": 0.0109
         }
       ]
     },
@@ -41,71 +41,71 @@
       "error_correlation_rank": [
         {
           "variable": "diesel_crack",
-          "score": 0.7674
-        },
-        {
-          "variable": "gasoline_crack",
-          "score": 0.7382
+          "score": 0.441
         },
         {
           "variable": "model_next_day_pct",
-          "score": 0.4517
-        },
-        {
-          "variable": "sentiment",
-          "score": 0.2342
+          "score": 0.3314
         },
         {
           "variable": "dxy_change_pct",
-          "score": 0.2188
-        },
-        {
-          "variable": "layer_composite",
-          "score": 0.213
+          "score": 0.2859
         },
         {
           "variable": "geo_risk_score",
-          "score": 0.1636
+          "score": 0.1222
+        },
+        {
+          "variable": "layer_composite",
+          "score": 0.1025
+        },
+        {
+          "variable": "gasoline_crack",
+          "score": 0.0712
+        },
+        {
+          "variable": "sentiment",
+          "score": 0.0669
         },
         {
           "variable": "inventory_wow_pct",
-          "score": 0.0456
+          "score": 0.0396
         }
       ]
     },
     "Crude_Oil": {
       "error_correlation_rank": [
         {
-          "variable": "model_next_day_pct",
-          "score": 0.6953
-        },
-        {
           "variable": "diesel_crack",
-          "score": 0.6744
-        },
-        {
-          "variable": "gasoline_crack",
-          "score": 0.622
+          "score": 0.3517
         },
         {
           "variable": "inventory_wow_pct",
-          "score": 0.3756
+          "score": 0.1498
         },
         {
           "variable": "dxy_change_pct",
-          "score": 0.2168
+          "score": 0.1247
         },
         {
           "variable": "geo_risk_score",
-          "score": 0.2159
+          "score": 0.0886
+        },
+        {
+          "variable": "model_next_day_pct",
+          "score": 0.0836
+        },
+        {
+          "variable": "gasoline_crack",
+          "score": 0.0731
         },
         {
           "variable": "sentiment",
-          "score": 0.0964
+          "score": 0.0543
         },
         {
           "variable": "layer_composite",
-          "score": 0.0769
+          "score": 0.0416
         }
       ]
     }
@@ -142,8 +142,8 @@
     "rbob_calendar_spread_5d": 0.0115,
     "rbob_return_1d": 0.0027,
     "topic_hurricane": 0.0018,
-    "retail_gasoline": 0.0,
+    "gasoline_inventory": 0.0,
     "diesel_inventory": 0.0,
-    "gasoline_inventory": 0.0
+    "retail_gasoline": 0.0
   }
 }

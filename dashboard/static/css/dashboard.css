@@ -75,13 +75,13 @@ body {
 .banner-logo,
 .card-logo {
   display: block;
+  object-fit: contain;
 }
 
 .joule-logo {
   width: 44px;
   height: 44px;
   overflow: visible;
-  filter: drop-shadow(0 2px 8px rgba(230, 81, 0, 0.35));
 }
 
 .brand h1 {
@@ -90,7 +90,7 @@ body {
   font-weight: 800;
   letter-spacing: -0.02em;
   font-family: "Nunito", "Inter", sans-serif;
-  background: linear-gradient(135deg, #FFAB40, #E65100);
+  background: linear-gradient(135deg, #38bdf8, #a78bfa 50%, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -289,7 +289,6 @@ body {
   width: 64px;
   height: 64px;
   margin: 0 auto;
-  filter: drop-shadow(0 3px 12px rgba(230, 81, 0, 0.3));
 }
 
 .brand-bubble {

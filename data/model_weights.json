@@ -1,17 +1,17 @@
 {
   "RBOB_Gasoline": {
-    "technical": 0.0593,
-    "fundamental": 0.3048,
-    "news": 0.636
+    "technical": 0.1464,
+    "fundamental": 0.3856,
+    "news": 0.468
   },
   "ULSD_Diesel": {
-    "technical": 0.6802,
-    "fundamental": 0.1981,
-    "news": 0.1218
+    "technical": 0.2485,
+    "fundamental": 0.4596,
+    "news": 0.2919
   },
   "Crude_Oil": {
-    "technical": 0.769,
-    "fundamental": 0.0497,
-    "news": 0.1813
+    "technical": 0.3685,
+    "fundamental": 0.3863,
+    "news": 0.2452
   }
 }

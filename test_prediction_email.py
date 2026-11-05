@@ -28,7 +28,11 @@ if os.path.exists("data/predictions.json"):
     engine.send_prediction_email(predictions)
     print()
     print("=" * 70)
-    print("Email sent! Check inboxes:")
+    from alerts import EmailAlertSystem
+    if EmailAlertSystem().is_configured():
+        print("Done. If no error above, check inboxes:")
+    else:
+        print("Email not configured — set SENDER_PASSWORD in .env")
     for email in EMAIL_CONFIG['recipient_emails']:
         print(f"  - {email.strip()}")
 else:

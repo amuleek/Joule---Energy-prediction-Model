@@ -3,14 +3,9 @@ Luxury-styled prediction email — crisp inline reasoning, email-client safe.
 """
 from __future__ import annotations
 
-import json
-import math
-import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from html import escape
-from typing import Any, Dict, List, Optional, Tuple
-
-from reasoning_engine import build_crisp_product_reasoning
+from typing import Dict, Optional, Tuple
 
 # Luxury palette (inline-only for email clients)
 C = {
@@ -23,75 +18,114 @@ C = {
     "ink_soft": "#5c5c62",
     "ink_muted": "#8e8e93",
     "rule": "#e8e4df",
-    "up": "#3d5c45",
+    "up": "#1f7a4d",
     "down": "#6b3a3a",
     "flat": "#6b6b70",
     "header_bg": "#141418",
 }
 
+CALL_STRIP = (
+    ("RBOB_Gasoline", "Gasoline", "Gas", 4),
+    ("ULSD_Diesel", "Diesel", "Diesel", 4),
+    ("Crude_Oil", "Crude", "Crude", 2),
+)
+
 
 class SimpleEmailFormatter:
-    """Premium forecast email with short intellectual reasoning."""
+    """Premium forecast email: header + NYMEX price calendar."""
 
-    PRODUCT_NAMES = {
-        "RBOB_Gasoline": {"display": "RBOB Gasoline", "subtitle": "NYMEX · Reformulated Blendstock"},
-        "ULSD_Diesel": {"display": "ULSD Diesel", "subtitle": "Heating Oil / Distillate"},
-        "Crude_Oil": {"display": "WTI Crude", "subtitle": "West Texas Intermediate"},
-    }
+    def _next_session_dt(self, preds: Dict) -> datetime:
+        for pk, *_ in CALL_STRIP:
+            d1 = (preds.get(pk) or {}).get("day_1") or {}
+            td = d1.get("target_date") if isinstance(d1, dict) else None
+            if td:
+                try:
+                    return datetime.strptime(str(td)[:10], "%Y-%m-%d")
+                except ValueError:
+                    pass
+        as_of = str(((preds.get("_meta") or {}).get("spot_reference") or {}).get("as_of_date") or "")
+        if as_of:
+            try:
+                d = datetime.strptime(as_of[:10], "%Y-%m-%d") + timedelta(days=1)
+                while d.weekday() >= 5:
+                    d += timedelta(days=1)
+                return d
+            except ValueError:
+                pass
+        d = datetime.now() + timedelta(days=1)
+        while d.weekday() >= 5:
+            d += timedelta(days=1)
+        return d
 
-    EMAIL_HORIZONS = (
-        ("day_1", "Tomorrow"),
-        ("day_4", "Day 4"),
-        ("day_7", "Day 7"),
-    )
+    def _session_labels(self, preds: Dict) -> Tuple[datetime, str, str, str]:
+        dt = self._next_session_dt(preds)
+        word = dt.strftime("%A")
+        title = dt.strftime("%A, %B %d")
+        short = dt.strftime("%a %b %d")
+        return dt, word, title, short
 
-    def _horizon_price_change(
-        self, pred: Dict[str, Any], hkey: str, current: float
-    ) -> Tuple[float, float]:
-        hd = pred.get(hkey) or pred.get("next_day" if hkey == "day_1" else hkey)
-        if isinstance(hd, dict):
-            price = float(hd.get("price", current))
-            pct = float(hd.get("change_percent", 0))
-            if math.isnan(pct):
-                pct = ((price - current) / current * 100) if current else 0
-            return price, pct
-        return current, 0.0
+    def _settle_line(self, preds: Dict) -> str:
+        as_of = str(((preds.get("_meta") or {}).get("spot_reference") or {}).get("as_of_date") or "")
+        roll = ((preds.get("_meta") or {}).get("spot_reference") or {}).get("contract_roll") or {}
+        resolved = ((preds.get("_meta") or {}).get("spot_reference") or {}).get("resolved") or {}
+        rb = resolved.get("RBOB") or ""
+        contract_note = f" · {rb}" if rb else ""
+        if roll.get("in_roll_window") and rb:
+            contract_note = f" · {rb} (lead month)"
+        if not as_of:
+            return "Last NYMEX settle" + contract_note
+        try:
+            d = datetime.strptime(as_of[:10], "%Y-%m-%d")
+            return f"vs {d.strftime('%A, %b %d')} settle{contract_note}"
+        except ValueError:
+            return f"vs {as_of} settle{contract_note}"
 
-    def _insight_line(
-        self,
-        product_key: str,
-        pred: Dict[str, Any],
-        meta: Dict[str, Any],
-        all_preds: Dict[str, Any],
-    ) -> str:
-        text = pred.get("reasoning") or build_crisp_product_reasoning(
-            product_key, pred, meta, all_preds
-        )
-        return str(text).strip()[:220]
-
-    def _direction_badge(self, pct: float) -> Tuple[str, str]:
-        if pct > 0.15:
-            return "▲", C["up"]
-        if pct < -0.15:
-            return "▼", C["down"]
-        return "—", C["flat"]
+    def format_email_subject(self, preds: Dict) -> str:
+        meta = preds.get("_meta") or {}
+        _, _, _, short = self._session_labels(preds)
+        if meta.get("correction_email"):
+            reason = (meta.get("correction_detail") or {}).get("reason", "overnight_gap")
+            if reason == "intraday_tape":
+                return f"NYMEX CORRECTED | {short} | intraday tape"
+            return f"NYMEX CORRECTED | {short} | overnight gap"
+        return f"NYMEX price calendar | {short}"
 
     def format_email_html(
         self,
         current_predictions: Dict,
         previous_predictions: Optional[Dict] = None,
     ) -> str:
-        est_time = datetime.now().strftime("%A, %B %d · %I:%M %p EST")
+        _, _session_word, session_title, _session_short = self._session_labels(current_predictions)
+        sent_at = datetime.now().strftime("%a, %b %d · %I:%M %p ET")
+        settle_note = self._settle_line(current_predictions)
         meta = current_predictions.get("_meta") or {}
-        spot_ref = meta.get("spot_reference") or {}
-        spot_as_of = spot_ref.get("as_of_date") or ""
-        if spot_as_of:
-            try:
-                settle_note = datetime.strptime(spot_as_of, "%Y-%m-%d").strftime("%b %d settle")
-            except ValueError:
-                settle_note = f"{spot_as_of} settle"
-        else:
-            settle_note = "Afternoon close"
+        correction_banner = ""
+        if meta.get("correction_email"):
+            detail = meta.get("correction_detail") or {}
+            flips = detail.get("flips") or []
+            flip_lines = []
+            for f in flips:
+                pk = f.get("product", "")
+                short = pk.replace("_Gasoline", "").replace("_Diesel", "").replace("_Oil", "")
+                gap = f.get("gap_pct")
+                if gap is not None:
+                    flip_lines.append(f"{short}: {f.get('was')} → {f.get('now')} ({float(gap):+.1f}% live)")
+                else:
+                    flip_lines.append(f"{short}: {f.get('was')} → {f.get('now')}")
+            reason = detail.get("reason", "overnight_gap")
+            if reason == "intraday_tape":
+                headline = "Day-1 updated — live NYMEX tape reversed the morning call."
+            else:
+                headline = "Day-1 updated after Asia/overnight gap."
+            flip_text = " · ".join(flip_lines) if flip_lines else headline
+            correction_banner = f"""
+<tr><td style="padding:14px 20px 0;">
+<p style="margin:0;padding:12px 14px;background:#3d2a2a;border:1px solid {C['down']};font-size:12px;color:#f5f3ef;line-height:1.5;">
+<strong style="color:{C['gold_light']};letter-spacing:1px;">CORRECTED</strong> — {escape(headline)}<br>
+<span style="color:#e8dcd8;">{escape(flip_text)}</span>
+</p>
+</td></tr>
+"""
 
         html = f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
@@ -100,100 +134,15 @@ class SimpleEmailFormatter:
 <tr><td align="center">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:580px;background:{C['bg_card']};border:1px solid #2a2a30;">
 
-<!-- Header -->
-<tr><td style="background:{C['header_bg']};padding:32px 28px 28px;text-align:center;border-bottom:2px solid {C['gold']};">
-<p style="margin:0 0 6px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:{C['gold']};font-family:Georgia,'Times New Roman',serif;">Gill Energy</p>
-<h1 style="margin:0;font-size:22px;font-weight:400;color:#f5f3ef;font-family:Georgia,'Times New Roman',serif;letter-spacing:0.5px;">Market Outlook</h1>
-<p style="margin:10px 0 0;font-size:11px;color:{C['ink_muted']};letter-spacing:0.5px;">{escape(est_time)}</p>
+<tr><td style="background:{C['header_bg']};padding:28px 28px 22px;text-align:center;border-bottom:2px solid {C['gold']};">
+<p style="margin:0 0 8px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:{C['gold']};font-family:Georgia,'Times New Roman',serif;">Gill Energy</p>
+<h1 style="margin:0;font-size:24px;font-weight:400;color:#f5f3ef;font-family:Georgia,'Times New Roman',serif;letter-spacing:0.3px;">{escape(session_title)}</h1>
+<p style="margin:10px 0 0;font-size:11px;color:{C['gold_light']};letter-spacing:0.3px;">NYMEX price calendar</p>
+<p style="margin:6px 0 0;font-size:11px;color:{C['ink_muted']};">{escape(settle_note)} · {escape(sent_at)}</p>
 </td></tr>
-
-<!-- Intro strip -->
-<tr><td style="padding:20px 28px 8px;">
-<p style="margin:0;font-size:12px;line-height:1.6;color:{C['ink_soft']};font-style:italic;font-family:Georgia,'Times New Roman',serif;">
-Three-horizon price view with drivers from inventories, crude, macro, and headlines.
-</p>
-</td></tr>
+{correction_banner}
 """
-
-        for product_key in ("RBOB_Gasoline", "ULSD_Diesel", "Crude_Oil"):
-            pred = current_predictions.get(product_key)
-            if not isinstance(pred, dict):
-                continue
-            pinfo = self.PRODUCT_NAMES.get(product_key, {"display": product_key, "subtitle": ""})
-            spot_by_product = spot_ref.get("by_product") or {}
-            try:
-                ref_price = spot_by_product.get(product_key)
-                current_price = float(ref_price if ref_price else pred.get("current_price", 0) or 0)
-                if current_price <= 0 or math.isnan(current_price):
-                    nd = pred.get("day_1") or pred.get("next_day") or {}
-                    if isinstance(nd, dict) and nd.get("price"):
-                        current_price = float(nd["price"]) * 0.99
-                    else:
-                        continue
-            except (TypeError, ValueError):
-                continue
-
-            _, d1_pct = self._horizon_price_change(pred, "day_1", current_price)
-            badge, badge_color = self._direction_badge(d1_pct)
-            insight = self._insight_line(product_key, pred, meta, current_predictions)
-            unc = pred.get("forecast_uncertainty") or {}
-            unc_html = ""
-            if unc.get("level") in ("HIGH", "MEDIUM"):
-                reasons = unc.get("reasons") or []
-                reason_txt = reasons[0] if reasons else unc.get("headline", "")
-                unc_html = f"""
-<tr><td style="padding:0 20px 10px;">
-<p style="margin:0;font-size:11px;line-height:1.5;color:#6b4e2a;background:#faf6ef;border:1px solid #e8dcc8;padding:10px 12px;">
-<strong style="color:#5c4a32;">Uncertainty ({escape(unc.get('level', ''))}):</strong> {escape(unc.get('headline', ''))}
-{f'<br><span style="color:#7a6548;">{escape(reason_txt)}</span>' if reason_txt else ''}
-</p>
-</td></tr>
-"""
-
-            html += f"""
-<tr><td style="padding:12px 28px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{C['bg_panel']};border:1px solid {C['rule']};">
-<tr><td style="padding:16px 20px 12px;border-top:3px solid {C['gold']};">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
-<td>
-<p style="margin:0;font-size:15px;font-weight:600;color:{C['ink']};font-family:Georgia,'Times New Roman',serif;">{escape(pinfo['display'])}</p>
-<p style="margin:3px 0 0;font-size:10px;color:{C['ink_muted']};letter-spacing:1px;text-transform:uppercase;">{escape(pinfo.get('subtitle', ''))}</p>
-</td>
-<td align="right" style="vertical-align:top;">
-<p style="margin:0;font-size:18px;color:{badge_color};font-weight:600;">{badge}</p>
-<p style="margin:2px 0 0;font-size:11px;color:{C['ink_soft']};">Close <span style="color:{C['ink']};font-weight:600;">${current_price:.4f}</span><br><span style="font-size:9px;color:{C['ink_muted']};">{escape(settle_note)}</span></p>
-</td>
-</tr></table>
-</td></tr>
-
-<tr><td style="padding:0 20px 14px;">
-<p style="margin:0;font-size:12px;line-height:1.55;color:{C['ink_soft']};border-left:2px solid {C['gold_light']};padding-left:12px;">
-{escape(insight)}
-</p>
-</td></tr>
-{unc_html}
-
-<tr><td style="padding:0 20px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid {C['rule']};">
-<tr>
-<td style="padding:10px 0 4px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:{C['ink_muted']};">Horizon</td>
-<td align="right" style="padding:10px 0 4px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:{C['ink_muted']};">Price</td>
-<td align="right" style="padding:10px 0 4px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:{C['ink_muted']};">Change</td>
-</tr>
-"""
-            for hkey, hlabel in self.EMAIL_HORIZONS:
-                price, change_pct = self._horizon_price_change(pred, hkey, current_price)
-                chg_color = C["up"] if change_pct > 0 else C["down"] if change_pct < 0 else C["flat"]
-                chg_txt = f"{change_pct:+.1f}%"
-                html += f"""<tr>
-<td style="padding:8px 0;border-top:1px solid {C['rule']};font-size:13px;color:{C['ink']};">{escape(hlabel)}</td>
-<td align="right" style="padding:8px 0;border-top:1px solid {C['rule']};font-size:13px;color:{C['ink']};font-variant-numeric:tabular-nums;">${price:.4f}</td>
-<td align="right" style="padding:8px 0;border-top:1px solid {C['rule']};font-size:13px;font-weight:600;color:{chg_color};font-variant-numeric:tabular-nums;">{chg_txt}</td>
-</tr>
-"""
-            html += "</table></td></tr></table></td></tr>"
-
-        html += self._render_post_mortem_luxury()
+        html += self._render_prediction_calendar()
 
         html += f"""
 <tr><td style="padding:24px 28px;text-align:center;border-top:1px solid {C['rule']};">
@@ -207,40 +156,77 @@ Three-horizon price view with drivers from inventories, crude, macro, and headli
 """
         return html
 
-    def _render_post_mortem_luxury(self) -> str:
-        path = "data/post_mortem_report.json"
-        if not os.path.exists(path):
-            return ""
+    def _render_prediction_calendar(self) -> str:
         try:
-            with open(path, encoding="utf-8") as f:
-                report = json.load(f)
+            from prediction_calendar import build_prediction_calendar
+            cal = build_prediction_calendar(n_past=4, n_forward=10)
         except Exception:
             return ""
-
-        explanations = report.get("explanations") or []
-        if not explanations:
+        past = cal.get("past") or []
+        future = cal.get("future") or []
+        if not past and not future:
             return ""
 
-        acc = report.get("direction_accuracy")
-        mae = report.get("mean_abs_error_pct")
-        stats = ""
-        if acc is not None and mae is not None:
-            stats = f"Last review: {acc:.0%} direction accuracy · {mae:.1f}% avg error"
+        def cell(prods: Dict, pk: str, dec: int, future_row: bool) -> str:
+            row = prods.get(pk) or {}
+            pred = row.get("predicted")
+            act = row.get("actual")
+            pred_px = f"{float(pred):.{dec}f}" if pred is not None else "—"
+            if future_row or row.get("pending") or act is None:
+                band = row.get("range_80") or {}
+                if band.get("low") is not None and band.get("high") is not None:
+                    return (
+                        f'<span style="color:{C["ink"]};">${pred_px}</span>'
+                        f'<br><span style="color:{C["ink_muted"]};font-size:9px;">'
+                        f'{float(band["low"]):.{dec}f}–{float(band["high"]):.{dec}f}</span>'
+                    )
+                return f'<span style="color:{C["ink"]};">${pred_px}</span>'
+            act_px = f"{float(act):.{dec}f}"
+            return (
+                f'<span style="color:{C["ink"]};">${pred_px}</span>'
+                f'<br><span style="color:{C["up"]};font-weight:600;">${act_px}</span>'
+            )
 
-        # One crisp post-mortem line only
-        first = explanations[0]
-        if len(first) > 160:
-            first = first[:157] + "…"
+        vline = f"border-left:1px solid {C['rule']};"
+        hline = f"border-top:1px solid {C['rule']};"
 
-        html = f"""
-<tr><td style="padding:8px 28px 20px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{C['header_bg']};border:1px solid #2a2a30;">
-<tr><td style="padding:14px 18px;">
-<p style="margin:0 0 6px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:{C['gold']};">Yesterday&apos;s Check</p>
+        def table_html(days: list, future_row: bool) -> str:
+            if not days:
+                return ""
+            body = ""
+            for day in days:
+                prods = day.get("products") or {}
+                date_s = day.get("label") or day.get("date") or ""
+                ink = C["ink"] if not future_row else C["ink_soft"]
+                body += f"""<tr>
+<td style="padding:7px 8px 7px 6px;{hline}font-size:11px;color:{ink};white-space:nowrap;">{escape(date_s)}</td>
+<td align="right" style="padding:7px 8px;{hline}{vline}font-size:11px;font-variant-numeric:tabular-nums;">{cell(prods, "RBOB_Gasoline", 4, future_row)}</td>
+<td align="right" style="padding:7px 8px;{hline}{vline}font-size:11px;font-variant-numeric:tabular-nums;">{cell(prods, "ULSD_Diesel", 4, future_row)}</td>
+<td align="right" style="padding:7px 8px;{hline}{vline}font-size:11px;font-variant-numeric:tabular-nums;">{cell(prods, "Crude_Oil", 2, future_row)}</td>
+</tr>
 """
-        if stats:
-            html += f'<p style="margin:0 0 8px;font-size:10px;color:{C["ink_muted"]};">{escape(stats)}</p>'
-        html += f"""<p style="margin:0;font-size:11px;line-height:1.5;color:#c8c8cc;">{escape(first)}</p>
-</td></tr></table></td></tr>
+            return f"""
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{C['bg_panel']};border:1px solid {C['rule']};border-collapse:collapse;">
+<tr>
+<td style="padding:6px 8px;border-bottom:1px solid {C['rule']};font-size:9px;letter-spacing:1px;text-transform:uppercase;color:{C['ink_muted']};">Session</td>
+<td align="right" style="padding:6px 8px;border-bottom:1px solid {C['rule']};border-left:1px solid {C['rule']};font-size:9px;letter-spacing:1px;text-transform:uppercase;color:{C['ink_muted']};">Gas</td>
+<td align="right" style="padding:6px 8px;border-bottom:1px solid {C['rule']};border-left:1px solid {C['rule']};font-size:9px;letter-spacing:1px;text-transform:uppercase;color:{C['ink_muted']};">Diesel</td>
+<td align="right" style="padding:6px 8px;border-bottom:1px solid {C['rule']};border-left:1px solid {C['rule']};font-size:9px;letter-spacing:1px;text-transform:uppercase;color:{C['ink_muted']};">Crude</td>
+</tr>
+{body}
+</table>
 """
-        return html
+
+        tables = table_html(past, False)
+        if past and future:
+            tables += '<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td style="height:12px;font-size:0;line-height:0;">&nbsp;</td></tr></table>'
+        tables += table_html(future, True)
+
+        return f"""
+<tr><td style="padding:16px 20px 8px;">
+<p style="margin:0 0 10px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:{C['gold']};">Price calendar</p>
+{tables}
+<p style="margin:10px 0 0;font-size:9px;color:{C['ink_muted']};">Dark number is the prediction (last settle) · small grey range is 80% likely · <span style="color:{C['up']};">green is the actual settle</span></p>
+</td></tr>
+"""
+

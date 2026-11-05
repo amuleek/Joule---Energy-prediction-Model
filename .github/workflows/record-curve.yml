@@ -1,0 +1,38 @@
+name: record-curve
+
+# Weekdays ~30 min after NYMEX settle (14:30 ET):
+#  - appends the futures curve to research/curve_history.csv
+#  - logs the experimental crude composite to research/signal_log.csv (paper tracking)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 20 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: research/requirements.txt
+      - run: pip install -r research/requirements.txt
+      - run: python research/record_curve.py
+      - name: Build dataset + track signals
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+        run: |
+          python research/build_dataset.py
+          python research/track_signals.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898319+github-actions[bot]@users.noreply.github.com"
+          git add research/curve_history.csv research/signal_log.csv
+          git diff --cached --quiet || (git commit -m "Daily curve + signal log $(date -u +%F)" && git push)

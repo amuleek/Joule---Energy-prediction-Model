@@ -1,82 +1,82 @@
 {
-  "updated_at": "2026-06-23T19:39:14.913550",
+  "updated_at": "2026-09-14T20:26:18.891773",
   "products": {
     "RBOB_Gasoline": {
       "day_1": {
-        "mae": 0.077877,
-        "rmse": 0.105822,
-        "mae_pct": 2.441,
-        "direction_accuracy": 0.636,
-        "bias_pct": -0.344,
-        "n_samples": 22
+        "mae": 0.127413,
+        "rmse": 0.184756,
+        "mae_pct": 4.043,
+        "direction_accuracy": 0.3,
+        "bias_pct": 2.068,
+        "n_samples": 30
       },
       "day_4": {
-        "mae": 0.14357,
-        "rmse": 0.196958,
-        "mae_pct": 4.771,
-        "direction_accuracy": 0.368,
-        "bias_pct": 1.524,
-        "n_samples": 19
+        "mae": 0.200744,
+        "rmse": 0.224674,
+        "mae_pct": 6.241,
+        "direction_accuracy": 0.367,
+        "bias_pct": -1.287,
+        "n_samples": 30
       },
       "day_7": {
-        "mae": 0.201784,
-        "rmse": 0.256584,
-        "mae_pct": 6.704,
-        "direction_accuracy": 0.625,
-        "bias_pct": 2.186,
-        "n_samples": 16
+        "mae": 0.272223,
+        "rmse": 0.293519,
+        "mae_pct": 8.454,
+        "direction_accuracy": 0.267,
+        "bias_pct": -2.11,
+        "n_samples": 30
       }
     },
     "ULSD_Diesel": {
       "day_1": {
-        "mae": 0.074609,
-        "rmse": 0.089658,
-        "mae_pct": 2.215,
+        "mae": 0.123705,
+        "rmse": 0.15738,
+        "mae_pct": 2.733,
         "direction_accuracy": 0.5,
-        "bias_pct": 0.405,
-        "n_samples": 22
+        "bias_pct": 1.286,
+        "n_samples": 30
       },
       "day_4": {
-        "mae": 0.153813,
-        "rmse": 0.211701,
-        "mae_pct": 4.648,
-        "direction_accuracy": 0.526,
-        "bias_pct": 4.167,
-        "n_samples": 19
+        "mae": 0.316917,
+        "rmse": 0.351045,
+        "mae_pct": 6.967,
+        "direction_accuracy": 0.267,
+        "bias_pct": -3.062,
+        "n_samples": 30
       },
       "day_7": {
-        "mae": 0.255497,
-        "rmse": 0.278394,
-        "mae_pct": 7.65,
-        "direction_accuracy": 0.438,
-        "bias_pct": 7.65,
-        "n_samples": 16
+        "mae": 0.328437,
+        "rmse": 0.41276,
+        "mae_pct": 7.169,
+        "direction_accuracy": 0.5,
+        "bias_pct": -4.179,
+        "n_samples": 30
       }
     },
     "Crude_Oil": {
       "day_1": {
-        "mae": 1.786608,
-        "rmse": 2.174054,
-        "mae_pct": 2.076,
-        "direction_accuracy": 0.727,
-        "bias_pct": -0.486,
-        "n_samples": 22
+        "mae": 1.917849,
+        "rmse": 2.420563,
+        "mae_pct": 2.144,
+        "direction_accuracy": 0.567,
+        "bias_pct": -0.124,
+        "n_samples": 30
       },
       "day_4": {
-        "mae": 4.672473,
-        "rmse": 5.990416,
-        "mae_pct": 5.56,
-        "direction_accuracy": 0.579,
-        "bias_pct": 4.937,
-        "n_samples": 19
+        "mae": 5.593428,
+        "rmse": 6.389977,
+        "mae_pct": 6.226,
+        "direction_accuracy": 0.4,
+        "bias_pct": -2.516,
+        "n_samples": 30
       },
       "day_7": {
-        "mae": 7.311849,
-        "rmse": 8.041391,
-        "mae_pct": 8.946,
-        "direction_accuracy": 0.438,
-        "bias_pct": 8.946,
-        "n_samples": 16
+        "mae": 6.614069,
+        "rmse": 7.973401,
+        "mae_pct": 7.335,
+        "direction_accuracy": 0.433,
+        "bias_pct": -5.35,
+        "n_samples": 30
       }
     }
   },
@@ -87,14 +87,19 @@
       "n_samples": 9
     },
     "VAR+XGB+CatBoost": {
-      "mae_pct": 3.694,
-      "direction_accuracy": 0.38,
+      "mae_pct": 7.864,
+      "direction_accuracy": 0.16,
       "n_samples": 50
     },
     "Prophet+XGB+CatBoost": {
       "mae_pct": 2.778,
       "direction_accuracy": 0.889,
       "n_samples": 9
+    },
+    "VAR+ML+CatBoost": {
+      "mae_pct": 6.692,
+      "direction_accuracy": 0.32,
+      "n_samples": 50
     }
   }
 }

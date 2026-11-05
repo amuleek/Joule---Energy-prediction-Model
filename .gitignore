@@ -33,3 +33,11 @@ data/market_data.db
 
 # Misc
 price_history.json
+
+# Research pipeline (rebuilt by research/build_dataset.py)
+research/data/
+research/results/oos*.csv
+
+# Generated caches / logs
+data/baseline_history.csv
+research/results/log_*.txt

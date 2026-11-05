@@ -35,33 +35,39 @@ def _macd(series: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9):
 
 def _seasonality_flags(dt: pd.Series) -> pd.DataFrame:
     month = dt.dt.month
+    doy = dt.dt.dayofyear.astype(float)
+    rad = 2.0 * np.pi * doy / 365.25
     return pd.DataFrame(
         {
             "is_driving_season": month.isin([5, 6, 7, 8, 9]).astype(int),
             "is_hurricane_season": month.isin([6, 7, 8, 9, 10, 11]).astype(int),
             "is_winter_blend": month.isin([10, 11, 12, 1, 2]).astype(int),
+            "is_winter_heating": month.isin([11, 12, 1, 2, 3]).astype(int),
+            "is_turnaround_season": month.isin([3, 4, 9, 10]).astype(int),
+            "month": month.astype(int),
+            "week_of_year": dt.dt.isocalendar().week.astype(int),
+            "weekday": dt.dt.weekday.astype(int),
+            "doy_sin": np.sin(rad),
+            "doy_cos": np.cos(rad),
+            # EIA WPSR is normally Wednesday; Labor Day week is handled in economic_calendar
+            "eia_print_day": (dt.dt.weekday == 2).astype(int),
+            "api_print_day": (dt.dt.weekday == 1).astype(int),
         },
         index=dt.index,
     )
 
 
-def fetch_dxy_change_pct() -> Optional[float]:
-    """Latest daily % change in U.S. Dollar Index proxy (DX-Y.NYB)."""
-    if yf is None:
-        return None
-    try:
-        t = yf.Ticker("DX-Y.NYB")
-        h = t.history(period="5d")
-        if h is None or len(h) < 2:
-            return None
-        c = h["Close"]
-        return float((c.iloc[-1] - c.iloc[-2]) / c.iloc[-2] * 100)
-    except Exception:
-        return None
+def _inv_z(level: pd.Series, window: int = 8, vol_window: int = 16) -> pd.Series:
+    """Weekly change vs trailing median, standardized. Negative = draw vs typical."""
+    chg = level.diff()
+    med = chg.shift(1).rolling(window, min_periods=4).median()
+    vol = chg.shift(1).rolling(vol_window, min_periods=4).std()
+    surprise = chg - med
+    return surprise / vol.replace(0, np.nan)
 
 
 def enrich_market_features(df: pd.DataFrame) -> pd.DataFrame:
-    """Add technical, basis, calendar-spread proxy, and seasonality columns."""
+    """Add technical, basis, calendar-spread proxy, seasonality, and petroleum features."""
     out = df.copy()
     if "date" in out.columns:
         out["date"] = pd.to_datetime(out["date"], errors="coerce")
@@ -80,6 +86,16 @@ def enrich_market_features(df: pd.DataFrame) -> pd.DataFrame:
         out["momentum_5d_pct"] = p.pct_change(5) * 100
         out["momentum_20d_pct"] = p.pct_change(20) * 100
         out["calendar_spread_proxy"] = p - p.shift(5)
+        out["rbob_return_1d"] = p.pct_change() * 100
+
+    if "ULSD" in out.columns:
+        u = pd.to_numeric(out["ULSD"], errors="coerce")
+        out["ulsd_return_1d"] = u.pct_change() * 100
+        out["ulsd_momentum_5d_pct"] = u.pct_change(5) * 100
+    if "Crude" in out.columns:
+        c = pd.to_numeric(out["Crude"], errors="coerce")
+        out["crude_return_1d"] = c.pct_change() * 100
+        out["crude_momentum_5d_pct"] = c.pct_change(5) * 100
 
     if "spot_ny" in out.columns and price_col:
         out["basis_ny_cash_minus_rbob"] = pd.to_numeric(out["spot_ny"], errors="coerce") - pd.to_numeric(
@@ -100,7 +116,56 @@ def enrich_market_features(df: pd.DataFrame) -> pd.DataFrame:
             out["Crude"], errors="coerce"
         )
 
+    if "crack_gasoline" in out.columns:
+        out["crack_gasoline_chg"] = pd.to_numeric(out["crack_gasoline"], errors="coerce").diff()
+    if "crack_diesel" in out.columns:
+        out["crack_diesel_chg"] = pd.to_numeric(out["crack_diesel"], errors="coerce").diff()
+
+    inv_map = {
+        "gasoline_inventory": "gas",
+        "diesel_inventory": "dist",
+        "crude_inventory": "crude",
+    }
+    for col, prefix in inv_map.items():
+        if col not in out.columns:
+            continue
+        lvl = pd.to_numeric(out[col], errors="coerce")
+        out[f"{prefix}_inv_wow_pct"] = lvl.pct_change() * 100
+        out[f"{prefix}_inv_chg"] = lvl.diff()
+        out[f"{prefix}_inv_z"] = _inv_z(lvl)
+        mean26 = lvl.shift(1).rolling(26, min_periods=8).mean()
+        out[f"{prefix}_inv_vs_mean_pct"] = (lvl / mean26 - 1.0) * 100
+        out[f"{prefix}_inv_print_day"] = (lvl.diff().abs() > 1.0).astype(float)
+
+    if "temp_max_c" in out.columns or "temp_min_c" in out.columns:
+        tmax = pd.to_numeric(out.get("temp_max_c"), errors="coerce")
+        tmin = pd.to_numeric(out.get("temp_min_c"), errors="coerce")
+        tmean = (tmax + tmin) / 2.0 if tmin is not None else tmax
+        # 65°F = 18.33°C
+        base = 18.33
+        out["hdd_proxy"] = (base - tmean).clip(lower=0)
+        out["cdd_proxy"] = (tmean - base).clip(lower=0)
+
+    if "refinery_utilization_pct" in out.columns:
+        util = pd.to_numeric(out["refinery_utilization_pct"], errors="coerce")
+        out["util_chg"] = util.diff()
+
     return out
+
+
+def fetch_dxy_change_pct() -> Optional[float]:
+    """Latest daily % change in U.S. Dollar Index proxy (DX-Y.NYB)."""
+    if yf is None:
+        return None
+    try:
+        t = yf.Ticker("DX-Y.NYB")
+        h = t.history(period="5d")
+        if h is None or len(h) < 2:
+            return None
+        c = h["Close"]
+        return float((c.iloc[-1] - c.iloc[-2]) / c.iloc[-2] * 100)
+    except Exception:
+        return None
 
 
 def latest_feature_snapshot(csv_path: str = "data/final_data.csv") -> Dict[str, Any]:
@@ -127,7 +192,7 @@ def latest_feature_snapshot(csv_path: str = "data/final_data.csv") -> Dict[str, 
     for k in ("basis_ny_cash_minus_rbob", "basis_gulf_cash_minus_rbob", "calendar_spread_proxy"):
         if k in row and pd.notna(row[k]):
             snap["basis"][k] = round(float(row[k]), 4)
-    for k in ("is_driving_season", "is_hurricane_season", "is_winter_blend"):
+    for k in ("is_driving_season", "is_hurricane_season", "is_winter_blend", "is_winter_heating"):
         if k in row:
             snap["seasonality"][k] = bool(int(row[k]))
     if "brent_wti_spread" in row and pd.notna(row["brent_wti_spread"]):

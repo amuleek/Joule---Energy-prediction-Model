@@ -37,10 +37,17 @@ from forecast_horizons import (
 )
 
 try:
+    from product_ml import apply_product_ml_overlay
     from rbob_xgb_model import apply_xgboost_rbob_overlay
     XGB_OVERLAY_AVAILABLE = True
 except ImportError:
-    XGB_OVERLAY_AVAILABLE = False
+    try:
+        from rbob_xgb_model import apply_xgboost_rbob_overlay
+        apply_product_ml_overlay = None
+        XGB_OVERLAY_AVAILABLE = True
+    except ImportError:
+        apply_product_ml_overlay = None
+        XGB_OVERLAY_AVAILABLE = False
 
 try:
     from medium_term_model import apply_medium_term_overlay
@@ -60,6 +67,7 @@ class EnergyPricePredictor:
         self._last_crack_snapshot = None
         self._last_model_used = 'Prophet'
         self._last_xgb_info: Optional[dict] = None
+        self._last_product_ml: Optional[dict] = None
         self._last_catboost_info: Optional[dict] = None
 
     def enrich_features(self, df):
@@ -509,6 +517,27 @@ class EnergyPricePredictor:
         if not results or not XGB_OVERLAY_AVAILABLE:
             return results
         try:
+            if apply_product_ml_overlay is not None:
+                results, infos = apply_product_ml_overlay(
+                    df, results, finalize_fn=self._finalize_product_prediction
+                )
+                self._last_product_ml = infos
+                self._last_xgb_info = infos.get("RBOB_Gasoline") or {}
+                used = [pk for pk, inf in infos.items() if inf.get("used")]
+                if used:
+                    self._last_model_used = f"{self._last_model_used}+ML"
+                for pk, info in infos.items():
+                    if not info.get("used"):
+                        continue
+                    wf = info.get("walk_forward") or {}
+                    label = pk.replace("_", " ")
+                    print(
+                        f"{label} next session: ML {info.get('predicted_return_pct', 0):+.2f}% "
+                        f"({info.get('direction')}, conf {info.get('confidence_pct')}%) "
+                        f"walk-forward dir {wf.get('dir_acc') or '?'} "
+                        f"MAE {wf.get('mae') or '?'}."
+                    )
+                return results
             results, info = apply_xgboost_rbob_overlay(
                 df, results, finalize_fn=self._finalize_product_prediction
             )

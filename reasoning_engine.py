@@ -92,31 +92,30 @@ def build_crisp_product_reasoning(
     all_preds: Optional[Dict[str, Any]] = None,
     **_kwargs: Any,
 ) -> str:
-    """One crisp line: verdict + uncertainty (if any) + top drivers."""
+    """One crisp line: drivers first. Session name is passed by the email formatter."""
+    session_word = str(_kwargs.get("session_word") or "the next session")
     chg = _tomorrow_pct(pred)
     unc = pred.get("forecast_uncertainty") or {}
     unc_level = unc.get("level", "NONE")
+    drivers = _pick_drivers(product_key, pred, meta, all_preds)
+    lead = ", ".join(drivers) if drivers else ""
 
     if unc_level in ("HIGH", "MEDIUM"):
-        verdict = f"Low conviction — model {chg:+.1f}% tomorrow"
-        unc_bits = unc.get("reasons") or []
-        if unc_bits:
-            return f"{verdict}. {unc_bits[0]}."
-        return f"{verdict}. Mixed signals — actual move may be larger than shown."
+        if lead:
+            return f"{lead}. Conviction is low — treat {session_word} as a range around {chg:+.1f}%."
+        return f"Signals are mixed. Treat {session_word} as a range around {chg:+.1f}%, not a pinpoint."
 
     if chg > 0.35:
-        verdict = f"Lean bullish - tomorrow {chg:+.1f}%"
+        verdict = f"Lean bid into {session_word}"
     elif chg < -0.35:
-        verdict = f"Lean bearish - tomorrow {chg:+.1f}%"
+        verdict = f"Lean offered into {session_word}"
     else:
-        verdict = f"Neutral tone - tomorrow {chg:+.1f}%"
+        verdict = f"Neutral into {session_word}"
 
-    drivers = _pick_drivers(product_key, pred, meta, all_preds)
-    if not drivers:
-        label = (pred.get("directional") or {}).get("label", "NEUTRAL")
-        return f"{verdict}. View: {label.lower()}."
-
-    return f"{verdict}. {', '.join(drivers)}."
+    if lead:
+        return f"{verdict}. {lead}."
+    label = (pred.get("directional") or {}).get("label", "NEUTRAL")
+    return f"{verdict}. View: {label.lower()}."
 
 
 def build_all_reasoning(
