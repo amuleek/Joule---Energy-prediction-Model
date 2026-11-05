@@ -196,6 +196,10 @@ def main() -> int:
     print("Downloading futures prices from Yahoo...")
     px = fetch_prices()
     print(f"  {len(px)} trading days, {px.index.min().date()} -> {px.index.max().date()}")
+    missing = [c for c in PRODUCTS if c not in px or px[c].notna().sum() < 3000]
+    if len(px) < 3000 or missing:
+        raise RuntimeError(f"Yahoo price download incomplete: {len(px)} rows, "
+                           f"short/missing: {missing} (rate-limited?)")
 
     inv = None
     key = os.getenv("EIA_API_KEY", "")
@@ -257,4 +261,6 @@ def _write(ds: pd.DataFrame, name: str) -> None:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from ci import run
+    run(main)
