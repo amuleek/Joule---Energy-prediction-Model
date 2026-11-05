@@ -169,6 +169,16 @@ class PredictionEngine:
         except Exception as e:
             print(f"  Named-month repair skipped: {e}")
 
+        # Upgrade recent Yahoo-daily (trust 1) settles to the 14:28-14:30 ET VWAP while
+        # 1-minute data is still available (~7 days), so those sessions can be scored.
+        try:
+            from live_prices import upgrade_recent_settles_to_vwap
+
+            n_up = upgrade_recent_settles_to_vwap(days=7)
+            print(f"  Settle VWAP upgrade: {n_up} session(s) upgraded to settlement-window VWAP")
+        except Exception as e:
+            print(f"  Settle VWAP upgrade skipped: {e}")
+
         print("\n1b. Syncing spot prices from live futures…")
         try:
             save_prices()

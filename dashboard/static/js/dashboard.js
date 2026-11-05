@@ -103,9 +103,9 @@ function renderKPIs(preds, acc, market, news) {
   const ns = news.summary || {};
 
   const items = [
-    ["Direction Accuracy", o.direction_pct != null ? `${o.direction_pct}%` : "—", `${o.count || 0} forecasts scored`],
-    ["Day-1 Accuracy", o.day1_direction_pct != null ? `${o.day1_direction_pct}%` : "—", "Tomorrow direction"],
-    ["Mean Abs Error", o.mean_abs_error_pct != null ? `${o.mean_abs_error_pct}%` : "—", "All horizons"],
+    ["80% Range Hit", o.range80_hit_pct != null ? `${o.range80_hit_pct}%` : "—", o.range80_n ? `target ~80% · ${o.range80_n} scored` : "scored once ranges mature"],
+    ["Mean Abs Error", o.mean_abs_error_pct != null ? `${o.mean_abs_error_pct}%` : "—", o.naive_abs_error_pct != null ? `No-change: ${o.naive_abs_error_pct}%` : "All horizons"],
+    ["Skill vs No-change", o.skill_vs_naive_pct != null ? `${o.skill_vs_naive_pct > 0 ? "+" : ""}${o.skill_vs_naive_pct}%` : "—", `${o.count || 0} forecasts scored`],
     ["News Sentiment", ns.sentiment_label || "—", ns.latest_sentiment != null ? `Score: ${ns.latest_sentiment}` : ""],
     ["Geo Risk", ns.latest_geo_risk != null ? ns.latest_geo_risk.toFixed(3) : "—", "Headline risk index"],
     ["DXY", dxy.close ? fmtNum(dxy.close, 2) : "—", dxy.change_1d_pct != null ? fmtPct(dxy.change_1d_pct) : ""],

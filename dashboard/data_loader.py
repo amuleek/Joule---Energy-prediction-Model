@@ -148,6 +148,19 @@ def load_accuracy_summary() -> Dict[str, Any]:
         "mean_abs_error_pct": round(df["abs_error_pct"].mean(), 2) if "abs_error_pct" in df else None,
     }
 
+    # Baseline comparison: error if we had simply said "price stays at the settle"
+    if {"spot_at_issue", "actual", "abs_error_pct"} <= set(df.columns):
+        naive = ((df["spot_at_issue"] - df["actual"]).abs() / df["actual"] * 100).mean()
+        if pd.notna(naive) and naive > 0:
+            overall["naive_abs_error_pct"] = round(float(naive), 2)
+            overall["skill_vs_naive_pct"] = round((1 - df["abs_error_pct"].mean() / naive) * 100, 1)
+    # Calibration of the issued 80% ranges (rows issued with ranges only)
+    if "in_range_80" in df.columns:
+        hits = df["in_range_80"].map({True: 1.0, False: 0.0, "True": 1.0, "False": 0.0}).dropna()
+        if len(hits):
+            overall["range80_hit_pct"] = round(float(hits.mean()) * 100, 1)
+            overall["range80_n"] = int(len(hits))
+
     day1 = df[df["horizon"] == "day_1"] if "horizon" in df.columns else df
     if not day1.empty:
         overall["day1_direction_pct"] = round(day1["direction_correct"].mean() * 100, 1)

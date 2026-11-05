@@ -2066,3 +2066,25 @@ def prior_session_return_pct(
     if prev <= 0:
         return None
     return (cur - prev) / prev * 100.0
+
+
+def upgrade_recent_settles_to_vwap(days: int = 7) -> int:
+    """Re-derive recent untrusted settles (trust < 2, e.g. Yahoo daily last) from the
+    14:28-14:30 ET named-month VWAP. Yahoo keeps 1-minute bars ~7 days, so only
+    recent sessions can be upgraded. Returns the number of sessions upgraded."""
+    cache = _load_session_settle_cache()
+    cutoff = (_now_et() - timedelta(days=days)).strftime("%Y-%m-%d")
+    today = _now_et().strftime("%Y-%m-%d")
+    upgraded = 0
+    for date_str in sorted(cache):
+        if date_str < cutoff or date_str > today:
+            continue
+        meta = (cache.get(date_str) or {}).get("meta") or {}
+        if _settle_trust_level(meta) >= 2:
+            continue
+        if not _session_closed_for_date(pd.Timestamp(date_str).date(), _now_et()):
+            continue
+        closes, _, _, vmeta = _fetch_yahoo_settle_vwap(date_str)
+        if closes and vmeta.get("trust_level", 0) >= 2:
+            upgraded += 1
+    return upgraded

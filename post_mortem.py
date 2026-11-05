@@ -437,11 +437,22 @@ def evaluate_mature_predictions(prices: Optional[pd.DataFrame] = None) -> List[D
                     "drivers_at_issue": drivers,
                     "ensemble_components": ensemble_components,
                     "model": meta.get("model", ""),
+                    # Range calibration + baseline comparison (see baseline_forecast.py)
+                    "naive_abs_error_pct": round(abs(spot - actual) / actual * 100, 3) if spot else None,
+                    "in_range_80": _in_range(hd.get("range_80"), actual),
+                    "in_range_95": _in_range(hd.get("range_95"), actual),
                 }
                 results.append(row)
                 seen.add(key)
 
     return results
+
+
+def _in_range(band: Any, actual: float) -> Optional[bool]:
+    """True/False if a forecast range exists, None for forecasts issued without one."""
+    if not isinstance(band, dict) or band.get("low") is None or band.get("high") is None:
+        return None
+    return bool(float(band["low"]) <= actual <= float(band["high"]))
 
 
 def _drivers_at_issue(block: Dict[str, Any], meta: Dict[str, Any], product: str) -> Dict[str, Any]:
@@ -813,8 +824,55 @@ def compute_error_adjustments(evaluations: List[Dict[str, Any]]) -> Dict[str, An
     return adjustments
 
 
+SCORECARD_PATH = "data/forecast_scorecard.json"
+
+
+def compute_forecast_scorecard() -> Dict[str, Any]:
+    """Honest live scorecard from the eval log, per product x horizon:
+      mae_pct / naive_mae_pct  model error vs "price stays at the settle" (skill > 0 = better)
+      cover80 / cover95        share of actuals inside the issued 80% / 95% ranges
+                               (should be ~0.80 / ~0.95; only rows issued with ranges)
+    """
+    out: Dict[str, Any] = {"updated_at": datetime.now().isoformat(), "products": {}}
+    if not os.path.exists(EVAL_LOG_PATH):
+        return out
+    log = pd.read_csv(EVAL_LOG_PATH)
+    for product in PRODUCT_COLUMNS:
+        out["products"][product] = {}
+        for hkey, _ in EVAL_HORIZONS:
+            sub = log[(log["product"] == product) & (log["horizon"] == hkey)].tail(60)
+            if sub.empty:
+                continue
+            mae = float(sub["abs_error_pct"].mean())
+            spot = pd.to_numeric(sub["spot_at_issue"], errors="coerce")
+            act = pd.to_numeric(sub["actual"], errors="coerce")
+            naive_rows = (spot - act).abs() / act * 100  # derivable for older rows too
+            if "naive_abs_error_pct" in sub:
+                naive_rows = pd.to_numeric(sub["naive_abs_error_pct"], errors="coerce").fillna(naive_rows)
+            naive = float(naive_rows.mean())
+            stats: Dict[str, Any] = {"n": int(len(sub)), "mae_pct": round(mae, 3)}
+            if pd.notna(naive) and naive > 0:
+                stats["naive_mae_pct"] = round(float(naive), 3)
+                stats["skill_vs_naive"] = round(1 - mae / float(naive), 3)
+            for lvl in ("80", "95"):
+                col = f"in_range_{lvl}"
+                if col in sub:
+                    v = sub[col].map({True: 1.0, False: 0.0, "True": 1.0, "False": 0.0}).dropna()
+                    if len(v):
+                        stats[f"cover{lvl}"] = round(float(v.mean()), 3)
+                        stats[f"n_ranged_{lvl}"] = int(len(v))
+            out["products"][product][hkey] = stats
+    with open(SCORECARD_PATH, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2)
+    return out
+
+
 def build_post_mortem_report(new_evals: List[Dict[str, Any]]) -> Dict[str, Any]:
     """Assemble daily post-mortem report JSON."""
+    try:
+        compute_forecast_scorecard()
+    except Exception as e:  # never block the post-mortem
+        print(f"  Scorecard skipped: {e}")
     from model_weights import compute_model_metrics, update_weights_from_evaluations
 
     explanations = [_explain_row(r) for r in new_evals]

@@ -1,0 +1,65 @@
+{
+  "updated_at": "2026-11-04T22:28:48.032651",
+  "products": {
+    "RBOB_Gasoline": {
+      "day_1": {
+        "n": 60,
+        "mae_pct": 3.825,
+        "naive_mae_pct": 3.473,
+        "skill_vs_naive": -0.102
+      },
+      "day_4": {
+        "n": 60,
+        "mae_pct": 7.339,
+        "naive_mae_pct": 5.5,
+        "skill_vs_naive": -0.334
+      },
+      "day_7": {
+        "n": 60,
+        "mae_pct": 9.787,
+        "naive_mae_pct": 7.008,
+        "skill_vs_naive": -0.397
+      }
+    },
+    "ULSD_Diesel": {
+      "day_1": {
+        "n": 60,
+        "mae_pct": 2.354,
+        "naive_mae_pct": 1.855,
+        "skill_vs_naive": -0.269
+      },
+      "day_4": {
+        "n": 60,
+        "mae_pct": 5.661,
+        "naive_mae_pct": 4.298,
+        "skill_vs_naive": -0.317
+      },
+      "day_7": {
+        "n": 60,
+        "mae_pct": 6.893,
+        "naive_mae_pct": 5.851,
+        "skill_vs_naive": -0.178
+      }
+    },
+    "Crude_Oil": {
+      "day_1": {
+        "n": 60,
+        "mae_pct": 2.025,
+        "naive_mae_pct": 1.843,
+        "skill_vs_naive": -0.099
+      },
+      "day_4": {
+        "n": 60,
+        "mae_pct": 5.913,
+        "naive_mae_pct": 5.12,
+        "skill_vs_naive": -0.155
+      },
+      "day_7": {
+        "n": 60,
+        "mae_pct": 7.792,
+        "naive_mae_pct": 6.595,
+        "skill_vs_naive": -0.182
+      }
+    }
+  }
+}
