@@ -146,6 +146,10 @@ def apply_baseline_forecast(predictions_json: Dict[str, Any]) -> Dict[str, Any]:
             hd = block.get(hkey)
             if not isinstance(hd, dict):
                 continue
+            # Legacy code can alias horizons (e.g. block["monthly"] is block["day_7"]);
+            # copy so a 21-day range never overwrites the 7-day one.
+            hd = dict(hd)
+            block[hkey] = hd
             params = _band_params(hist[pk], h, implied_daily_var(hist, pk))
             legacy[hkey] = {k: hd.get(k) for k in ("price", "change_percent", "direction")}
             r80 = price_range(current, params, 80)
