@@ -211,7 +211,7 @@ def _future_days(n_forward: int, preds: Optional[Dict[str, Any]] = None) -> List
             if params and current:
                 try:
                     from baseline_forecast import price_range
-                    band = price_range(current, params, 80, sessions=i)
+                    band = price_range(px, params, 80, sessions=i)  # centred on forecast
                 except Exception:
                     band = None
             cell["products"][pk] = {

@@ -27,8 +27,12 @@ All tests are out-of-sample: models only see data available at the time.
 | Can we forecast a reliable price **range**? | **Yes.** EWMA volatility + empirical quantiles: 80% bands cover 79-81%, 95% bands 94-95% (2014-2026). | `volatility.py` |
 | Does OVX improve the ranges? | **Yes, modestly.** A 50/50 EWMA + OVX blend beats EWMA in all 9 product/horizon cells (interval score -2 to -4% at 80%, -4 to -8% at 95%). | `volatility.py --data dataset_plus.csv` |
 
-**Live model** (`../baseline_forecast.py`): centre = last settle, 80% / 95% ranges from
-EWMA + OVX volatility. `FORECAST_MODE=legacy` restores the old stack.
+| Does starting from the live Globex price (instead of yesterday's settle) help? | **Yes, a lot** (~470 sessions of hourly data): next-settle error -26% at a 6am run, -41% at 9am, -70% at noon. Remaining-variance table x1.2 keeps 80% bands at 79.7% coverage. | `baseline_forecast.live_anchor` |
+
+**Live model** (`../baseline_forecast.py`): centre = latest Globex trade of the settle's
+contract when fresh (else last settle); 80% / 95% ranges from EWMA + OVX volatility,
+shrunk by how much of the session is left. `FORECAST_MODE=legacy` restores the old
+stack; `LIVE_ANCHOR=false` disables the live anchor.
 
 ## Most promising next data
 Rack / retail / supplier prices (they lag futures by days, so they are likely
