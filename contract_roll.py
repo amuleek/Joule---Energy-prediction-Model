@@ -85,6 +85,32 @@ def nymex_symbol(root: str, year: int, month: int) -> str:
     return f"{root}{code}{str(year)[-2:]}"
 
 
+def wti_last_trade_day(year: int, month: int) -> datetime:
+    """Last trading day of the WTI contract that *expires* in (year, month):
+    3 business days before the 25th, or before the last business day preceding
+    the 25th when the 25th is not a business day (weekends only; exchange holidays
+    can move it one day earlier)."""
+    d = datetime(year, month, 25)
+    # anchor on the 25th or the business day before it (Dec 25 is always a holiday)
+    while d.weekday() >= 5 or (d.month == 12 and d.day == 25):
+        d = d.replace(day=d.day - 1)
+    n = 0
+    while n < 3:
+        d = d.replace(day=d.day - 1)
+        if d.weekday() < 5:
+            n += 1
+    return d
+
+
+def infer_wti_front_month(as_of: Optional[datetime] = None) -> tuple[int, int]:
+    """WTI delivery month M expires around the 20th of month M-1. Before that date the
+    front is next month; after it, the month after next (e.g. Nov 21 -> CLF)."""
+    as_of = as_of or _now_et()
+    exp = wti_last_trade_day(as_of.year, as_of.month)
+    offset = 1 if as_of.date() <= exp.date() else 2
+    return _add_months(as_of.year, as_of.month, offset)
+
+
 def infer_delivery_front_month(as_of: Optional[datetime] = None) -> tuple[int, int]:
     """
     RBOB/HO: delivery month M expires in the prior calendar month, so during
@@ -108,12 +134,11 @@ def infer_resolved_contracts(as_of: Optional[datetime] = None) -> Dict[str, str]
         root = (nb or "")[:2]
         if root not in ("RB", "HO", "CL"):
             continue
-        if root == "CL" and not str(nb).endswith("*2"):
-            # WTI: prefer next calendar month (Sep → CLV) once prior month is gone
-            y, m = _add_months(as_of.year, as_of.month, 0)
-            # After the 1st, Sep CLU is usually off the board — use Oct CLV in September
-            if as_of.day >= 1:
-                y, m = _add_months(as_of.year, as_of.month, 1)
+        if root == "CL":
+            # WTI expires ~20th of the prior month, not at month end like RB/HO.
+            y, m = infer_wti_front_month(as_of)
+            if str(nb).endswith("*2"):
+                y, m = _add_months(y, m, 1)
         elif str(nb).endswith("*2"):
             y, m = ly, lm
         else:
