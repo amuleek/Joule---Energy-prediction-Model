@@ -3278,5 +3278,224 @@
       "trust_level": 2
     },
     "saved_at": "2026-09-14T20:29:26"
+  },
+  "2026-10-27": {
+    "closes": {
+      "RBOB": 3.0638,
+      "ULSD": 4.6172
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-10-27) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBZ26.NYM",
+        "ULSD": "HOZ26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBZ26",
+        "ULSD": "HOZ26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBZ26.NYM",
+          "ULSD": "HOZ26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.0638,
+          "ULSD": 4.6172
+        }
+      }
+    },
+    "saved_at": "2026-11-04T22:09:11"
+  },
+  "2026-10-28": {
+    "closes": {
+      "RBOB": 3.1087,
+      "ULSD": 4.6639
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-10-28) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBZ26.NYM",
+        "ULSD": "HOZ26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBZ26",
+        "ULSD": "HOZ26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBZ26.NYM",
+          "ULSD": "HOZ26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.1087,
+          "ULSD": 4.6639
+        }
+      }
+    },
+    "saved_at": "2026-11-04T22:09:12"
+  },
+  "2026-10-29": {
+    "closes": {
+      "RBOB": 3.0881,
+      "ULSD": 4.5875
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-10-29) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBZ26.NYM",
+        "ULSD": "HOZ26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBZ26",
+        "ULSD": "HOZ26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBZ26.NYM",
+          "ULSD": "HOZ26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.0881,
+          "ULSD": 4.5875
+        }
+      }
+    },
+    "saved_at": "2026-11-04T22:09:12"
+  },
+  "2026-10-30": {
+    "closes": {
+      "RBOB": 3.1565,
+      "ULSD": 4.6761
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-10-30) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBZ26.NYM",
+        "ULSD": "HOZ26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBZ26",
+        "ULSD": "HOZ26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBZ26.NYM",
+          "ULSD": "HOZ26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 3.1565,
+          "ULSD": 4.6761
+        }
+      }
+    },
+    "saved_at": "2026-11-04T22:09:13"
+  },
+  "2026-11-02": {
+    "closes": {
+      "RBOB": 2.9001,
+      "Crude": 96.46,
+      "ULSD": 4.4216
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-11-02) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBZ26.NYM",
+        "Crude": "CLZ26.NYM",
+        "ULSD": "HOZ26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBZ26",
+        "ULSD": "HOZ26",
+        "Crude": "CLZ26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBZ26.NYM",
+          "Crude": "CLZ26.NYM",
+          "ULSD": "HOZ26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 2.9001,
+          "ULSD": 4.4216,
+          "Crude": 96.46
+        }
+      }
+    },
+    "saved_at": "2026-11-04T22:09:14"
+  },
+  "2026-11-03": {
+    "closes": {
+      "RBOB": 2.9355,
+      "Crude": 96.09,
+      "ULSD": 4.5306
+    },
+    "meta": {
+      "source": "yahoo_named_month",
+      "label": "NYMEX (2026-11-03) \u2014 named-month repair",
+      "yahoo_tickers": {
+        "RBOB": "RBZ26.NYM",
+        "Crude": "CLZ26.NYM",
+        "ULSD": "HOZ26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBZ26",
+        "ULSD": "HOZ26",
+        "Crude": "CLZ26"
+      },
+      "trust_level": 1,
+      "reconcile": {
+        "yahoo_tickers": {
+          "RBOB": "RBZ26.NYM",
+          "Crude": "CLZ26.NYM",
+          "ULSD": "HOZ26.NYM"
+        },
+        "yahoo_closes": {
+          "RBOB": 2.9355,
+          "ULSD": 4.5306,
+          "Crude": 96.09
+        }
+      }
+    },
+    "saved_at": "2026-11-04T22:09:14"
+  },
+  "2026-11-04": {
+    "closes": {
+      "RBOB": 2.7291,
+      "ULSD": 4.2064,
+      "Crude": 88.1234
+    },
+    "meta": {
+      "source": "yahoo_settle_vwap",
+      "label": "NYMEX (2026-11-04) \u2014 14:28\u201314:30 ET named-month VWAP",
+      "method": "globex_settle_window_vwap",
+      "yahoo_tickers": {
+        "RBOB": "RBZ26.NYM",
+        "ULSD": "HOZ26.NYM",
+        "Crude": "CLZ26.NYM"
+      },
+      "resolved": {
+        "RBOB": "RBZ26",
+        "ULSD": "HOZ26",
+        "Crude": "CLZ26"
+      },
+      "vwap_bars": {
+        "RBOB": 3,
+        "ULSD": 3,
+        "Crude": 3
+      },
+      "trust_level": 2
+    },
+    "saved_at": "2026-11-04T22:10:01"
   }
 }
